@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91次元 - 二次元内容聚合门户</title>
+<meta name="description" content="91次元聚合新番动画、漫画连载、轻小说与同人创作等二次元内容，提供番剧更新动态、漫画条目推荐、深度类型解析与追番消费指南，适合追番党和漫画读者浏览。">
+<meta name="keywords" content="新番动画,漫画连载,轻小说,同人创作,追番指南">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231a1033'/%3E%3Ccircle cx='50' cy='50' r='26' fill='none' stroke='%23ff6b9d' stroke-width='5'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%237c5cff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0f0a1e;
+  --bg-soft:#17112b;
+  --panel:#1d1535;
+  --panel-2:#241a42;
+  --line:#332a55;
+  --text:#ece8f7;
+  --text-2:#b3aacb;
+  --text-3:#8a80a6;
+  --pink:#ff6b9d;
+  --purple:#7c5cff;
+  --cyan:#4fd6e3;
+  --amber:#ffb547;
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow:0 8px 28px rgba(0,0,0,.35);
+  --announce-h:38px;
+  --header-h:62px;
+  --sticky-offset:calc(var(--announce-h) + var(--header-h) + 12px);
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-offset)}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:4px}
+
+/* ---------- 吸顶公告条 ---------- */
+.announce{
+  position:sticky;top:0;z-index:60;
+  height:var(--announce-h);
+  background:linear-gradient(90deg,#2a1a4d,#3b1d5c 55%,#4a1f5e);
+  border-bottom:1px solid #4a2a70;
+  display:flex;align-items:center;
+  overflow:hidden;
+}
+.announce-inner{
+  max-width:1360px;margin:0 auto;padding:0 20px;width:100%;
+  display:flex;align-items:center;gap:12px;
+  font-size:13px;color:#e3d6ff;
+}
+.announce-tag{
+  flex:none;background:var(--pink);color:#2a0d1c;
+  font-weight:700;font-size:11px;letter-spacing:.06em;
+  padding:2px 9px;border-radius:20px;
+}
+.announce-track{overflow:hidden;white-space:nowrap;flex:1}
+.announce-track span{display:inline-block;padding-right:40px}
+.announce a.announce-link{color:var(--cyan);text-decoration:underline;text-underline-offset:2px}
+
+/* ---------- 吸顶页头 ---------- */
+.site-header{
+  position:sticky;top:var(--announce-h);z-index:55;
+  height:var(--header-h);
+  background:rgba(15,10,30,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1360px;margin:0 auto;padding:0 20px;height:100%;
+  display:flex;align-items:center;gap:18px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand-mark{width:38px;height:38px;flex:none}
+.brand-text{
+  font-size:20px;font-weight:800;letter-spacing:.02em;
+  background:linear-gradient(90deg,var(--pink),var(--purple) 70%,var(--cyan));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  white-space:nowrap;
+}
+.main-nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap}
+.main-nav a{
+  font-size:14px;color:var(--text-2);padding:6px 11px;border-radius:20px;
+  transition:.18s;white-space:nowrap;
+}
+.main-nav a:hover{color:var(--text);background:var(--panel-2)}
+.header-actions{margin-left:auto;display:flex;align-items:center;gap:10px}
+.search-box{position:relative;display:flex;align-items:center}
+.search-box input{
+  width:190px;height:34px;border-radius:20px;
+  background:var(--panel);border:1px solid var(--line);
+  color:var(--text);padding:0 14px 0 34px;font-size:13px;
+  transition:.2s;
+}
+.search-box input:focus{outline:none;border-color:var(--purple);width:220px}
+.search-box svg{position:absolute;left:11px;width:15px;height:15px;stroke:var(--text-3);pointer-events:none}
+.search-feedback{
+  position:absolute;top:42px;right:0;width:300px;
+  background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius-sm);
+  box-shadow:var(--shadow);padding:10px 14px;font-size:13px;color:var(--text-2);
+  display:none;z-index:70;
+}
+.search-feedback.show{display:block}
+.search-feedback em{color:var(--pink);font-style:normal}
+.btn-ghost{
+  font-size:13px;color:var(--text);border:1px solid var(--line);
+  background:var(--panel);padding:7px 15px;border-radius:20px;transition:.18s;white-space:nowrap;
+}
+.btn-ghost:hover{border-color:var(--purple);color:#fff}
+
+/* ---------- 布局容器：三栏门户 ---------- */
+.layout{
+  max-width:1360px;margin:0 auto;padding:0 20px;
+  display:grid;
+  grid-template-columns:180px minmax(0,1fr) 250px;
+  gap:26px;
+  align-items:start;
+}
+.channel-rail{position:sticky;top:var(--sticky-offset);align-self:start}
+.aux-rail{position:sticky;top:var(--sticky-offset);align-self:start}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  grid-column:1/-1;
+  position:relative;overflow:hidden;
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(124,92,255,.38),transparent 46%),
+    radial-gradient(circle at 12% 88%,rgba(255,107,157,.28),transparent 50%),
+    linear-gradient(140deg,#1c1236,#150e2a 55%,#1a1033);
+  border:1px solid var(--line);
+  padding:44px 40px 40px;
+  margin-top:26px;
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:30px;
+  align-items:center;
+}
+.hero-copy{position:relative;z-index:2}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;letter-spacing:.14em;color:var(--cyan);
+  border:1px solid rgba(79,214,227,.35);border-radius:20px;
+  padding:4px 13px;margin-bottom:18px;
+}
+.hero-kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+h1{
+  font-size:clamp(34px,4.6vw,52px);
+  line-height:1.12;font-weight:900;letter-spacing:.01em;
+  margin-bottom:16px;
+  background:linear-gradient(96deg,#fff 12%,#ffb3d0 48%,#a992ff 82%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-desc{color:var(--text-2);font-size:15px;max-width:560px;margin-bottom:24px}
+.hero-desc strong{color:var(--text);font-weight:600}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.btn-primary{
+  background:linear-gradient(96deg,var(--pink),var(--purple));
+  color:#fff;border:none;font-size:14px;font-weight:700;
+  padding:11px 24px;border-radius:24px;transition:.2s;
+  box-shadow:0 6px 20px rgba(124,92,255,.35);
+}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 9px 26px rgba(124,92,255,.5)}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap}
+.hero-stats div{font-size:12px;color:var(--text-3)}
+.hero-stats b{display:block;font-size:22px;color:var(--text);font-weight:800;line-height:1.3}
+.hero-visual{position:relative;z-index:2;display:flex;justify-content:center}
+.hero-visual svg{width:100%;max-width:330px;height:auto;filter:drop-shadow(0 12px 30px rgba(124,92,255,.35))}
+
+/* ---------- 通用面板 ---------- */
+.panel{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:18px 16px;
+  margin-bottom:20px;
+}
+.panel-title{
+  font-size:13px;font-weight:700;letter-spacing:.1em;
+  color:var(--text-3);text-transform:uppercase;
+  display:flex;align-items:center;gap:8px;margin-bottom:14px;
+}
+.panel-title::before{content:"";width:3px;height:13px;background:var(--pink);border-radius:2px}
+
+/* 频道索引 */
+.channel-list{list-style:none;display:flex;flex-direction:column;gap:2px}
+.channel-list a{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:8px 10px;border-radius:8px;font-size:14px;color:var(--text-2);transition:.16s;
+}
+.channel-list a:hover,.channel-list a.active{background:var(--panel-2);color:var(--text)}
+.channel-list .count{font-size:11px;color:var(--text-3);background:var(--bg-soft);padding:1px 7px;border-radius:10px}
+
+/* ---------- 主内容区 ---------- */
+.main-col{min-width:0}
+
+section.block{margin-bottom:34px;scroll-margin-top:var(--sticky-offset)}
+.block-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+.block-head h2{
+  font-size:21px;font-weight:800;letter-spacing:.01em;display:flex;align-items:center;gap:10px;
+}
+.block-head h2::before{content:"";width:5px;height:20px;border-radius:3px;background:linear-gradient(180deg,var(--pink),var(--purple))}
+.block-head .sub{font-size:12.5px;color:var(--text-3)}
+.block-more{font-size:12.5px;color:var(--cyan);white-space:nowrap}
+.block-more:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* 领域概览 */
+.overview{
+  background:linear-gradient(135deg,var(--panel),#1a1233);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;font-size:14.5px;color:var(--text-2);
+}
+.overview p+p{margin-top:12px}
+.overview strong{color:var(--text);font-weight:600}
+.overview .kw{color:var(--pink);font-weight:600}
+
+/* 精选卡片网格 */
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:.2s;
+}
+.card:hover{transform:translateY(-3px);border-color:#4a3a78;box-shadow:var(--shadow)}
+.card-cover{position:relative;aspect-ratio:4/3;background:var(--bg-soft);overflow:hidden}
+.card-cover img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.card:hover .card-cover img{transform:scale(1.05)}
+.card-badge{
+  position:absolute;top:9px;left:9px;font-size:11px;font-weight:700;
+  background:rgba(15,10,30,.82);color:var(--cyan);padding:3px 9px;border-radius:20px;
+  backdrop-filter:blur(4px);
+}
+.card-body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-title{font-size:15.5px;font-weight:700;line-height:1.4}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:11px;color:var(--text-2);background:var(--bg-soft);border:1px solid var(--line);padding:1px 8px;border-radius:20px}
+.tag.hot{color:var(--amber);border-color:rgba(255,181,71,.35)}
+.card-note{font-size:12.8px;color:var(--text-2);line-height:1.65;flex:1}
+.card-meta{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--text-3);border-top:1px solid var(--line);padding-top:9px}
+.card-meta .score{color:var(--amber);font-weight:700}
+
+/* 动态列表 */
+.updates{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.update-item{
+  display:flex;align-items:center;gap:14px;padding:13px 18px;
+  border-bottom:1px solid var(--line);font-size:13.5px;transition:.15s;
+}
+.update-item:last-child{border-bottom:none}
+.update-item:hover{background:var(--panel-2)}
+.update-time{flex:none;width:82px;font-size:11.5px;color:var(--text-3);font-variant-numeric:tabular-nums}
+.update-name{flex:none;font-weight:700;color:var(--text);min-width:0}
+.update-name .type{font-weight:400;font-size:11px;color:var(--purple);background:rgba(124,92,255,.15);padding:1px 7px;border-radius:10px;margin-left:7px;white-space:nowrap}
+.update-text{color:var(--text-2);font-size:12.8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cat{
+  display:flex;flex-direction:column;gap:5px;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:15px 14px;transition:.18s;
+}
+.cat:hover{background:var(--panel-2);border-color:var(--purple);transform:translateY(-2px)}
+.cat b{font-size:15px;font-weight:700}
+.cat span{font-size:11.5px;color:var(--text-3);line-height:1.5}
+.cat .cat-count{font-size:11px;color:var(--cyan);margin-top:2px}
+
+/* 深度解析 */
+.article{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 30px;font-size:14.5px;color:var(--text-2);line-height:1.85;
+}
+.article h3{
+  font-size:17px;font-weight:800;color:var(--text);margin:24px 0 10px;
+  padding-left:11px;border-left:3px solid var(--pink);
+}
+.article h3:first-child{margin-top:0}
+.article p{margin-bottom:11px}
+.article ul{list-style:none;margin:8px 0 14px;padding-left:0}
+.article ul li{position:relative;padding-left:18px;margin-bottom:7px}
+.article ul li::before{content:"";position:absolute;left:2px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--purple)}
+.article strong{color:var(--text);font-weight:600}
+.article .hl{color:var(--cyan)}
+
+/* 体验指南步骤 */
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;counter-reset:step}
+.step{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 18px 18px 20px;position:relative;
+}
+.step::before{
+  counter-increment:step;content:counter(step,decimal-leading-zero);
+  font-size:12px;font-weight:800;color:var(--pink);
+  display:inline-block;margin-bottom:7px;letter-spacing:.1em;
+}
+.step h4{font-size:14.5px;font-weight:700;color:var(--text);margin-bottom:6px}
+.step p{font-size:12.8px;color:var(--text-2);line-height:1.7}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:10px}
+.faq details{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:0 18px;transition:.18s;
+}
+.faq details[open]{border-color:#4a3a78;background:var(--panel-2)}
+.faq summary{
+  cursor:pointer;list-style:none;padding:14px 0;font-size:14.5px;font-weight:600;color:var(--text);
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:20px;color:var(--pink);font-weight:400;flex:none;line-height:1;transition:.2s}
+.faq details[open] summary::after{content:"−"}
+.faq .answer{padding:0 0 15px;font-size:13.3px;color:var(--text-2);line-height:1.8}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.comment{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:13px 15px;
+}
+.comment-head{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.avatar{
+  width:28px;height:28px;border-radius:50%;flex:none;
+  display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff;
+}
+.comment-name{font-size:12.5px;font-weight:700;color:var(--text)}
+.comment-time{font-size:11px;color:var(--text-3);margin-left:auto}
+.comment-body{font-size:12.8px;color:var(--text-2);line-height:1.7}
+.comment-body .at{color:var(--cyan)}
+
+/* 资讯 */
+.news-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.news{
+  display:flex;gap:13px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:12px;transition:.18s;
+}
+.news:hover{border-color:#4a3a78;background:var(--panel-2)}
+.news-thumb{width:92px;height:70px;flex:none;border-radius:8px;overflow:hidden;background:var(--bg-soft)}
+.news-thumb img{width:100%;height:100%;object-fit:cover}
+.news-info{min-width:0;display:flex;flex-direction:column;gap:4px}
+.news-title{font-size:13.5px;font-weight:700;color:var(--text);line-height:1.45}
+.news-date{font-size:11px;color:var(--text-3)}
+.news-sum{font-size:12px;color:var(--text-2);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* 相关推荐 标签索引 */
+.reco-tags{display:flex;flex-wrap:wrap;gap:9px}
+.reco-tags a{
+  font-size:13px;color:var(--text-2);background:var(--panel);border:1px solid var(--line);
+  padding:7px 15px;border-radius:22px;transition:.16s;
+}
+.reco-tags a:hover{color:#fff;background:linear-gradient(96deg,var(--pink),var(--purple));border-color:transparent}
+
+/* 榜单 */
+.rank{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.rank-item{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line);font-size:13.5px}
+.rank-item:last-child{border-bottom:none}
+.rank-no{width:24px;height:24px;flex:none;border-radius:7px;display:grid;place-items:center;font-size:12px;font-weight:800;background:var(--bg-soft);color:var(--text-3)}
+.rank-item:nth-child(1) .rank-no{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff}
+.rank-item:nth-child(2) .rank-no{background:rgba(255,181,71,.9);color:#2a1a00}
+.rank-item:nth-child(3) .rank-no{background:rgba(79,214,227,.85);color:#08262a}
+.rank-name{font-weight:700;color:var(--text)}
+.rank-type{font-size:11px;color:var(--text-3);margin-left:8px}
+.rank-score{margin-left:auto;color:var(--amber);font-weight:700;font-size:13px}
+.rank-bar{width:70px;height:5px;border-radius:3px;background:var(--bg-soft);overflow:hidden;flex:none}
+.rank-bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--purple),var(--pink))}
+
+/* ---------- 右侧辅助栏 ---------- */
+.aux-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:18px}
+.aux-card h3{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--text-3);margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.aux-card h3::before{content:"";width:3px;height:12px;background:var(--cyan);border-radius:2px}
+.hot-list{list-style:none;display:flex;flex-direction:column;gap:2px;counter-reset:hot}
+.hot-list li{counter-increment:hot}
+.hot-list a{display:flex;gap:10px;padding:8px 6px;border-radius:7px;font-size:13px;color:var(--text-2);transition:.15s;align-items:flex-start}
+.hot-list a:hover{background:var(--panel-2);color:var(--text)}
+.hot-list a::before{content:counter(hot);flex:none;width:18px;height:18px;border-radius:5px;background:var(--bg-soft);font-size:11px;font-weight:800;color:var(--text-3);display:grid;place-items:center;margin-top:2px}
+.hot-list li:nth-child(1) a::before,.hot-list li:nth-child(2) a::before,.hot-list li:nth-child(3) a::before{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff}
+.hot-meta{display:block;font-size:11px;color:var(--text-3);margin-top:1px}
+.update-stream{list-style:none;display:flex;flex-direction:column;gap:11px}
+.update-stream li{font-size:12.5px;color:var(--text-2);line-height:1.55;padding-bottom:11px;border-bottom:1px dashed var(--line)}
+.update-stream li:last-child{border-bottom:none;padding-bottom:0}
+.update-stream b{color:var(--text);font-weight:700;display:block}
+.update-stream time{font-size:11px;color:var(--text-3)}
+.aux-tags{display:flex;flex-wrap:wrap;gap:7px}
+.aux-tags a{font-size:12px;color:var(--text-2);background:var(--bg-soft);border:1px solid var(--line);padding:4px 11px;border-radius:16px;transition:.15s}
+.aux-tags a:hover{color:var(--cyan);border-color:var(--cyan)}
+
+/* ---------- 页尾 ---------- */
+.site-footer{
+  margin-top:40px;border-top:1px solid var(--line);
+  background:linear-gradient(180deg,var(--bg-soft),#0b0717);
+}
+.footer-inner{max-width:1360px;margin:0 auto;padding:40px 20px 22px}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;margin-bottom:30px}
+.footer-brand .brand-text{font-size:19px}
+.footer-brand p{font-size:12.8px;color:var(--text-3);margin-top:12px;line-height:1.75;max-width:280px}
+.footer-col h4{font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px}
+.footer-col a{display:block;font-size:12.5px;color:var(--text-3);padding:3px 0;transition:.15s}
+.footer-col a:hover{color:var(--cyan)}
+.footer-bottom{
+  border-top:1px solid var(--line);padding-top:16px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:11.5px;color:var(--text-3);
+}
+
+/* ---------- 响应式 ---------- */
+@media(max-width:1180px){
+  .layout{grid-template-columns:160px minmax(0,1fr) 230px;gap:20px}
+  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:1024px){
+  .layout{grid-template-columns:minmax(0,1fr) 250px;gap:22px}
+  .channel-rail{display:none}
+  .hero{grid-template-columns:1fr;padding:34px 26px}
+  .hero-visual{display:none}
+  .main-nav{display:none}
+}
+@media(max-width:860px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .aux-rail{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:8px}
+  .aux-card{margin-bottom:0}
+  .news-list,.comments{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:740px){
+  body{font-size:14.5px}
+  .announce-inner{font-size:11.5px;gap:8px}
+  .announce-tag{display:none}
+  .header-inner{gap:10px;padding:0 14px}
+  .brand-text{font-size:17px}
+  .search-box input{width:130px}
+  .search-box input:focus{width:150px}
+  .btn-ghost{display:none}
+  .layout{padding:0 14px}
+  .hero{padding:28px 18px;border-radius:16px;margin-top:16px}
+  .hero-desc{font-size:14px}
+  .card-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:1fr}
+  .article{padding:20px 18px}
+  .aux-rail{grid-template-columns:1fr}
+  .update-item{flex-wrap:wrap;gap:4px 10px;padding:12px 14px}
+  .update-time{width:auto}
+  .update-text{white-space:normal;flex-basis:100%}
+  .rank-bar{display:none}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce" role="region" aria-label="站内更新公告">
+  <div class="announce-inner">
+    <span class="announce-tag">更新</span>
+    <div class="announce-track">
+      <span>本周新增 18 部秋季新番条目 · 《边境列车》第 6 话已上线 · 漫画《雾港夜航》第 42 话更新 · 同人创作区新增 7 篇投稿 · <a class="announce-link" href="/#updates">查看全部动态</a></span>
+    </div>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/#top" aria-label="91次元首页">
+      <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+        <rect width="100" height="100" rx="22" fill="#1a1033"/>
+        <circle cx="50" cy="50" r="26" fill="none" stroke="#ff6b9d" stroke-width="5"/>
+        <circle cx="50" cy="50" r="10" fill="#7c5cff"/>
+        <path d="M50 18 L50 30 M50 70 L50 82 M18 50 L30 50 M70 50 L82 50" stroke="#4fd6e3" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">91次元</span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="/#anime">新番动画</a>
+      <a href="/#manga">漫画连载</a>
+      <a href="/#novel">轻小说</a>
+      <a href="/#doujin">同人创作</a>
+      <a href="/#rank">热度榜单</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input type="search" id="siteSearch" placeholder="搜索番剧、漫画、作者" aria-label="站内搜索">
+        <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+      </div>
+      <a class="btn-ghost" href="/#updates">追番日历</a>
+    </div>
+  </div>
+</header>
+
+<div class="layout" id="top">
+
+  <!-- 左侧频道索引 -->
+  <aside class="channel-rail" aria-label="频道索引">
+    <div class="panel">
+      <div class="panel-title">频道索引</div>
+      <ul class="channel-list">
+        <li><a href="/#anime" class="active">新番动画 <span class="count">126</span></a></li>
+        <li><a href="/#manga">漫画连载 <span class="count">98</span></a></li>
+        <li><a href="/#novel">轻小说 <span class="count">64</span></a></li>
+        <li><a href="/#doujin">同人创作 <span class="count">47</span></a></li>
+        <li><a href="/#updates">更新动态 <span class="count">24</span></a></li>
+        <li><a href="/#category">分类导航 <span class="count">8</span></a></li>
+        <li><a href="/#article">深度解析 <span class="count">6</span></a></li>
+        <li><a href="/#guide">追番指南 <span class="count">4</span></a></li>
+        <li><a href="/#faq">常见问答 <span class="count">6</span></a></li>
+        <li><a href="/#rank">热度榜单 <span class="count">10</span></a></li>
+        <li><a href="/#comments">读者评论 <span class="count">16</span></a></li>
+        <li><a href="/#news">资讯速递 <span class="count">6</span></a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <span class="hero-kicker">二次元垂直聚合</span>
+      <h1 id="hero-title">91次元</h1>
+      <p class="hero-desc">汇聚<strong>秋季新番、漫画连载、轻小说与同人创作</strong>的二次元内容入口，覆盖<strong>《边境列车》《雾港夜航》</strong>等本季可追条目，按类型、更新节奏与阅读门槛整理，方便追番党与漫画读者快速定位当下值得投入时间的作品。</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/#anime">浏览本季新番</a>
+        <a class="btn-ghost" href="/#updates" style="display:inline-block">查看更新日历</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>335</b>在库条目</div>
+        <div><b>24</b>本周更新</div>
+        <div><b>8</b>内容分类</div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ringA" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ff6b9d"/><stop offset="1" stop-color="#7c5cff"/>
+          </linearGradient>
+          <linearGradient id="ringB" x1="1" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4fd6e3"/><stop offset="1" stop-color="#7c5cff"/>
+          </linearGradient>
+        </defs>
+        <circle cx="160" cy="160" r="118" fill="none" stroke="#332a55" stroke-width="1.5" stroke-dasharray="4 8"/>
+        <circle cx="160" cy="160" r="92" fill="none" stroke="url(#ringA)" stroke-width="3" stroke-dasharray="180 400" stroke-linecap="round" transform="rotate(-30 160 160)"/>
+        <circle cx="160" cy="160" r="70" fill="none" stroke="url(#ringB)" stroke-width="2.5" stroke-dasharray="120 340" stroke-linecap="round" transform="rotate(140 160 160)"/>
+        <circle cx="160" cy="160" r="42" fill="#241a42" stroke="#4a3a78" stroke-width="1.5"/>
+        <path d="M148 146 L186 160 L148 174 Z" fill="url(#ringA)"/>
+        <circle cx="160" cy="42" r="6" fill="#ff6b9d"/>
+        <circle cx="252" cy="220" r="5" fill="#4fd6e3"/>
+        <circle cx="70" cy="212" r="4" fill="#7c5cff"/>
+        <path d="M240 74 l7 14 15 2 -11 11 3 15 -14 -7 -14 7 3 -15 -11 -11 15 -2 Z" fill="#ffb547" opacity=".85"/>
+        <path d="M60 84 l4 8 9 1 -7 6 2 9 -8 -4 -8 4 2 -9 -7 -6 9 -1 Z" fill="#4fd6e3" opacity=".7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 主内容区 -->
+  <main class="main-col">
+
+    <!-- 1. 主题领域概览 -->
+    <section class="block" id="overview">
+      <div class="block-head">
+        <h2>二次元内容领域概览</h2>
+        <span class="sub">动画 · 漫画 · 轻小说 · 同人</span>
+      </div>
+      <div class="overview">
+        <p><strong>91次元</strong>所覆盖的二次元内容，大致分为四条主线：以季度为单位的<strong>新番动画</strong>、按话连载的<strong>漫画</strong>、图文结合的<strong>轻小说</strong>，以及由爱好者主导的<strong>同人创作</strong>。这四类内容在更新节奏、阅读门槛和消费方式上差别明显，放在一起看时，先分清类型比盲目追更更有效。</p>
+        <p>当前共收录 <span class="kw">335</span> 个在库条目，其中 2026 年秋季新番 18 部、连载漫画 98 部、轻小说 64 部、同人投稿 47 篇。秋季档里，《边境列车》以周更节奏推进到第 6 话，《雾港夜航》漫画第 42 话刚更新；轻小说侧以《星屑观测手册》的慢热叙事最受讨论。同人区则以短篇合集和角色二创为主，更新随机但单篇完成度高。</p>
+        <p>对刚接触的读者，建议先按<strong>单话时长</strong>和<strong>单章字数</strong>筛一轮：动画单集 24 分钟、漫画单话 3—5 分钟、轻小说单章 10—15 分钟，同人短篇则视篇幅从 5 分钟到 30 分钟不等。确认自己能接受的消费节奏，再去看具体条目的类型标签和评分，比直接扎进热度榜更不容易中途弃坑。</p>
+      </div>
+    </section>
+
+    <!-- 2. 精选内容推荐 -->
+    <section class="block" id="anime">
+      <div class="block-head">
+        <h2>本季精选条目</h2>
+        <a class="block-more" href="/#rank">查看热度榜 →</a>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-cover">
+            <img src="https://picsum.photos/seed/bianjing-lieche18/400/300" alt="边境列车动画主视觉封面" width="400" height="300" loading="lazy">
+            <span class="card-badge">新番 · 周更</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">边境列车</h3>
+            <div class="card-tags"><span class="tag">公路冒险</span><span class="tag">群像</span><span class="tag hot">本季黑马</span></div>
+            <p class="card-note">一列永不停站的列车载着十二名乘客穿行雪原，每节车厢对应一段未解往事。叙事靠车厢切换推进，单集完成度高，适合喜欢单元剧结构又想要主线的观众。</p>
+            <div class="card-meta"><span>更新至第 6 话</span><span class="score">9.1</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-cover">
+            <img src="https://picsum.photos/seed/wugang-yehang42/400/300" alt="雾港夜航漫画封面" width="400" height="300" loading="lazy">
+            <span class="card-badge">漫画 · 双周更</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">雾港夜航</h3>
+            <div class="card-tags"><span class="tag">悬疑</span><span class="tag">港口城市</span><span class="tag">黑白分镜</span></div>
+            <p class="card-note">主角在雾港码头接手一艘无法靠岸的旧船，每夜航一次就丢失一段记忆。画面以大面积留白和雨幕线条见长，第 42 话开始收束前期的伏笔。</p>
+            <div class="card-meta"><span>更新至第 42 话</span><span class="score">8.8</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-cover">
+            <img src="https://picsum.photos/seed/xingxie-shouce12/400/300" alt="星屑观测手册轻小说封面" width="400" height="300" loading="lazy">
+            <span class="card-badge">轻小说 · 月更</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">星屑观测手册</h3>
+            <div class="card-tags"><span class="tag">日常奇幻</span><span class="tag">天文</span><span class="tag">慢热</span></div>
+            <p class="card-note">以天文台为舞台的群像日常，主线藏在每章末尾的观测记录里。文字密度偏高，适合愿意慢读、喜欢在细节里找线索的轻小说读者。</p>
+            <div class="card-meta"><span>第 7 卷 · 月更</span><span class="score">8.5</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-cover">
+            <img src="https://picsum.photos/seed/yanhuo-dangan07/400/300" alt="烟火档案单元剧封面" width="400" height="300" loading="lazy">
+            <span class="card-badge">新番 · 周更</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">烟火档案</h3>
+            <div class="card-tags"><span class="tag">都市怪谈</span><span class="tag">单元剧</span><span class="tag">短篇集</span></div>
+            <p class="card-note">每集围绕一场烟花大会展开独立怪谈，人物不重复但共用同一座城市。适合零散时间观看，单集闭环，跳看也不影响理解。</p>
+            <div class="card-meta"><span>更新至第 4 话</span><span class="score">8.2</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-cover">
+            <img src="https://picsum.photos/seed/qiuye-shuyuan21/400/300" alt="秋叶书院漫画封面" width="400" height="300" loading="lazy">
+            <span class="card-badge">漫画 · 周更</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">秋叶书院</h3>
+            <div class="card-tags"><span class="tag">校园</span><span class="tag">社团</span><span class="tag">轻松</span></div>
+            <p class="card-note">古书修复社的日常群像，节奏舒缓，靠角色对话和书本冷知识撑起趣味。适合想找下饭漫画、不追主线的读者。</p>
+            <div class="card-meta"><span>更新至第 30 话</span><span class="score">8.0</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-cover">
+            <img src="https://picsum.photos/seed/tingche-chang09/400/300" alt="停在场站尽头的同人短篇集封面" width="400" height="300" loading="lazy">
+            <span class="card-badge">同人 · 完结</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">停在场站尽头</h3>
+            <div class="card-tags"><span class="tag">同人短篇</span><span class="tag">群像</span><span class="tag">完结</span></div>
+            <p class="card-note">围绕《边境列车》展开的七篇二创短篇合集，视角从配角切回乘客，补完了正片未交代的车厢往事。单篇独立，可跳读。</p>
+            <div class="card-meta"><span>7 篇 · 已完结</span><span class="score">8.6</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. 最新更新动态 -->
+    <section class="block" id="updates">
+      <div class="block-head">
+        <h2>最新更新与动态</h2>
+        <span class="sub">2026-11-08 更新</span>
+      </div>
+      <div class="updates">
+        <div class="update-item"><span class="update-time">今天 09:30</span><span class="update-name">边境列车<span class="type">动画</span></span><span class="update-text">第 6 话「隧道尽头」上线，主线首次交代列车长身份</span></div>
+        <div class="update-item"><span class="update-time">今天 08:50</span><span class="update-name">雾港夜航<span class="type">漫画</span></span><span class="update-text">第 42 话更新，旧船记忆线索收束，前篇伏笔回收三处</span></div>
+        <div class="update-item"><span class="update-time">昨天 21:10</span><span class="update-name">星屑观测手册<span class="type">轻小说</span></span><span class="update-text">第 7 卷试读章公开，新增天文台夜班视角</span></div>
+        <div class="update-item"><span class="update-time">昨天 18:40</span><span class="update-name">烟火档案<span class="type">动画</span></span><span class="update-text">第 4 话上线，单集怪谈以夏季烟火大会收尾</span></div>
+        <div class="update-item"><span class="update-time">11 月 6 日</span><span class="update-name">秋叶书院<span class="type">漫画</span></span><span class="update-text">第 30 话更新，古书修复社迎来新成员</span></div>
+        <div class="update-item"><span class="update-time">11 月 5 日</span><span class="update-name">停在场站尽头<span class="type">同人</span></span><span class="update-text">合集完结，最后一篇「空车厢」发布</span></div>
+        <div class="update-item"><span class="update-time">11 月 4 日</span><span class="update-name">冬季新番预告表<span class="type">动画</span></span><span class="update-text">2027 年 1 月档 14 部新番定档，含 3 部续作</span></div>
+        <div class="update-item"><span class="update-time">11 月 3 日</span><span class="update-name">同人创作区<span class="type">公告</span></span><span class="update-text">投稿标签新增「单元剧」「群像」，旧投稿已自动归类</span></div>
+        <div class="update-item"><span class="update-time">11 月 2 日</span><span class="update-name">雨落电车站<span class="type">漫画</span></span><span class="update-text">第 18 话更新，回忆篇进入第二阶段</span></div>
+        <div class="update-item"><span class="update-time">11 月 1 日</span><span class="update-name">读者评分榜<span class="type">榜单</span></span><span class="update-text">10 月月度评分榜公布，《边境列车》升至首位</span></div>
+      </div>
+    </section>
+
+    <!-- 4. 分类入口 -->
+    <section class="block" id="category">
+      <div class="block-head">
+        <h2>按类型进入</h2>
+        <span class="sub">8 个分类方向</span>
+      </div>
+      <div class="cat-grid">
+        <a class="cat" href="/#anime"><b>公路冒险</b><span>旅途结构、单元叙事</span><span class="cat-count">32 部</span></a>
+        <a class="cat" href="/#manga"><b>悬疑推理</b><span>线索铺陈、伏笔回收</span><span class="cat-count">28 部</span></a>
+        <a class="cat" href="/#novel"><b>日常奇幻</b><span>低冲突、氛围向</span><span class="cat-count">21 部</span></a>
+        <a class="cat" href="/#doujin"><b>同人短篇</b><span>二创、单篇独立</span><span class="cat-count">47 篇</span></a>
+        <a class="cat" href="/#anime"><b>都市怪谈</b><span>单元剧、短篇集</span><span class="cat-count">19 部</span></a>
+        <a class="cat" href="/#manga"><b>校园社团</b><span>轻松、群像日常</span><span class="cat-count">24 部</span></a>
+        <a class="cat" href="/#novel"><b>群像叙事</b><span>多视角、主线隐线</span><span class="cat-count">16 部</span></a>
+        <a class="cat" href="/#doujin"><b>角色二创</b><span>角色向、补完设定</span><span class="cat-count">30 篇</span></a>
+      </div>
+    </section>
+
+    <!-- 5. 深度解析 -->
+    <section class="block" id="article">
+      <div class="block-head">
+        <h2>类型差异与条目判断</h2>
+        <span class="sub">深度解析</span>
+      </div>
+      <div class="article">
+        <h3>动画、漫画、轻小说在消费节奏上的根本区别</h3>
+        <p>同样是二次元内容，三者的更新单位决定了完全不同的追更体验。动画以<strong>单集 24 分钟</strong>为基本单位，节奏由制作方控制，观众无法调速；漫画以<strong>单话 3—5 分钟</strong>阅读量推进，分镜密度决定信息量；轻小说则以<strong>单章 10—15 分钟</strong>的纯文字阅读为主，信息密度最高，但也最依赖读者的想象力补全画面。</p>
+        <p>以本季的《边境列车》和《雾港夜航》为例：前者是动画，靠车厢切换完成单元叙事，观众只能跟着播出节奏走；后者是漫画，第 42 话里三处伏笔回收集中在两页内，读者可以反复回看分镜。这两种体验无法互相替代，选择前先想清楚自己是要「被带着走」还是「自己控制节奏」。</p>
+
+        <h3>怎么判断一个条目值不值得投入时间</h3>
+        <p>看三个维度比看单一评分更可靠：</p>
+        <ul>
+          <li><strong>更新稳定性</strong>：周更、双周更、月更，还是不定时。长期追更最怕停更，优先选择已连载超过 20 话或已完结的条目。</li>
+          <li><strong>单集/单章完成度</strong>：单元剧结构（如《烟火档案》）单集闭环，随时可入；连续主线（如《雾港夜航》）前 10 话是门槛，需要连续投入。</li>
+          <li><strong>类型密度</strong>：公路冒险偏重氛围与人物，悬疑推理偏重线索与逻辑，日常奇幻偏重情绪。先确认自己能接受的密度，再看评分。</li>
+        </ul>
+
+        <h3>同类条目的横向比较方法</h3>
+        <p>把同类型的两到三个条目放在一起，比单看一个更容易判断。《边境列车》和《雨落电车站》都属于「旅途 + 回忆」结构，区别在于前者用群像分摊叙事压力，后者把重心压在单一主角的回忆线上。喜欢多视角的选前者，喜欢沉浸单线的选后者。</p>
+        <p>轻小说侧，《星屑观测手册》和多数日常奇幻的差别在于<strong>主线藏在附录里</strong>——每章末尾的观测记录才是真正的推进器。这类结构对慢读读者友好，对跳读读者不友好，选择前先看自己是否愿意读附录。</p>
+
+        <h3>同人创作与正片的阅读顺序</h3>
+        <p>同人短篇（如《停在场站尽头》）默认读者已经看过正片，直接读会丢失大量语境。合理的顺序是：正片看到至少第 4 话或第 20 话，确认角色关系后，再读同人补完。同人区的标签里「角色二创」和「群像补完」是两类不同方向，前者重角色，后者重世界观，按需求选。</p>
+        <p>另外，同人投稿的更新随机性最强，单篇完成度差异也大。看同人时优先选<strong>已完结合集</strong>，避免追到一半断更。合集类条目通常会在标题或标签里注明篇数与完结状态，这是判断是否值得进入的第一道筛选。</p>
+
+        <h3>评分与热度该怎么用</h3>
+        <p>评分反映的是「看完的人的满意程度」，热度反映的是「正在看的人的数量」，两者经常不一致。《烟火档案》热度中等但评分稳定在 8.2 以上，属于典型的「小众高分」；《边境列车》则是热度与评分同步走高。追更时间有限时，先看热度确认讨论氛围，再看评分确认完成质量，比只看其中一个更稳。</p>
+      </div>
+    </section>
+
+    <!-- 6. 体验指南 -->
+    <section class="block" id="guide">
+      <div class="block-head">
+        <h2>追番与阅读路径</h2>
+        <span class="sub">从入门到稳定追更</span>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h4>先定消费时长</h4>
+          <p>通勤碎片时间选漫画单话或同人短篇，单次 5 分钟内；整块时间选动画单集或轻小说单章，24 分钟到 15 分钟不等。时长先对上，再挑内容。</p>
+        </div>
+        <div class="step">
+          <h4>确认更新节奏</h4>
+          <p>周更适合养成习惯，双周更和月更适合囤着看。追更前先看条目页的更新周期标签，避免追到一半发现是月更而失去耐心。</p>
+        </div>
+        <div class="step">
+          <h4>看前 3 话再决定</h4>
+          <p>动画看前 3 集、漫画看前 10 话、轻小说看前 2 章。这个区间足够判断叙事结构是否合口味，也避免过早弃掉慢热作品。</p>
+        </div>
+        <div class="step">
+          <h4>用同人补完世界观</h4>
+          <p>正片追到一定进度后，再进入同人区。优先选已完结合集，按「角色二创」或「群像补完」标签分流，补完正片没展开的支线。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="block" id="faq">
+      <div class="block-head">
+        <h2>常见问题</h2>
+        <span class="sub">追更与选择相关</span>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>新番动画一般多久更新一集？</summary>
+          <div class="answer">主流电视动画为周更，每周固定一天播出，单集 24 分钟左右。部分网络配信作品会一次性放出多集，或以双周更为节奏。追更前看条目页的更新周期标签最准确，本季《边境列车》为周更，《烟火档案》同为周更但单集独立。</div>
+        </details>
+        <details>
+          <summary>漫画和轻小说改编动画，先看哪个比较好？</summary>
+          <div class="answer">想看画面和节奏先看动画，想补细节和支线先看原作。动画受单集时长限制会删减内容，漫画和轻小说保留更多心理描写和旁支剧情。如果已经看过动画且喜欢，再回头读原作通常会有明显的信息增量。</div>
+        </details>
+        <details>
+          <summary>第一次接触这个类型，从哪部开始看比较好？</summary>
+          <div class="answer">建议从单集或单话闭环的条目入手，比如《烟火档案》动画或《秋叶书院》漫画，不需要连续投入就能理解。确认自己喜欢这个类型后，再进入《边境列车》这类有连续主线的作品，门槛会低很多。</div>
+        </details>
+        <details>
+          <summary>同人创作和正片是什么关系，需要先看正片吗？</summary>
+          <div class="answer">同人大多基于正片角色和世界观展开，默认读者已有基础认知。直接读会丢失语境，建议正片看到至少第 4 话或第 20 话后再进入同人区。标注「独立世界观」的同人除外，可以单独阅读。</div>
+        </details>
+        <details>
+          <summary>悬疑类漫画的评判标准通常是什么？</summary>
+          <div class="answer">主要看三点：线索是否公平（读者能否凭已给信息推理）、伏笔回收率、以及揭晓时是否自洽。以《雾港夜航》为例，第 42 话集中回收前期三处伏笔，属于回收率较高的类型；如果长期只埋不收，阅读体验会明显下降。</div>
+        </details>
+        <details>
+          <summary>评分高的条目一定适合自己吗？</summary>
+          <div class="answer">不一定。评分反映的是整体满意度，但类型偏好差异很大。日常奇幻的高分作品对喜欢强情节的读者可能偏平淡，悬疑高分作品对怕烧脑的读者也可能不友好。先看类型标签和单集完成度，再看评分，判断会更准。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8. 用户评论 -->
+    <section class="block" id="comments">
+      <div class="block-head">
+        <h2>读者评论</h2>
+        <span class="sub">16 条讨论</span>
+      </div>
+      <div class="comments">
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#ff6b9d">雪</span><span class="comment-name">雪原乘客</span><span class="comment-time">今天 10:12</span></div><p class="comment-body">《边境列车》第 6 话把列车长的身份摊开讲了，前面五集埋的细节一下串起来，单元剧能做到这个收束度不容易。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#7c5cff">雾</span><span class="comment-name">雾港打工人</span><span class="comment-time">今天 09:44</span></div><p class="comment-body">《雾港夜航》42 话那两页分镜反复看了三遍，雨幕线条里藏的字终于对上了，作者是真的会埋。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#4fd6e3">星</span><span class="comment-name">天文台夜班</span><span class="comment-time">昨天 22:30</span></div><p class="comment-body">《星屑观测手册》第 7 卷试读章看完，还是那个节奏，附录比正文信息量大。慢读党狂喜，跳读党会骂。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#ffb547">烟</span><span class="comment-name">烟火大会常客</span><span class="comment-time">昨天 20:05</span></div><p class="comment-body">《烟火档案》第 4 话收得挺干净，单集怪谈就这点好，不用记上一集讲了啥。适合我这种一周只看一集的。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#a992ff">秋</span><span class="comment-name">古书修复社</span><span class="comment-time">11 月 7 日</span></div><p class="comment-body">《秋叶书院》30 话新成员加入后节奏快了一点，之前太慢我差点弃，现在刚刚好。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#ff6b9d">站</span><span class="comment-name">站台尽头</span><span class="comment-time">11 月 7 日</span></div><p class="comment-body">《停在场站尽头》最后一篇「空车厢」看完有点空落，同人补完正片配角线的做法很聪明。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#7c5cff">雨</span><span class="comment-name">雨天电车</span><span class="comment-time">11 月 6 日</span></div><p class="comment-body">《雨落电车站》18 话回忆篇进入第二阶段，节奏比前篇稳，但更新太慢，双周更追得有点累。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#4fd6e3">评</span><span class="comment-name">评分观察员</span><span class="comment-time">11 月 6 日</span></div><p class="comment-body">10 月评分榜《边境列车》升第一不意外，热度评分双高。倒是《烟火档案》评分稳但热度一般，典型小众高分。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#ffb547">新</span><span class="comment-name">新番试毒员</span><span class="comment-time">11 月 5 日</span></div><p class="comment-body">冬季新番预告表 14 部，续作 3 部，原创 11 部。原创多的话风险也大，先观望前三集再决定追不追。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#a992ff">同</span><span class="comment-name">同人区常驻</span><span class="comment-time">11 月 5 日</span></div><p class="comment-body">投稿标签新增「单元剧」和「群像」之后好找多了，之前只能按角色名翻，效率低。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#ff6b9d">慢</span><span class="comment-name">慢读主义者</span><span class="comment-time">11 月 4 日</span></div><p class="comment-body">轻小说还是得慢读，《星屑观测手册》那种附录藏主线的写法，快读一遍等于白读。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#7c5cff">单</span><span class="comment-name">单元剧爱好者</span><span class="comment-time">11 月 4 日</span></div><p class="comment-body">单元剧结构是真的省心，《烟火档案》这种一集一个故事的，断更两周回来也能接上。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#4fd6e3">群</span><span class="comment-name">群像控</span><span class="comment-time">11 月 3 日</span></div><p class="comment-body">《边境列车》群像分摊叙事压力这点做得不错，每个乘客都有戏份，没有工具人。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#ffb547">分</span><span class="comment-name">分镜研究者</span><span class="comment-time">11 月 3 日</span></div><p class="comment-body">《雾港夜航》黑白分镜在雨幕场景里用大面积留白，信息密度其实很高，只是第一眼容易漏。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#a992ff">囤</span><span class="comment-name">囤番选手</span><span class="comment-time">11 月 2 日</span></div><p class="comment-body">我一般囤三集再一起看，周更单集信息量不够解馋。《边境列车》囤三集刚好一整段旅程。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#ff6b9d">比</span><span class="comment-name">比较爱好者</span><span class="comment-time">11 月 2 日</span></div><p class="comment-body">同类型比较还是有用，《边境列车》和《雨落电车站》都带回忆线，但一个群像一个单线，选起来清楚多了。</p></div>
+      </div>
+    </section>
+
+    <!-- 9. 相关资讯 -->
+    <section class="block" id="news">
+      <div class="block-head">
+        <h2>资讯速递</h2>
+        <span class="sub">条目与规则动态</span>
+      </div>
+      <div class="news-list">
+        <a class="news" href="/#news">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/zixun-dongji14/600/400" alt="冬季新番定档预告表配图" width="600" height="400" loading="lazy"></div>
+          <div class="news-info"><div class="news-title">2027 年 1 月档 14 部新番定档，原创占比过半</div><div class="news-date">2026-11-04</div><p class="news-sum">冬季档公布 14 部新番，其中原创动画 8 部、续作 3 部、改编 3 部，续作集中在公路冒险与日常奇幻两类。</p></div>
+        </a>
+        <a class="news" href="/#news">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/zixun-bianjing06/600/400" alt="边境列车第6话上线相关配图" width="600" height="400" loading="lazy"></div>
+          <div class="news-info"><div class="news-title">《边境列车》第 6 话上线，主线首次交代列车长身份</div><div class="news-date">2026-11-08</div><p class="news-sum">本话把前五集分散的乘客往事串成一条线，列车长的身份揭晓，后续将进入新的车厢单元。</p></div>
+        </a>
+        <a class="news" href="/#news">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/zixun-wugang42/600/400" alt="雾港夜航第42话伏笔回收配图" width="600" height="400" loading="lazy"></div>
+          <div class="news-info"><div class="news-title">《雾港夜航》42 话集中回收三处伏笔，回忆篇收束</div><div class="news-date">2026-11-08</div><p class="news-sum">作者在单话内完成三条旧线索的回收，画面以雨幕分镜呈现，后续将转向新港口篇章。</p></div>
+        </a>
+        <a class="news" href="/#news">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/zixun-tongren03/600/400" alt="同人创作区投稿标签调整配图" width="600" height="400" loading="lazy"></div>
+          <div class="news-info"><div class="news-title">同人创作区新增「单元剧」「群像」投稿标签</div><div class="news-date">2026-11-03</div><p class="news-sum">新标签覆盖短篇合集和群像补完两类投稿，旧投稿已按内容自动归类，检索效率提升。</p></div>
+        </a>
+        <a class="news" href="/#news">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/zixun-pingfen10/600/400" alt="10月评分榜公布配图" width="600" height="400" loading="lazy"></div>
+          <div class="news-info"><div class="news-title">10 月月度评分榜公布，《边境列车》升至首位</div><div class="news-date">2026-11-01</div><p class="news-sum">榜单依据完成度与评分综合排序，公路冒险类整体评分走高，日常奇幻类保持稳定。</p></div>
+        </a>
+        <a class="news" href="/#news">
+          <div class="news-thumb"><img src="https://picsum.photos/seed/zixun-xingxie07/600/400" alt="星屑观测手册第7卷试读章公开配图" width="600" height="400" loading="lazy"></div>
+          <div class="news-info"><div class="news-title">《星屑观测手册》第 7 卷试读章公开，新增夜班视角</div><div class="news-date">2026-11-07</div><p class="news-sum">试读章从天文台夜班人员视角展开，附录观测记录同步更新，主线线索进一步收紧。</p></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 10. 相关推荐 -->
+    <section class="block" id="reco">
+      <div class="block-head">
+        <h2>延伸方向</h2>
+        <span class="sub">按题材与结构检索</span>
+      </div>
+      <div class="reco-tags">
+        <a href="/#anime">公路冒险单元剧</a>
+        <a href="/#manga">悬疑漫画伏笔回收</a>
+        <a href="/#novel">附录藏主线的轻小说</a>
+        <a href="/#doujin">已完结同人合集</a>
+        <a href="/#anime">都市怪谈短篇集</a>
+        <a href="/#manga">校园社团日常</a>
+        <a href="/#novel">群像多视角叙事</a>
+        <a href="/#doujin">角色二创补完</a>
+      </div>
+    </section>
+
+    <!-- 11. 补充板块：热度榜单 -->
+    <section class="block" id="rank">
+      <div class="block-head">
+        <h2>本周热度榜</h2>
+        <span class="sub">2026-11-08 更新</span>
+      </div>
+      <div class="rank">
+        <div class="rank-item"><span class="rank-no">1</span><span class="rank-name">边境列车</span><span class="rank-type">动画 · 周更</span><span class="rank-bar"><i style="width:96%"></i></span><span class="rank-score">9.1</span></div>
+        <div class="rank-item"><span class="rank-no">2</span><span class="rank-name">雾港夜航</span><span class="rank-type">漫画 · 双周更</span><span class="rank-bar"><i style="width:90%"></i></span><span class="rank-score">8.8</span></div>
+        <div class="rank-item"><span class="rank-no">3</span><span class="rank-name">停在场站尽头</span><span class="rank-type">同人 · 完结</span><span class="rank-bar"><i style="width:86%"></i></span><span class="rank-score">8.6</span></div>
+        <div class="rank-item"><span class="rank-no">4</span><span class="rank-name">星屑观测手册</span><span class="rank-type">轻小说 · 月更</span><span class="rank-bar"><i style="width:82%"></i></span><span class="rank-score">8.5</span></div>
+        <div class="rank-item"><span class="rank-no">5</span><span class="rank-name">烟火档案</span><span class="rank-type">动画 · 周更</span><span class="rank-bar"><i style="width:78%"></i></span><span class="rank-score">8.2</span></div>
+        <div class="rank-item"><span class="rank-no">6</span><span class="rank-name">秋叶书院</span><span class="rank-type">漫画 · 周更</span><span class="rank-bar"><i style="width:74%"></i></span><span class="rank-score">8.0</span></div>
+        <div class="rank-item"><span class="rank-no">7</span><span class="rank-name">雨落电车站</span><span class="rank-type">漫画 · 双周更</span><span class="rank-bar"><i style="width:71%"></i></span><span class="rank-score">7.9</span></div>
+        <div class="rank-item"><span class="rank-no">8</span><span class="rank-name">旧书页里的夏天</span><span class="rank-type">轻小说 · 月更</span><span class="rank-bar"><i style="width:68%"></i></span><span class="rank-score">7.8</span></div>
+        <div class="rank-item"><span class="rank-no">9</span><span class="rank-name">夜班列车员</span><span class="rank-type">同人 · 连载</span><span class="rank-bar"><i style="width:64%"></i></span><span class="rank-score">7.6</span></div>
+        <div class="rank-item"><span class="rank-no">10</span><span class="rank-name">云间邮局</span><span class="rank-type">动画 · 周更</span><span class="rank-bar"><i style="width:60%"></i></span><span class="rank-score">7.5</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右侧辅助栏 -->
+  <aside class="aux-rail" aria-label="辅助信息">
+    <div class="aux-card">
+      <h3>今日热搜条目</h3>
+      <ol class="hot-list">
+        <li><a href="/#anime">边境列车 第 6 话<span class="hot-meta">列车长身份揭晓</span></a></li>
+        <li><a href="/#manga">雾港夜航 第 42 话<span class="hot-meta">三处伏笔回收</span></a></li>
+        <li><a href="/#novel">星屑观测手册 第 7 卷<span class="hot-meta">夜班视角试读</span></a></li>
+        <li><a href="/#doujin">停在场站尽头 完结<span class="hot-meta">七篇合集收尾</span></a></li>
+        <li><a href="/#anime">2027 年 1 月新番定档<span class="hot-meta">14 部 · 原创过半</span></a></li>
+      </ol>
+    </div>
+    <div class="aux-card">
+      <h3>更新流</h3>
+      <ul class="update-stream">
+        <li><b>边境列车 第 6 话</b><time>今天 09:30</time></li>
+        <li><b>雾港夜航 第 42 话</b><time>今天 08:50</time></li>
+        <li><b>星屑观测手册 第 7 卷</b><time>昨天 21:10</time></li>
+        <li><b>烟火档案 第 4 话</b><time>昨天 18:40</time></li>
+        <li><b>秋叶书院 第 30 话</b><time>11 月 6 日</time></li>
+      </ul>
+    </div>
+    <div class="aux-card">
+      <h3>热门标签</h3>
+      <div class="aux-tags">
+        <a href="/#anime">公路冒险</a>
+        <a href="/#manga">悬疑推理</a>
+        <a href="/#novel">日常奇幻</a>
+        <a href="/#doujin">同人短篇</a>
+        <a href="/#anime">都市怪谈</a>
+        <a href="/#manga">校园社团</a>
+        <a href="/#novel">群像叙事</a>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/#top">
+          <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+            <rect width="100" height="100" rx="22" fill="#1a1033"/>
+            <circle cx="50" cy="50" r="26" fill="none" stroke="#ff6b9d" stroke-width="5"/>
+            <circle cx="50" cy="50" r="10" fill="#7c5cff"/>
+          </svg>
+          <span class="brand-text">91次元</span>
+        </a>
+        <p>聚合新番动画、漫画连载、轻小说与同人创作的二次元内容入口，按类型、更新节奏与阅读门槛整理可追条目。</p>
+      </div>
+      <div class="footer-col">
+        <h4>内容频道</h4>
+        <a href="/#anime">新番动画</a>
+        <a href="/#manga">漫画连载</a>
+        <a href="/#novel">轻小说</a>
+        <a href="/#doujin">同人创作</a>
+      </div>
+      <div class="footer-col">
+        <h4>检索与参考</h4>
+        <a href="/#category">分类导航</a>
+        <a href="/#article">深度解析</a>
+        <a href="/#guide">追番指南</a>
+        <a href="/#rank">热度榜单</a>
+      </div>
+      <div class="footer-col">
+        <h4>互动与动态</h4>
+        <a href="/#updates">更新动态</a>
+        <a href="/#comments">读者评论</a>
+        <a href="/#news">资讯速递</a>
+        <a href="/#faq">常见问答</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 91次元 · 二次元内容聚合示例站</span>
+      <span>部分内容为示例数据，仅用于展示页面结构</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var input=document.getElementById('siteSearch');
+  var fb=document.getElementById('searchFeedback');
+  if(!input||!fb)return;
+  var targets=[].slice.call(document.querySelectorAll('main .card-title, main .update-name, main .rank-name, main .news-title, main .cat b, main .reco-tags a'));
+  function norm(s){return (s||'').replace(/\s+/g,'').toLowerCase();}
+  function run(){
+    var q=norm(input.value);
+    if(!q){fb.classList.remove('show');fb.innerHTML='';return;}
+    var hits=[];
+    targets.forEach(function(el){
+      var t=(el.textContent||'').trim();
+      if(norm(t).indexOf(q)>-1&&hits.indexOf(t)===-1)hits.push(t);
+    });
+    fb.classList.add('show');
+    if(!hits.length){
+      fb.innerHTML='未找到与「<em>'+input.value.replace(/[<>&]/g,'')+'</em>」相关的内容，试试「边境列车」「雾港夜航」或「悬疑」。';
+      return;
+    }
+    fb.innerHTML='找到 '+hits.length+' 条相关：<br>'+hits.slice(0,6).map(function(h){return '· '+h;}).join('<br>');
+  }
+  input.addEventListener('input',run);
+  input.addEventListener('keydown',function(e){if(e.key==='Escape'){input.value='';run();input.blur();}});
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search-box'))fb.classList.remove('show');
+  });
+})();
+</script>
+</body>
+  </html>
