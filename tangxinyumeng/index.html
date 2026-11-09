@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖心御梦子 - 甜系幻想角色档案</title>
+<meta name="description" content="糖心御梦子是一个汇聚甜系幻想角色、梦境主题插画与治愈系短篇故事的内容平台，提供角色档案、短篇剧场、插画图鉴与同好讨论等具体内容，适合喜爱甜系二次元创作与轻幻想叙事的读者收藏浏览。">
+<meta name="keywords" content="甜系角色档案,梦境主题插画,治愈系短篇,幻想角色图鉴,同人创作">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff8fb1'/%3E%3Cstop offset='1' stop-color='%23ffcf6e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23fff4f7'/%3E%3Cpath d='M32 12c7 6 14 10 14 19a14 14 0 0 1-28 0c0-9 7-13 14-19z' fill='url(%23g)'/%3E%3Ccircle cx='32' cy='33' r='5' fill='%23fff' opacity='.85'/%3E%3C/svg%3E">
+<style>
+:root{
+  --pink:#e85d8a;
+  --pink-soft:#ffd9e4;
+  --pink-deep:#b23b68;
+  --cream:#fff8f3;
+  --paper:#ffffff;
+  --ink:#2f2733;
+  --ink-soft:#6b5f6e;
+  --line:#f0dde4;
+  --gold:#e9a83b;
+  --mint:#4fae9f;
+  --lav:#8a72c9;
+  --radius:14px;
+  --shadow:0 6px 22px rgba(180,90,120,.10);
+  --shadow-lg:0 14px 40px rgba(180,90,120,.16);
+  --sticky-h:104px;
+  --maxw:1300px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 480px at 85% -120px, #ffe6ef 0%, transparent 60%),
+    radial-gradient(900px 420px at -80px 220px, #fff2dd 0%, transparent 55%),
+    var(--cream);
+  line-height:1.75;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:var(--pink-deep);text-decoration:none;}
+a:hover{text-decoration:underline;}
+h1,h2,h3,h4{line-height:1.3;margin:0;}
+[id]{scroll-margin-top:calc(var(--sticky-h) + 16px);}
+
+/* ============ 吸顶公告条 + 页头 ============ */
+.sticky-top{position:sticky;top:0;z-index:60;}
+.notice-bar{
+  background:linear-gradient(90deg,#b23b68,#e85d8a 55%,#e9a83b);
+  color:#fff;
+  font-size:13px;
+  letter-spacing:.2px;
+}
+.notice-bar .inner{
+  max-width:var(--maxw);margin:0 auto;padding:7px 20px;
+  display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+}
+.notice-bar .dot{
+  width:7px;height:7px;border-radius:50%;background:#fff;
+  box-shadow:0 0 0 3px rgba(255,255,255,.35);flex:none;
+}
+.notice-bar b{font-weight:600;}
+.notice-bar .sep{opacity:.55;}
+.notice-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px;}
+
+.site-header{
+  background:rgba(255,248,243,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 2px 14px rgba(180,90,120,.07);
+}
+.header-inner{
+  max-width:var(--maxw);margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:11px;flex:none;}
+.brand .glyph{width:44px;height:44px;flex:none;}
+.brand .btext{display:flex;flex-direction:column;line-height:1.15;}
+.brand .bname{font-size:21px;font-weight:800;letter-spacing:1px;color:var(--pink-deep);}
+.brand .bsub{font-size:11px;color:var(--ink-soft);letter-spacing:2px;}
+.header-nav{display:flex;gap:4px;flex-wrap:wrap;flex:1;min-width:240px;}
+.header-nav a{
+  font-size:13.5px;color:var(--ink-soft);padding:6px 11px;border-radius:99px;
+  transition:.18s;white-space:nowrap;
+}
+.header-nav a:hover,.header-nav a:focus-visible{
+  background:var(--pink-soft);color:var(--pink-deep);text-decoration:none;outline:none;
+}
+.header-nav a:focus-visible{box-shadow:0 0 0 2px var(--pink);}
+.header-tools{display:flex;align-items:center;gap:8px;flex:none;}
+.search-box{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px 6px 5px 14px;box-shadow:var(--shadow);}
+.search-box input{
+  border:none;outline:none;background:transparent;font-size:13px;width:150px;color:var(--ink);
+  font-family:inherit;
+}
+.search-box button{
+  border:none;cursor:pointer;background:var(--pink);color:#fff;border-radius:99px;
+  font-size:12.5px;padding:5px 14px;font-family:inherit;transition:.18s;
+}
+.search-box button:hover{background:var(--pink-deep);}
+.search-box button:focus-visible{outline:2px solid var(--pink-deep);outline-offset:2px;}
+
+.search-feedback{
+  max-width:var(--maxw);margin:0 auto;padding:0 20px 10px;
+  font-size:13px;color:var(--pink-deep);display:none;
+}
+.search-feedback.show{display:block;}
+
+/* ============ 首屏 ============ */
+.hero{
+  max-width:var(--maxw);margin:0 auto;padding:34px 20px 10px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:7px;font-size:12px;letter-spacing:1.5px;
+  color:var(--pink-deep);background:var(--pink-soft);padding:4px 13px;border-radius:99px;
+  font-weight:600;
+}
+.hero h1{
+  font-size:clamp(32px,4.6vw,52px);letter-spacing:2px;font-weight:900;
+  margin:14px 0 6px;
+  background:linear-gradient(100deg,#b23b68,#e85d8a 45%,#e9a83b);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .lead{
+  font-size:15.5px;color:var(--ink-soft);max-width:560px;margin:0 0 20px;
+}
+.hero .lead strong{color:var(--pink-deep);font-weight:600;}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;font-size:14px;padding:10px 22px;border-radius:99px;
+  font-weight:600;transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:var(--pink);color:#fff;box-shadow:0 8px 20px rgba(232,93,138,.35);}
+.btn-primary:hover{background:var(--pink-deep);text-decoration:none;transform:translateY(-1px);}
+.btn-ghost{background:#fff;color:var(--pink-deep);border-color:var(--pink-soft);box-shadow:var(--shadow);}
+.btn-ghost:hover{background:var(--pink-soft);text-decoration:none;}
+.hero-stats{display:flex;gap:26px;flex-wrap:wrap;}
+.hero-stats div{display:flex;flex-direction:column;}
+.hero-stats b{font-size:22px;color:var(--pink-deep);font-weight:800;line-height:1.2;}
+.hero-stats span{font-size:12px;color:var(--ink-soft);}
+
+.hero-visual{position:relative;min-height:340px;}
+.hero-visual .frame{
+  position:relative;border-radius:26px;overflow:hidden;box-shadow:var(--shadow-lg);
+  border:1px solid #fff;
+}
+.hero-visual img{width:100%;height:360px;object-fit:cover;}
+.hero-visual .glass{
+  position:absolute;left:14px;bottom:14px;right:14px;
+  background:rgba(255,248,243,.9);backdrop-filter:blur(6px);
+  border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:10px;
+  box-shadow:var(--shadow);
+}
+.hero-visual .glass b{font-size:13px;color:var(--pink-deep);}
+.hero-visual .glass span{font-size:12px;color:var(--ink-soft);}
+.hero-visual .badge-float{
+  position:absolute;top:-12px;right:-6px;background:#fff;border-radius:14px;padding:8px 14px;
+  font-size:12px;color:var(--pink-deep);box-shadow:var(--shadow);border:1px solid var(--pink-soft);
+  font-weight:600;z-index:2;
+}
+
+/* ============ 主体三栏 ============ */
+.layout{
+  max-width:var(--maxw);margin:0 auto;padding:26px 20px 60px;
+  display:grid;grid-template-columns:186px minmax(0,1fr) 250px;gap:26px;
+  align-items:start;
+}
+.col-left{position:sticky;top:calc(var(--sticky-h) + 8px);}
+.col-right{position:sticky;top:calc(var(--sticky-h) + 8px);}
+
+/* 左频道索引 */
+.channel-index{
+  background:var(--paper);border-radius:var(--radius);border:1px solid var(--line);
+  box-shadow:var(--shadow);padding:14px 12px;
+}
+.channel-index h2{
+  font-size:12px;letter-spacing:2px;color:var(--ink-soft);font-weight:600;
+  padding:0 6px 8px;margin-bottom:6px;border-bottom:1px dashed var(--line);
+}
+.channel-index ul{list-style:none;margin:0;padding:0;}
+.channel-index li a{
+  display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink);
+  padding:7px 8px;border-radius:9px;transition:.16s;
+}
+.channel-index li a:hover,.channel-index li a:focus-visible{
+  background:var(--pink-soft);color:var(--pink-deep);text-decoration:none;outline:none;
+}
+.channel-index li a .ic{
+  width:7px;height:7px;border-radius:50%;background:var(--pink);flex:none;opacity:.65;
+}
+
+/* 主内容区 */
+main{min-width:0;}
+.panel{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:24px 24px 26px;margin-bottom:26px;
+}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:16px;flex-wrap:wrap;}
+.sec-head h2{
+  font-size:20px;font-weight:800;letter-spacing:.5px;color:var(--ink);
+  display:flex;align-items:center;gap:9px;
+}
+.sec-head h2::before{
+  content:"";width:5px;height:20px;border-radius:3px;
+  background:linear-gradient(180deg,var(--pink),var(--gold));
+}
+.sec-head .sub{font-size:12.5px;color:var(--ink-soft);}
+.sec-head .more{font-size:12.5px;color:var(--pink-deep);}
+
+/* 概览 */
+.overview p{margin:0 0 12px;color:#453a49;font-size:14.6px;}
+.overview .kw{color:var(--pink-deep);font-weight:600;}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.card{
+  border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fffdfc;
+  display:flex;flex-direction:column;transition:.2s;min-width:0;
+}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-2px);border-color:var(--pink-soft);}
+.card .thumb{position:relative;}
+.card .thumb img{width:100%;height:150px;object-fit:cover;}
+.card .thumb .cat{
+  position:absolute;left:9px;top:9px;background:rgba(255,255,255,.94);color:var(--pink-deep);
+  font-size:11px;padding:2px 9px;border-radius:99px;font-weight:600;letter-spacing:.5px;
+}
+.card .cbody{padding:12px 14px 14px;display:flex;flex-direction:column;gap:7px;flex:1;}
+.card h3{font-size:15px;font-weight:700;}
+.card .desc{font-size:12.8px;color:var(--ink-soft);line-height:1.6;flex:1;}
+.tags{display:flex;gap:6px;flex-wrap:wrap;}
+.tag{
+  font-size:11px;color:var(--lav);background:#f2effb;padding:2px 8px;border-radius:99px;
+}
+.tag.mint{color:#2f7d71;background:#e6f5f2;}
+.tag.gold{color:#a9761c;background:#fdf1d9;}
+.card .meta{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:8px;}
+.card .meta b{color:var(--pink-deep);}
+
+/* 动态列表 */
+.updates{list-style:none;margin:0;padding:0;}
+.updates li{
+  display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:flex-start;
+}
+.updates li:last-child{border-bottom:none;}
+.updates .time{font-size:12px;color:var(--pink-deep);font-weight:600;flex:none;width:66px;padding-top:1px;}
+.updates .txt{font-size:13.6px;color:#453a49;min-width:0;}
+.updates .txt b{color:var(--ink);font-weight:700;}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;}
+.cat-item{
+  border:1px solid var(--line);border-radius:11px;padding:13px 12px;background:#fffdfc;
+  text-align:center;transition:.18s;display:block;
+}
+.cat-item:hover{background:var(--pink-soft);border-color:var(--pink);text-decoration:none;transform:translateY(-2px);}
+.cat-item b{display:block;font-size:14px;color:var(--ink);margin-bottom:2px;}
+.cat-item span{font-size:11.5px;color:var(--ink-soft);}
+
+/* 深度解析 */
+.deep h3{
+  font-size:16px;font-weight:800;color:var(--pink-deep);margin:20px 0 8px;
+  padding-left:11px;border-left:4px solid var(--gold);line-height:1.4;
+}
+.deep h3:first-of-type{margin-top:2px;}
+.deep p{margin:0 0 11px;color:#453a49;font-size:14.5px;}
+.deep ul{margin:0 0 13px;padding-left:20px;color:#453a49;font-size:14.3px;}
+.deep li{margin-bottom:6px;}
+.deep .hl{color:var(--pink-deep);font-weight:600;}
+
+/* 体验指南步骤 */
+.steps{counter-reset:st;list-style:none;margin:0;padding:0;display:grid;gap:12px;}
+.steps li{
+  counter-increment:st;position:relative;padding:14px 16px 14px 56px;
+  background:#fffdfc;border:1px solid var(--line);border-radius:12px;font-size:14px;color:#453a49;
+}
+.steps li::before{
+  content:counter(st);position:absolute;left:14px;top:13px;width:28px;height:28px;
+  border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));
+  color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;
+}
+.steps li b{color:var(--ink);}
+
+/* FAQ */
+.faq details{
+  border:1px solid var(--line);border-radius:11px;padding:0;margin-bottom:10px;background:#fffdfc;
+  overflow:hidden;
+}
+.faq details[open]{border-color:var(--pink-soft);box-shadow:var(--shadow);}
+.faq summary{
+  cursor:pointer;padding:13px 16px;font-size:14.3px;font-weight:600;color:var(--ink);
+  list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{
+  content:"+";font-size:18px;color:var(--pink);font-weight:700;flex:none;transition:.2s;
+}
+.faq details[open] summary::after{content:"−";}
+.faq summary:focus-visible{outline:2px solid var(--pink);outline-offset:-2px;}
+.faq .ans{padding:0 16px 14px;font-size:13.7px;color:var(--ink-soft);line-height:1.72;}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+.comment{
+  border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fffdfc;
+  font-size:13.2px;color:#453a49;min-width:0;
+}
+.comment .who{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.avatar{
+  width:26px;height:26px;border-radius:50%;flex:none;
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;
+}
+.comment .who b{font-size:12.8px;color:var(--ink);}
+.comment .who .stars{margin-left:auto;color:var(--gold);font-size:11px;letter-spacing:1px;}
+.comment p{margin:0;}
+
+/* 资讯 */
+.news{list-style:none;margin:0;padding:0;}
+.news li{display:flex;gap:14px;padding:13px 0;border-bottom:1px dashed var(--line);}
+.news li:last-child{border-bottom:none;padding-bottom:0;}
+.news .nimg{flex:none;width:104px;border-radius:9px;overflow:hidden;}
+.news .nimg img{width:104px;height:74px;object-fit:cover;}
+.news .nbody{min-width:0;}
+.news h3{font-size:14.5px;font-weight:700;margin-bottom:3px;}
+.news .ndate{font-size:11.5px;color:var(--pink-deep);margin-bottom:3px;}
+.news p{margin:0;font-size:12.7px;color:var(--ink-soft);line-height:1.6;}
+
+/* 相关推荐 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:9px;}
+.rec-tags a{
+  font-size:13px;padding:7px 15px;border-radius:99px;background:#fffdfc;
+  border:1px solid var(--line);color:var(--ink);transition:.18s;
+}
+.rec-tags a:hover{background:var(--pink-soft);border-color:var(--pink);color:var(--pink-deep);text-decoration:none;}
+
+/* 榜单 */
+.rank-list{list-style:none;margin:0;padding:0;counter-reset:rk;}
+.rank-list li{
+  counter-increment:rk;display:flex;align-items:center;gap:13px;padding:11px 0;
+  border-bottom:1px dashed var(--line);
+}
+.rank-list li:last-child{border-bottom:none;}
+.rank-list li::before{
+  content:counter(rk);width:24px;height:24px;flex:none;border-radius:8px;
+  background:#f5eef1;color:var(--ink-soft);font-size:12px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+}
+.rank-list li:nth-child(-n+3)::before{
+  background:linear-gradient(135deg,var(--pink),var(--gold));color:#fff;
+}
+.rank-list .rt{flex:1;min-width:0;}
+.rank-list .rt b{font-size:13.8px;color:var(--ink);display:block;font-weight:700;}
+.rank-list .rt span{font-size:11.5px;color:var(--ink-soft);}
+.rank-list .score{font-size:13px;font-weight:800;color:var(--pink-deep);flex:none;}
+
+/* 右辅助栏 */
+.side-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:16px 15px;margin-bottom:20px;
+}
+.side-card h2{
+  font-size:14px;font-weight:800;color:var(--ink);margin-bottom:11px;
+  display:flex;align-items:center;gap:7px;padding-bottom:9px;border-bottom:1px dashed var(--line);
+}
+.side-card h2::before{content:"";width:4px;height:14px;border-radius:2px;background:var(--pink);}
+.hot-list{list-style:none;margin:0;padding:0;counter-reset:ht;}
+.hot-list li{
+  counter-increment:ht;display:flex;gap:9px;padding:7px 0;font-size:13px;align-items:flex-start;
+}
+.hot-list li::before{
+  content:counter(ht);font-size:11px;font-weight:800;color:#fff;flex:none;
+  width:18px;height:18px;border-radius:5px;background:#d9c9d2;display:flex;
+  align-items:center;justify-content:center;margin-top:2px;
+}
+.hot-list li:nth-child(-n+3)::before{background:var(--pink);}
+.hot-list a{color:var(--ink);line-height:1.5;}
+.hot-list a:hover{color:var(--pink-deep);}
+.side-note{font-size:12.3px;color:var(--ink-soft);line-height:1.7;margin:0;}
+.timeline{list-style:none;margin:0;padding:0 0 0 14px;border-left:2px solid var(--pink-soft);}
+.timeline li{position:relative;padding:0 0 14px 14px;font-size:12.6px;color:var(--ink-soft);}
+.timeline li:last-child{padding-bottom:0;}
+.timeline li::before{
+  content:"";position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;
+  background:var(--pink);box-shadow:0 0 0 3px #fff;
+}
+.timeline b{color:var(--ink);display:block;font-size:13px;}
+
+/* 页尾 */
+.site-footer{
+  background:linear-gradient(180deg,#fff7f0,#ffeef3);
+  border-top:1px solid var(--line);padding:36px 20px 22px;margin-top:10px;
+}
+.footer-inner{max-width:var(--maxw);margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:26px;}
+.footer-brand{display:flex;gap:11px;align-items:flex-start;}
+.footer-brand .glyph{width:40px;height:40px;flex:none;}
+.footer-brand b{font-size:18px;color:var(--pink-deep);letter-spacing:1px;display:block;}
+.footer-brand p{font-size:12.7px;color:var(--ink-soft);margin:6px 0 0;line-height:1.7;max-width:280px;}
+.footer-col h3{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.footer-col ul{list-style:none;margin:0;padding:0;}
+.footer-col li{margin-bottom:7px;}
+.footer-col a{font-size:12.8px;color:var(--ink-soft);}
+.footer-col a:hover{color:var(--pink-deep);}
+.footer-bottom{
+  margin-top:26px;padding-top:16px;border-top:1px dashed #e9cdd6;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12px;color:#9a8894;
+}
+.footer-bottom .demo{color:#a2939d;}
+
+/* ============ 响应式 ============ */
+@media (max-width:1024px){
+  .layout{grid-template-columns:minmax(0,1fr) 250px;}
+  .col-left{position:static;grid-column:1 / -1;}
+  .channel-index{display:flex;gap:8px;overflow-x:auto;padding:10px;align-items:center;}
+  .channel-index h2{display:none;}
+  .channel-index ul{display:flex;gap:6px;flex-wrap:nowrap;}
+  .channel-index li a{white-space:nowrap;background:#fffdfc;border:1px solid var(--line);}
+  .hero{grid-template-columns:1fr;gap:24px;}
+  .hero-visual{min-height:auto;}
+  .hero-visual img{height:280px;}
+}
+@media (max-width:860px){
+  .card-grid,.comments{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:740px){
+  :root{--sticky-h:132px;}
+  .layout{grid-template-columns:1fr;padding:18px 14px 46px;}
+  .col-right{position:static;}
+  .header-inner{padding:10px 14px;gap:10px;}
+  .header-nav{order:3;width:100%;overflow-x:auto;flex-wrap:nowrap;gap:2px;}
+  .header-nav a{padding:5px 9px;font-size:12.8px;}
+  .search-box input{width:104px;}
+  .hero{padding:24px 14px 6px;}
+  .hero-visual img{height:230px;}
+  .panel{padding:18px 15px 20px;}
+  .news li{gap:10px;}
+  .news .nimg,.news .nimg img{width:82px;}
+  .news .nimg img{height:60px;}
+  .footer-top{grid-template-columns:1fr;}
+  .updates .time{width:60px;font-size:11.5px;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-top">
+  <div class="notice-bar">
+    <div class="inner">
+      <span class="dot"></span>
+      <span><b>11 月 8 日更新</b></span>
+      <span class="sep">|</span>
+      <span>新增「月泊糖霜」角色档案 3 篇</span>
+      <span class="sep">|</span>
+      <span>梦境短篇《玻璃糖纸的第七夜》已上线</span>
+      <span class="sep">|</span>
+      <a href="/#latest">查看全部更新</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/#top" aria-label="糖心御梦子 首页">
+        <svg class="glyph" viewBox="0 0 64 64" role="img" aria-label="糖心御梦子 图形标志">
+          <defs>
+            <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff8fb1"/>
+              <stop offset="1" stop-color="#ffcf6e"/>
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="16" fill="#fff4f7"/>
+          <path d="M32 11c8 7 15 11 15 21a15 15 0 0 1-30 0c0-10 7-14 15-21z" fill="url(#bg1)"/>
+          <circle cx="32" cy="34" r="5.4" fill="#fff" opacity=".9"/>
+          <path d="M32 26.5l1.9 4 4.3.5-3.2 2.9.9 4.3L32 36.1l-3.9 2.1.9-4.3-3.2-2.9 4.3-.5z" fill="#e85d8a" opacity=".85"/>
+        </svg>
+        <span class="btext">
+          <span class="bname">糖心御梦子</span>
+          <span class="bsub">SWEET DREAM ARCHIVE</span>
+        </span>
+      </a>
+
+      <nav class="header-nav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选档案</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">同好评论</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+
+      <div class="header-tools">
+        <form class="search-box" role="search" onsubmit="return false;">
+          <label for="siteSearch" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">站内搜索</label>
+          <input id="siteSearch" type="search" placeholder="搜索角色、短篇…" autocomplete="off">
+          <button type="button" id="searchBtn">查找</button>
+        </form>
+      </div>
+    </div>
+    <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div>
+      <span class="hero-tag">甜系幻想 · 角色档案 · 治愈叙事</span>
+      <h1 id="heroTitle">糖心御梦子</h1>
+      <p class="lead">一座以<strong>甜系幻想角色</strong>为核心的梦境档案室：收录角色设定、梦境主题插画、治愈系短篇剧场与同人创作笔记，按角色、类型与更新节奏整理，方便你从喜欢的甜系角色开始逐层翻阅。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#featured">浏览精选角色档案</a>
+        <a class="btn btn-ghost" href="/#latest">看本周更新</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>128</b><span>角色档案</span></div>
+        <div><b>76</b><span>梦境短篇</span></div>
+        <div><b>11 月 8 日</b><span>最近整理</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <span class="badge-float">本周主题 · 糖霜与月夜</span>
+      <div class="frame">
+        <img src="https://picsum.photos/seed/tangxin-yumengzi01/800/400" width="800" height="400" alt="糖心御梦子主题视觉：糖霜色梦境与月夜角色插画" loading="lazy">
+        <div class="glass">
+          <b>「月泊糖霜」</b>
+          <span>角色档案 · 第 4 版设定更新</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout">
+
+    <!-- 左频道索引 -->
+    <aside class="col-left" aria-label="频道索引">
+      <div class="channel-index">
+        <h2>频道索引</h2>
+        <ul>
+          <li><a href="/#overview"><span class="ic"></span>领域概览</a></li>
+          <li><a href="/#featured"><span class="ic"></span>角色档案</a></li>
+          <li><a href="/#latest"><span class="ic"></span>最新更新</a></li>
+          <li><a href="/#categories"><span class="ic"></span>分类入口</a></li>
+          <li><a href="/#deep"><span class="ic"></span>深度解析</a></li>
+          <li><a href="/#guide"><span class="ic"></span>体验指南</a></li>
+          <li><a href="/#faq"><span class="ic"></span>常见问答</a></li>
+          <li><a href="/#comments"><span class="ic"></span>同好评论</a></li>
+          <li><a href="/#news"><span class="ic"></span>相关资讯</a></li>
+          <li><a href="/#recommend"><span class="ic"></span>延伸方向</a></li>
+          <li><a href="/#ranking"><span class="ic"></span>人气榜单</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- 主内容 -->
+    <div>
+      <!-- 1 领域概览 -->
+      <section class="panel overview" id="overview" aria-labelledby="overviewTitle">
+        <div class="sec-head">
+          <h2 id="overviewTitle">糖心御梦子领域概览</h2>
+          <span class="sub">甜系幻想内容的几条主要脉络</span>
+        </div>
+        <p><span class="kw">糖心御梦子</span>所代表的甜系幻想创作，通常围绕「角色设定 + 梦境场景 + 轻叙事」三层展开。角色设定层负责外貌、性格、服饰与标志性道具，比如糖霜发饰、月牙耳坠、玻璃糖纸伞这类细节；梦境场景层负责角色所处的世界，常见的有糖果工厂、月泊港湾、云朵图书馆与午夜甜品店；轻叙事层则用短篇或单元剧把角色放进具体事件里，让读者理解角色为什么这样说话、这样选择。</p>
+        <p>从当前内容看，甜系幻想大致分成四个方向：一是<span class="kw">治愈系角色档案</span>，以设定集和关系图为主，适合喜欢考据的读者；二是<span class="kw">梦境主题插画</span>，强调氛围与配色，常见糖霜粉、奶油白、月夜蓝三色搭配；三是<span class="kw">甜系短篇剧场</span>，单篇 2000—5000 字，讲一个小事件；四是<span class="kw">同人创作笔记</span>，记录二次设定、服装改版与剧情推演。</p>
+        <p>值得关注的具体内容集中在几条线上：角色「月泊糖霜」的第四版设定刚补齐了幼年线；短篇《玻璃糖纸的第七夜》用倒叙讲了一场梦境告别；插画系列「午夜甜品店」更新到第 12 张，主题从草莓塔转向焦糖布丁。整体节奏是角色档案每月 2—3 篇、短篇每两周 1 篇、插画每周 1—2 张，适合按角色线追更，也适合按类型集中补看。</p>
+      </section>
+
+      <!-- 2 精选内容推荐 -->
+      <section class="panel" id="featured" aria-labelledby="featuredTitle">
+        <div class="sec-head">
+          <h2 id="featuredTitle">精选角色档案与短篇</h2>
+          <span class="sub">6 个可直接进入的具体条目</span>
+        </div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/yuebo-tangshuang11/400/300" width="400" height="300" alt="月泊糖霜角色档案封面：月夜港湾与糖霜发饰" loading="lazy">
+              <span class="cat">角色档案</span>
+            </div>
+            <div class="cbody">
+              <h3>月泊糖霜 · 第四版设定</h3>
+              <p class="desc">以月泊港湾为居所的角色，标志是糖霜发饰与玻璃糖纸伞。第四版补齐幼年线，解释了她为何害怕深夜的钟声，以及糖纸伞从何而来。</p>
+              <div class="tags"><span class="tag">治愈系</span><span class="tag mint">幼年线</span><span class="tag gold">设定集</span></div>
+              <div class="meta"><span>更新 11-08</span><span>热度 <b>9.4</b></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/boli-tangzhi22/400/300" width="400" height="300" alt="玻璃糖纸的第七夜短篇封面：夜色中的糖纸与灯光" loading="lazy">
+              <span class="cat">短篇剧场</span>
+            </div>
+            <div class="cbody">
+              <h3>玻璃糖纸的第七夜</h3>
+              <p class="desc">用倒叙讲一场梦境告别：主角每晚折一张糖纸，第七夜糖纸变成船。全文 4800 字，重点不在反转，而在告别时两人各自的沉默。</p>
+              <div class="tags"><span class="tag">梦境叙事</span><span class="tag mint">倒叙</span><span class="tag gold">单篇完结</span></div>
+              <div class="meta"><span>上线 11-06</span><span>评分 <b>9.1</b></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/wuye-tianpin33/400/300" width="400" height="300" alt="午夜甜品店插画系列第12张：焦糖布丁与暖色灯光" loading="lazy">
+              <span class="cat">插画图鉴</span>
+            </div>
+            <div class="cbody">
+              <h3>午夜甜品店 · 第 12 张</h3>
+              <p class="desc">系列从草莓塔转向焦糖布丁，配色由粉白转为琥珀与奶油。这一张重点处理了柜台反光与角色影子的关系，适合研究甜系插画的光影层次。</p>
+              <div class="tags"><span class="tag">氛围插画</span><span class="tag mint">光影</span><span class="tag gold">系列更新</span></div>
+              <div class="meta"><span>更新 11-07</span><span>收藏 <b>1.2k</b></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/yunduo-tushuguan44/400/300" width="400" height="300" alt="云朵图书馆角色群像：漂浮书架与轻幻想角色" loading="lazy">
+              <span class="cat">角色群像</span>
+            </div>
+            <div class="cbody">
+              <h3>云朵图书馆 · 三人组设定</h3>
+              <p class="desc">把三位角色放进同一座漂浮图书馆：管理员负责整理梦境、访客负责带来故事、修补师负责修复破损的记忆书页。适合想看角色互动关系的读者。</p>
+              <div class="tags"><span class="tag">群像</span><span class="tag mint">关系图</span><span class="tag gold">轻幻想</span></div>
+              <div class="meta"><span>更新 11-03</span><span>热度 <b>8.8</b></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/tangguo-gongchang55/400/300" width="400" height="300" alt="糖果工厂夜班短篇封面：工厂灯光与糖浆管道" loading="lazy">
+              <span class="cat">短篇剧场</span>
+            </div>
+            <div class="cbody">
+              <h3>糖果工厂的夜班</h3>
+              <p class="desc">一篇偏日常的短篇：角色在糖果工厂值夜班，负责看管会自己变色的糖浆。冲突很小，重点在夜班对话与机器声的节奏感。</p>
+              <div class="tags"><span class="tag">日常向</span><span class="tag mint">夜班</span><span class="tag gold">轻冲突</span></div>
+              <div class="meta"><span>上线 10-29</span><span>评分 <b>8.6</b></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/tangshuang-fashi66/400/300" width="400" height="300" alt="糖霜发饰图鉴：多种甜系发饰设计对照" loading="lazy">
+              <span class="cat">设定图鉴</span>
+            </div>
+            <div class="cbody">
+              <h3>糖霜发饰与月牙耳坠图鉴</h3>
+              <p class="desc">把角色常用的配饰单独抽出来做对照：糖霜发饰分硬糖、软糖、结晶三类，月牙耳坠按材质分银、玻璃、糖霜。适合做同人服装改版时参考。</p>
+              <div class="tags"><span class="tag">配饰设定</span><span class="tag mint">对照</span><span class="tag gold">同人参考</span></div>
+              <div class="meta"><span>更新 11-01</span><span>收藏 <b>860</b></span></div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 3 最新更新 -->
+      <section class="panel" id="latest" aria-labelledby="latestTitle">
+        <div class="sec-head">
+          <h2 id="latestTitle">最新更新与动态</h2>
+          <span class="sub">11 月 1 日 — 11 月 8 日</span>
+        </div>
+        <ul class="updates">
+          <li><span class="time">今天 09:30</span><span class="txt"><b>月泊糖霜 · 第四版设定</b> 补齐幼年线，新增「钟声恐惧」条目与两页关系图。</span></li>
+          <li><span class="time">今天 08:10</span><span class="txt"><b>玻璃糖纸的第七夜</b> 全文上线，共 4800 字，附作者后记一篇。</span></li>
+          <li><span class="time">昨天 21:10</span><span class="txt"><b>午夜甜品店 · 第 12 张</b> 发布，主题由草莓塔转为焦糖布丁。</span></li>
+          <li><span class="time">11-07 16:40</span><span class="txt"><b>糖霜发饰与月牙耳坠图鉴</b> 新增「结晶糖霜」分类，补充 6 张对照草图。</span></li>
+          <li><span class="time">11-06 20:05</span><span class="txt"><b>云朵图书馆 · 三人组设定</b> 更新修补师背景，补了一张三人站位关系图。</span></li>
+          <li><span class="time">11-05 11:20</span><span class="txt"><b>梦境配色笔记</b> 新增「月夜蓝 + 奶油白」组合，附 4 组取色参考。</span></li>
+          <li><span class="time">11-04 19:30</span><span class="txt"><b>糖果工厂的夜班</b> 修订第二段夜班对话，调整机器声的描写节奏。</span></li>
+          <li><span class="time">11-03 14:15</span><span class="txt"><b>角色关系图模板</b> 更新至第 3 版，支持三人以上群像排版。</span></li>
+          <li><span class="time">11-02 10:00</span><span class="txt"><b>甜系短篇投稿须知</b> 调整字数区间为 2000—5000 字，新增梦境场景要求。</span></li>
+          <li><span class="time">11-01 17:45</span><span class="txt"><b>同人创作笔记</b> 新增「服装改版不脱离角色标志」条目，举例 3 个改版方案。</span></li>
+        </ul>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="panel" id="categories" aria-labelledby="catTitle">
+        <div class="sec-head">
+          <h2 id="catTitle">分类入口</h2>
+          <span class="sub">按类型进入具体内容</span>
+        </div>
+        <div class="cat-grid">
+          <a class="cat-item" href="/#featured"><b>角色档案</b><span>设定集 · 关系图</span></a>
+          <a class="cat-item" href="/#featured"><b>短篇剧场</b><span>单篇 · 单元剧</span></a>
+          <a class="cat-item" href="/#featured"><b>插画图鉴</b><span>氛围 · 配色</span></a>
+          <a class="cat-item" href="/#featured"><b>配饰设定</b><span>发饰 · 耳坠</span></a>
+          <a class="cat-item" href="/#guide"><b>梦境场景</b><span>港湾 · 图书馆</span></a>
+          <a class="cat-item" href="/#recommend"><b>同人笔记</b><span>改版 · 推演</span></a>
+          <a class="cat-item" href="/#deep"><b>治愈叙事</b><span>轻冲突 · 日常</span></a>
+          <a class="cat-item" href="/#ranking"><b>人气榜单</b><span>角色 · 短篇</span></a>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="panel deep" id="deep" aria-labelledby="deepTitle">
+        <div class="sec-head">
+          <h2 id="deepTitle">深度解析：甜系幻想角色的判断维度</h2>
+          <span class="sub">从设定、场景到叙事的三个层面</span>
+        </div>
+
+        <h3>角色档案里真正值得看的是什么</h3>
+        <p>一份角色档案是否扎实，通常看三件事：<span class="hl">标志物是否唯一</span>、<span class="hl">性格是否有行为依据</span>、<span class="hl">关系是否可推演</span>。以月泊糖霜为例，糖霜发饰和玻璃糖纸伞是她的两个标志物，前者负责视觉识别，后者负责叙事功能——糖纸伞既能遮雨，也能在第七夜折成船。标志物一旦承担功能，角色就不只是好看，而是能被写进事件里。</p>
+        <p>性格依据则要看档案有没有写「她为什么这样」。第四版设定里补了幼年线，解释了她害怕深夜钟声的来源，这比单纯写「她胆小」有用得多。关系可推演的意思是：读者能根据两人已知的立场，猜出他们在新事件里会怎么互动，而不是每次都要作者重新解释。</p>
+
+        <h3>梦境场景的三种常见结构</h3>
+        <ul>
+          <li><b>封闭场景：</b>糖果工厂、午夜甜品店。角色被困在一个有限空间里，冲突来自空间规则，比如糖浆会自己变色、甜品店只在午夜开门。</li>
+          <li><b>漂浮场景：</b>云朵图书馆、月泊港湾。空间本身会移动，冲突来自「找不到想找的东西」，适合写寻找与错过。</li>
+          <li><b>循环场景：</b>同一夜反复出现，比如玻璃糖纸的第七夜。冲突来自角色是否愿意打破循环，适合写告别与和解。</li>
+        </ul>
+        <p>三种结构没有高下，但适配的叙事长度不同。封闭场景适合 2000—3000 字的单篇，漂浮场景适合 3000—5000 字并带一点群像，循环场景最好控制在 5000 字以内，否则读者会疲劳。</p>
+
+        <h3>短篇剧场的节奏判断</h3>
+        <p>甜系短篇容易写成「氛围很好但什么都没发生」。判断一篇短篇是否成立，可以看它有没有一个明确的<span class="hl">小事件</span>：一次夜班、一次折糖纸、一次柜台换班。事件不需要大，但必须有开始、变化和结束。以《糖果工厂的夜班》为例，开始是角色接班，变化是糖浆颜色失控，结束是她决定不修机器、让它继续变色。这个决定很小，但完成了角色态度的一次表达。</p>
+        <p>另一个判断维度是对话密度。甜系短篇如果对话太少，容易变成散文；对话太多，又会失去氛围。比较稳妥的比例是每 800 字有 3—5 轮有效对话，其余用动作和环境描写支撑。</p>
+
+        <h3>配饰设定与同人改版的边界</h3>
+        <p>配饰是甜系角色最容易改、也最容易改坏的部分。糖霜发饰分硬糖、软糖、结晶三类，改版时可以换材质，但最好保留「糖」这个核心；月牙耳坠可以换颜色，但月牙形状一旦改成圆环，角色的识别度就会下降。同人改版的常见误区是同时改掉标志物和配色，结果角色只剩名字。</p>
+        <p>比较安全的改版顺序是：先换服装风格，再换配饰材质，最后才动配色。每改一步都回头看一眼原设定，确认还能认出这是同一个角色。</p>
+
+        <h3>如何比较两个相近的角色</h3>
+        <p>相近角色比较时，不要只看外貌，要看三组信息：标志物是否重叠、场景是否重叠、叙事功能是否重叠。如果两个角色都用糖霜发饰、都住在月泊港湾、都承担「安慰者」功能，那他们大概率会互相稀释。解决办法是至少拆开一项：换场景、换标志物，或者换叙事功能，让其中一个从安慰者变成记录者。</p>
+        <p>糖心御梦子这个方向的角色数量在增加，比较意识比收集意识更重要。能说清两个角色差在哪，比多收十份档案更有用。</p>
+      </section>
+
+      <!-- 6 体验指南 -->
+      <section class="panel" id="guide" aria-labelledby="guideTitle">
+        <div class="sec-head">
+          <h2 id="guideTitle">体验指南：从哪个条目开始看</h2>
+          <span class="sub">按投入时间与偏好选择顺序</span>
+        </div>
+        <ol class="steps">
+          <li><b>先看一份完整角色档案。</b>推荐从「月泊糖霜 · 第四版设定」开始，它同时包含标志物、性格依据和关系图，能帮你建立判断标准。</li>
+          <li><b>再读一篇单篇短篇。</b>选《玻璃糖纸的第七夜》，4800 字，一次读完不费力，也能感受这个方向的叙事节奏。</li>
+          <li><b>接着看插画系列。</b>「午夜甜品店」第 12 张适合观察配色与光影，看完再回头看第 1 张，能看出系列的风格变化。</li>
+          <li><b>然后补配饰图鉴。</b>糖霜发饰与月牙耳坠图鉴是工具型内容，不用一次读完，做同人改版时按需查。</li>
+          <li><b>最后看同人笔记。</b>同人笔记偏推演，适合已经熟悉角色的人，用来比较不同改版方案的得失。</li>
+        </ol>
+        <p style="margin-top:14px;font-size:13.6px;color:var(--ink-soft);">如果时间有限，优先看角色档案和一篇短篇；如果只想找视觉参考，直接进插画图鉴和配饰设定。判断一个条目值不值得投入时间，看它有没有写明「角色为什么这样」，只有外貌描写的条目通常信息量较低。</p>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="panel faq" id="faq" aria-labelledby="faqTitle">
+        <div class="sec-head">
+          <h2 id="faqTitle">常见问答</h2>
+          <span class="sub">关于甜系幻想内容的 6 个问题</span>
+        </div>
+
+        <details>
+          <summary>甜系幻想角色档案一般多久更新一次？</summary>
+          <div class="ans">角色档案通常每月 2—3 篇，重大改版会单独发一版完整设定。像月泊糖霜这种主角色，第四版和第三版之间隔了约六周，中间会穿插小条目补充。</div>
+        </details>
+        <details>
+          <summary>第一次接触糖心御梦子，从哪个条目开始看比较好？</summary>
+          <div class="ans">建议先看「月泊糖霜 · 第四版设定」，再看短篇《玻璃糖纸的第七夜》。前者建立角色判断标准，后者让你感受这个方向的叙事节奏，两篇加起来不到一小时。</div>
+        </details>
+        <details>
+          <summary>角色档案和短篇剧场有什么区别？</summary>
+          <div class="ans">角色档案是静态设定，讲角色是谁、有什么标志物、和谁有什么关系；短篇剧场是动态事件，把角色放进一个具体情境里。档案用来查，短篇用来读，两者互补。</div>
+        </details>
+        <details>
+          <summary>甜系短篇的评判标准通常是什么？</summary>
+          <div class="ans">主要看三点：有没有一个明确的小事件、角色有没有做出态度上的选择、对话和环境描写的比例是否合适。氛围好但什么都没发生的短篇，通常读完后记忆点较弱。</div>
+        </details>
+        <details>
+          <summary>同人改版时，配饰可以随便换吗？</summary>
+          <div class="ans">可以换材质和颜色，但建议保留核心形状。糖霜发饰可以换硬糖、软糖、结晶，月牙耳坠可以换银、玻璃、糖霜，但月牙改成圆环后识别度会明显下降。</div>
+        </details>
+        <details>
+          <summary>两个相近角色怎么判断该保留哪一个？</summary>
+          <div class="ans">比较三组信息：标志物是否重叠、场景是否重叠、叙事功能是否重叠。至少拆开一项，比如换场景或换功能，让两个角色在读者心里有不同位置。</div>
+        </details>
+      </section>
+
+      <!-- 8 用户评论 -->
+      <section class="panel" id="comments" aria-labelledby="commentsTitle">
+        <div class="sec-head">
+          <h2 id="commentsTitle">同好评论</h2>
+          <span class="sub">14 条围绕具体条目的讨论</span>
+        </div>
+        <div class="comments">
+
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#e85d8a;">糖</span><b>糖纸折船</b><span class="stars">★★★★★</span></div>
+            <p>第四版幼年线补得很好，钟声恐惧这个点终于有来处了，之前一直觉得她怕黑怕得没道理。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#8a72c9;">月</span><b>月泊边散步</b><span class="stars">★★★★☆</span></div>
+            <p>《玻璃糖纸的第七夜》倒叙用得克制，没有为了反转而反转，结尾那张糖纸船我看了两遍。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#4fae9f;">焦</span><b>焦糖布丁控</b><span class="stars">★★★★★</span></div>
+            <p>午夜甜品店第 12 张的柜台反光处理得很细，比第 8 张的草莓塔成熟不少，配色也更耐看。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#e9a83b;">云</span><b>云朵修补师</b><span class="stars">★★★★☆</span></div>
+            <p>云朵图书馆三人组里最喜欢修补师，背景更新后她和访客的关系清楚多了，站位图也实用。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#b23b68;">夜</span><b>夜班第三年</b><span class="stars">★★★☆☆</span></div>
+            <p>糖果工厂的夜班氛围不错，但冲突确实小，糖浆变色那段如果能再推进一步会更好。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#5b8fd6;">图</span><b>图鉴收集癖</b><span class="stars">★★★★★</span></div>
+            <p>糖霜发饰分硬糖软糖结晶三类这事，之前一直分不清，图鉴一出就明白了，做改版方便很多。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#e85d8a;">改</span><b>改版不换色</b><span class="stars">★★★★☆</span></div>
+            <p>同人笔记里「先换服装再换配饰最后动配色」的顺序挺有道理，我上次就是一步改太多，角色认不出来。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#8a72c9;">梦</span><b>梦境配色党</b><span class="stars">★★★★★</span></div>
+            <p>月夜蓝配奶油白那组取色很舒服，已经拿去画自己的角色了，比纯粉白更有层次。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#4fae9f;">短</span><b>短篇只读一遍</b><span class="stars">★★★☆☆</span></div>
+            <p>倒叙那篇结构好，但我个人更想看顺叙版本，倒叙有点分散情绪，可能是我自己的阅读习惯问题。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#e9a83b;">糖</span><b>糖霜结晶</b><span class="stars">★★★★☆</span></div>
+            <p>结晶糖霜这个新分类加得好，之前硬糖和结晶总是混着用，现在对照草图一看就分得开。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#b23b68;">关</span><b>关系图爱好者</b><span class="stars">★★★★★</span></div>
+            <p>关系图模板第 3 版支持三人以上群像排版，这个更新很实用，之前三人关系总是画得很挤。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#5b8fd6;">比</span><b>比较意识</b><span class="stars">★★★★☆</span></div>
+            <p>深度解析里讲相近角色要拆开一项，这个说法很到位。我手头两个角色就是场景和功能都重叠，准备换掉一个的场景。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#e85d8a;">投</span><b>投稿观望中</b><span class="stars">★★★☆☆</span></div>
+            <p>投稿须知把字数调到 2000—5000 字了，之前写的 6000 字要砍，梦境场景要求也变具体了。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar" style="background:#8a72c9;">伞</span><b>玻璃糖纸伞</b><span class="stars">★★★★★</span></div>
+            <p>糖纸伞能折成船这个设定我第一次看到就记住了，标志物承担功能这件事，比单纯好看重要太多。</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 9 相关资讯 -->
+      <section class="panel" id="news" aria-labelledby="newsTitle">
+        <div class="sec-head">
+          <h2 id="newsTitle">相关资讯</h2>
+          <span class="sub">近期条目与规则变化</span>
+        </div>
+        <ul class="news">
+          <li>
+            <div class="nimg"><img src="https://picsum.photos/seed/zixun-yuebo11/600/400" width="600" height="400" alt="月泊糖霜第四版设定发布资讯配图" loading="lazy"></div>
+            <div class="nbody">
+              <div class="ndate">2026-11-08</div>
+              <h3>月泊糖霜第四版设定发布，幼年线首次公开</h3>
+              <p>新增「钟声恐惧」条目与两页关系图，补齐角色幼年经历，并调整了糖纸伞的来历说明。</p>
+            </div>
+          </li>
+          <li>
+            <div class="nimg"><img src="https://picsum.photos/seed/zixun-boli22/600/400" width="600" height="400" alt="玻璃糖纸的第七夜短篇上线资讯配图" loading="lazy"></div>
+            <div class="nbody">
+              <div class="ndate">2026-11-06</div>
+              <h3>《玻璃糖纸的第七夜》全文上线，附作者后记</h3>
+              <p>4800 字单篇完结，采用倒叙结构，作者后记说明了糖纸折船意象的来源。</p>
+            </div>
+          </li>
+          <li>
+            <div class="nimg"><img src="https://picsum.photos/seed/zixun-tianpin33/600/400" width="600" height="400" alt="午夜甜品店第12张插画发布资讯配图" loading="lazy"></div>
+            <div class="nbody">
+              <div class="ndate">2026-11-07</div>
+              <h3>午夜甜品店系列第 12 张发布，主题转向焦糖布丁</h3>
+              <p>配色由粉白转为琥珀与奶油，重点处理柜台反光与角色影子的关系。</p>
+            </div>
+          </li>
+          <li>
+            <div class="nimg"><img src="https://picsum.photos/seed/zixun-tougao44/600/400" width="600" height="400" alt="甜系短篇投稿规则调整资讯配图" loading="lazy"></div>
+            <div class="nbody">
+              <div class="ndate">2026-11-02</div>
+              <h3>甜系短篇投稿须知调整字数区间</h3>
+              <p>字数区间改为 2000—5000 字，新增梦境场景要求，投稿前需确认场景结构类型。</p>
+            </div>
+          </li>
+          <li>
+            <div class="nimg"><img src="https://picsum.photos/seed/zixun-peishi55/600/400" width="600" height="400" alt="糖霜发饰图鉴新增结晶分类资讯配图" loading="lazy"></div>
+            <div class="nbody">
+              <div class="ndate">2026-11-01</div>
+              <h3>糖霜发饰图鉴新增「结晶糖霜」分类</h3>
+              <p>补充 6 张对照草图，明确硬糖、软糖、结晶三类在材质与反光上的差异。</p>
+            </div>
+          </li>
+          <li>
+            <div class="nimg"><img src="https://picsum.photos/seed/zixun-guanxi66/600/400" width="600" height="400" alt="角色关系图模板第三版更新资讯配图" loading="lazy"></div>
+            <div class="nbody">
+              <div class="ndate">2026-10-30</div>
+              <h3>角色关系图模板更新至第 3 版</h3>
+              <p>支持三人以上群像排版，新增修补师、记录者等叙事功能标签，方便比较相近角色。</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="panel" id="recommend" aria-labelledby="recTitle">
+        <div class="sec-head">
+          <h2 id="recTitle">相关推荐 · 延伸方向</h2>
+          <span class="sub">从当前条目往外走一步</span>
+        </div>
+        <div class="rec-tags">
+          <a href="/#featured">月泊港湾场景设定</a>
+          <a href="/#featured">玻璃糖纸伞的三种用法</a>
+          <a href="/#featured">云朵图书馆群像关系</a>
+          <a href="/#featured">焦糖布丁配色参考</a>
+          <a href="/#featured">硬糖与结晶糖霜区别</a>
+          <a href="/#featured">循环场景叙事写法</a>
+          <a href="/#deep">相近角色拆分方法</a>
+          <a href="/#guide">单篇短篇阅读顺序</a>
+        </div>
+      </section>
+
+      <!-- 11 人气榜单 -->
+      <section class="panel" id="ranking" aria-labelledby="rankTitle">
+        <div class="sec-head">
+          <h2 id="rankTitle">人气榜单 · 角色与短篇</h2>
+          <span class="sub">按收藏与讨论量整理</span>
+        </div>
+        <ol class="rank-list">
+          <li>
+            <div class="rt"><b>月泊糖霜 · 第四版设定</b><span>角色档案 · 收藏 3.1k</span></div>
+            <span class="score">9.4</span>
+          </li>
+          <li>
+            <div class="rt"><b>玻璃糖纸的第七夜</b><span>短篇剧场 · 收藏 2.4k</span></div>
+            <span class="score">9.1</span>
+          </li>
+          <li>
+            <div class="rt"><b>午夜甜品店 · 第 12 张</b><span>插画图鉴 · 收藏 1.2k</span></div>
+            <span class="score">9.0</span>
+          </li>
+          <li>
+            <div class="rt"><b>云朵图书馆 · 三人组设定</b><span>角色群像 · 收藏 1.0k</span></div>
+            <span class="score">8.8</span>
+          </li>
+          <li>
+            <div class="rt"><b>糖霜发饰与月牙耳坠图鉴</b><span>设定图鉴 · 收藏 860</span></div>
+            <span class="score">8.7</span>
+          </li>
+          <li>
+            <div class="rt"><b>糖果工厂的夜班</b><span>短篇剧场 · 收藏 640</span></div>
+            <span class="score">8.6</span>
+          </li>
+        </ol>
+      </section>
+
+    </div>
+
+    <!-- 右辅助栏 -->
+    <aside class="col-right" aria-label="辅助信息">
+      <div class="side-card">
+        <h2>本周热读</h2>
+        <ol class="hot-list">
+          <li><a href="/#featured">月泊糖霜 · 第四版设定</a></li>
+          <li><a href="/#featured">玻璃糖纸的第七夜</a></li>
+          <li><a href="/#featured">午夜甜品店 · 第 12 张</a></li>
+          <li><a href="/#featured">云朵图书馆 · 三人组设定</a></li>
+          <li><a href="/#featured">糖霜发饰与月牙耳坠图鉴</a></li>
+          <li><a href="/#featured">糖果工厂的夜班</a></li>
+        </ol>
+      </div>
+
+      <div class="side-card">
+        <h2>更新节奏</h2>
+        <ol class="timeline">
+          <li><b>11-08</b>角色档案 · 第四版设定</li>
+          <li><b>11-07</b>插画图鉴 · 第 12 张</li>
+          <li><b>11-06</b>短篇剧场 · 单篇上线</li>
+          <li><b>11-03</b>角色群像 · 关系图更新</li>
+          <li><b>11-01</b>配饰图鉴 · 新增分类</li>
+        </ol>
+      </div>
+
+      <div class="side-card">
+        <h2>关于这个方向</h2>
+        <p class="side-note">甜系幻想内容以角色设定为骨架、梦境场景为容器、短篇叙事为血肉。判断一个条目是否值得读，先看它有没有写明角色为什么这样，再看事件是否完成了一次态度表达。</p>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg class="glyph" viewBox="0 0 64 64" role="img" aria-label="糖心御梦子 页脚标志">
+          <rect width="64" height="64" rx="16" fill="#fff4f7"/>
+          <path d="M32 11c8 7 15 11 15 21a15 15 0 0 1-30 0c0-10 7-14 15-21z" fill="#e85d8a"/>
+          <circle cx="32" cy="34" r="5.4" fill="#fff" opacity=".9"/>
+        </svg>
+        <div>
+          <b>糖心御梦子</b>
+          <p>甜系幻想角色档案室，收录角色设定、梦境主题插画、治愈系短篇与同人创作笔记。</p>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>内容频道</h3>
+        <ul>
+          <li><a href="/#featured">角色档案</a></li>
+          <li><a href="/#featured">短篇剧场</a></li>
+          <li><a href="/#featured">插画图鉴</a></li>
+          <li><a href="/#featured">配饰设定</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>阅读参考</h3>
+        <ul>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#ranking">人气榜单</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>同好交流</h3>
+        <ul>
+          <li><a href="/#comments">同好评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#recommend">延伸方向</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 糖心御梦子 · 甜系幻想角色档案室</span>
+      <span class="demo">部分内容为示例数据，仅用于展示页面结构</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var input = document.getElementById('siteSearch');
+  var btn = document.getElementById('searchBtn');
+  var fb = document.getElementById('searchFeedback');
+  var main = document.querySelector('main');
+
+  function runSearch(){
+    var q = (input.value || '').trim().toLowerCase();
+    if(!q){
+      fb.classList.remove('show');
+      fb.textContent = '';
+      clearHighlight();
+      return;
+    }
+    var nodes = main.querySelectorAll('h2, h3, .card, .updates li, .cat-item, .rec-tags a, .rank-list li, .comment, .news li, .steps li, .faq details');
+    var hits = [];
+    nodes.forEach(function(n){
+      if(n.textContent.toLowerCase().indexOf(q) !== -1){
+        hits.push(n);
+      }
+    });
+    if(hits.length === 0){
+      fb.classList.add('show');
+      fb.textContent = '未找到与「' + input.value.trim() + '」相关的内容，可尝试“月泊糖霜”“玻璃糖纸”“糖霜发饰”等关键词。';
+      return;
+    }
+    fb.classList.add('show');
+    fb.textContent = '找到 ' + hits.length + ' 处相关内容，已定位到第一条。';
+    hits[0].scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function clearHighlight(){}
+
+  btn.addEventListener('click', runSearch);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){
+      e.preventDefault();
+      runSearch();
+    }
+  });
+})();
+</script>
+</body>
+                                                       </html>
