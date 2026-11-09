@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>b站校招 - 岗位类型与投递攻略</title>
+  <meta name="description" content="b站校招汇集2026届技术、产品、设计、运营等校园招聘岗位，整理投递流程、笔试面试经验与最新宣讲动态，适合应届生和实习生查看。">
+  <meta name="keywords" content="校园招聘岗位，应届生求职，笔试面试经验，宣讲会动态，实习生招聘">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2300a1d6'/%3E%3Cpath d='M8 12h16v10H8z' fill='white' opacity='.9'/%3E%3Ccircle cx='12' cy='17' r='2' fill='%2300a1d6'/%3E%3Ccircle cx='20' cy='17' r='2' fill='%2300a1d6'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --panel: #f0f4fa;
+      --border: #dce5f0;
+      --text: #1a2634;
+      --text-secondary: #4e6278;
+      --muted: #7d8fa3;
+      --primary: #00a1d6;
+      --primary-dark: #0080b0;
+      --primary-light: #e5f6fd;
+      --accent: #fb7299;
+      --accent-light: #fef0f5;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 2px 12px rgba(0, 60, 100, 0.06);
+      --shadow-hover: 0 6px 24px rgba(0, 100, 160, 0.12);
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --max-width: 1320px;
+      --header-height: 64px;
+      --announce-height: 44px;
+      --sticky-offset: calc(var(--header-height) + var(--announce-height));
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--sticky-offset);
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--primary-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--primary);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(90deg, #00a1d6, #1e7ab8);
+      color: #fff;
+      height: var(--announce-height);
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      overflow: hidden;
+    }
+
+    .announce-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .announce-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .announce-tag {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .announce-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.95;
+    }
+
+    .announce-item::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.7);
+      flex-shrink: 0;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 99;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      height: var(--header-height);
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      height: 100%;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+
+    .brand-text em {
+      font-style: normal;
+      color: var(--primary);
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .main-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .main-nav a {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .main-nav a:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-box input {
+      width: 180px;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0 14px 0 36px;
+      font-size: 13px;
+      background: var(--panel);
+      outline: none;
+      transition: all 0.2s;
+      color: var(--text);
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(0, 161, 214, 0.1);
+      width: 220px;
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      stroke: var(--muted);
+      pointer-events: none;
+    }
+
+    .search-feedback {
+      position: absolute;
+      top: 42px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-hover);
+      padding: 10px 14px;
+      font-size: 13px;
+      color: var(--muted);
+      display: none;
+      z-index: 10;
+    }
+
+    .search-feedback.show {
+      display: block;
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      font-family: var(--font);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--primary);
+      color: var(--primary-dark);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      border-radius: 20px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      font-family: var(--font);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      color: #fff;
+    }
+
+    /* 主容器 */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 首屏 Hero */
+    .hero {
+      background: linear-gradient(135deg, #e9f7fe 0%, #f7f9fc 50%, #fef0f5 100%);
+      padding: 48px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 161, 214, 0.12) 0%, transparent 70%);
+      top: -120px;
+      right: -60px;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(251, 114, 153, 0.1) 0%, transparent 70%);
+      bottom: -100px;
+      left: -80px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-badge span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-actions .btn-primary {
+      padding: 11px 28px;
+      font-size: 15px;
+    }
+
+    .hero-actions .btn-ghost {
+      padding: 11px 24px;
+      font-size: 15px;
+    }
+
+    .hero-visual {
+      flex-shrink: 0;
+      width: 340px;
+      position: relative;
+    }
+
+    @media (max-width: 900px) {
+      .hero-visual {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+
+    /* 三栏门户布局 */
+    .portal-layout {
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 24px;
+      padding: 32px 0;
+      align-items: start;
+    }
+
+    @media (max-width: 1100px) {
+      .portal-layout {
+        grid-template-columns: 1fr 260px;
+      }
+      .channel-sidebar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .portal-layout {
+        grid-template-columns: 1fr;
+      }
+      .aux-sidebar {
+        order: 99;
+        margin-top: 32px;
+      }
+    }
+
+    /* 频道侧栏 */
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 18px 0;
+      overflow: hidden;
+    }
+
+    .channel-sidebar h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 0 18px;
+      margin-bottom: 10px;
+    }
+
+    .channel-sidebar nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .channel-sidebar nav a {
+      padding: 9px 18px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      border-left: 3px solid transparent;
+    }
+
+    .channel-sidebar nav a:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-left-color: var(--primary);
+    }
+
+    .channel-sidebar nav a .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+
+    /* 主内容 */
+    .main-content {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* 辅助侧栏 */
+    .aux-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .aux-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .aux-card-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .aux-card-header a {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .aux-card-body {
+      padding: 8px 0;
+    }
+
+    .hot-list {
+      list-style: none;
+    }
+
+    .hot-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 18px;
+      font-size: 13px;
+      transition: background 0.2s;
+    }
+
+    .hot-list li:hover {
+      background: var(--panel);
+    }
+
+    .hot-list .rank {
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--muted);
+      width: 18px;
+      flex-shrink: 0;
+      line-height: 1.5;
+    }
+
+    .hot-list li:nth-child(1) .rank { color: var(--accent); }
+    .hot-list li:nth-child(2) .rank { color: #f59e0b; }
+    .hot-list li:nth-child(3) .rank { color: #f97316; }
+
+    .hot-list .info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hot-list .info strong {
+      display: block;
+      font-weight: 600;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .hot-list .info span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .update-stream {
+      list-style: none;
+      padding: 4px 0;
+    }
+
+    .update-stream li {
+      padding: 10px 18px;
+      font-size: 13px;
+      border-bottom: 1px solid var(--panel);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .update-stream li:last-child {
+      border-bottom: none;
+    }
+
+    .update-stream .time {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .update-stream .title {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .update-stream .desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    /* 板块通用 */
+    .section {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 26px 28px;
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 18px 16px;
+        border-radius: var(--radius-sm);
+      }
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .section-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-header h2::before {
+      content: "";
+      width: 4px;
+      height: 20px;
+      border-radius: 2px;
+      background: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .section-header .meta {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .section-intro {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    .section-intro p {
+      margin-bottom: 10px;
+    }
+
+    .section-intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .job-card {
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: all 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .job-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      border-color: var(--primary);
+    }
+
+    .job-card-img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      background: var(--panel);
+    }
+
+    .job-card-body {
+      padding: 14px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .job-card-body h3 {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    .job-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 500;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .tag.accent {
+      background: var(--accent-light);
+      color: #d6336c;
+    }
+
+    .tag.gray {
+      background: var(--panel);
+      color: var(--text-secondary);
+    }
+
+    .job-card-body p {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .job-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--muted);
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+      margin-top: 4px;
+    }
+
+    .job-meta strong {
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    /* 紧凑列表 */
+    .compact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .compact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .compact-list li:last-child {
+      border-bottom: none;
+    }
+
+    .compact-list .date {
+      font-size: 12px;
+      color: var(--muted);
+      width: 72px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    .compact-list .content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .compact-list .content strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .compact-list .content span {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+    }
+
+    .category-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .category-item:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .category-item .icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+      background: var(--primary-light);
+    }
+
+    /* 深度解析 */
+    .deep-dive h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 22px 0 10px;
+      color: var(--text);
+    }
+
+    .deep-dive h3:first-child {
+      margin-top: 0;
+    }
+
+    .deep-dive p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .deep-dive ul, .deep-dive ol {
+      margin: 8px 0 16px 20px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .deep-dive li {
+      margin-bottom: 4px;
+    }
+
+    .deep-dive strong {
+      color: var(--text);
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 12px 0 18px;
+    }
+
+    .compare-table th, .compare-table td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .compare-table th {
+      background: var(--panel);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .compare-table td {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* FAQ */
+    .faq-list details {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      overflow: hidden;
+      background: var(--bg);
+      transition: all 0.2s;
+    }
+
+    .faq-list details[open] {
+      border-color: var(--primary);
+      background: #fff;
+    }
+
+    .faq-list summary {
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text);
+      list-style: none;
+      user-select: none;
+    }
+
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-list summary::after {
+      content: "+";
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--muted);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+
+    .faq-list details[open] summary::after {
+      content: "−";
+      color: var(--primary);
+    }
+
+    .faq-answer {
+      padding: 0 18px 16px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* 评论 */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .comment-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--panel);
+    }
+
+    .comment-item:last-child {
+      border-bottom: none;
+    }
+
+    .comment-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      flex-shrink: 0;
+    }
+
+    .comment-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .comment-body .name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .comment-body .text {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .comment-body .time {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* 资讯 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .news-card {
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s;
+    }
+
+    .news-card:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .news-card-body {
+      padding: 14px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .news-card-body h3 {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    .news-card-body p {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .news-card-body .date {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* 相关推荐标签 */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag-cloud a {
+      display: inline-block;
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      transition: all 0.2s;
+    }
+
+    .tag-cloud a:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary-dark);
+    }
+
+    /* 时间线 */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: var(--border);
+      border-radius: 1px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 18px 16px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px var(--primary-light);
+    }
+
+    .timeline-item .tl-date {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 2px;
+    }
+
+    .timeline-item strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .timeline-item span {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* 页尾 */
+    .site-footer {
+      background: #1a2634;
+      color: #b8c9da;
+      margin-top: 48px;
+      padding: 44px 0 28px;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 800px) {
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand .brand-text {
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .footer-brand .brand-text em {
+      color: var(--primary);
+    }
+
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #8fa4b8;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col a {
+      font-size: 13px;
+      color: #8fa4b8;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: #6b8299;
+    }
+
+    .footer-bottom .disclaimer {
+      font-size: 11px;
+      color: #6b8299;
+      opacity: 0.8;
+    }
+
+    /* 手机端导航 */
+    @media (max-width: 740px) {
+      .header-inner {
+        gap: 12px;
+        padding: 0 14px;
+      }
+      .main-nav {
+        display: none;
+      }
+      .search-box input {
+        width: 140px;
+      }
+      .search-box input:focus {
+        width: 180px;
+      }
+      .hero {
+        padding: 32px 0 28px;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
+      .hero-desc {
+        font-size: 14px;
+      }
+      .portal-layout {
+        padding: 20px 0;
+        gap: 20px;
+      }
+      .aux-sidebar {
+        position: static;
+      }
+      .announce-inner {
+        padding: 0 14px;
+        font-size: 12px;
+      }
+      .brand-text {
+        font-size: 17px;
+      }
+      .container {
+        padding: 0 14px;
+      }
+      .hero-inner {
+        padding: 0 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* 滚动偏移 */
+    [id] {
+      scroll-margin-top: var(--sticky-offset);
+    }
+
+    /* 隐藏无结果提示 */
+    .no-result {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .no-result.show {
+      display: block;
+    }
+
+    /* 搜索隐藏 */
+    .search-hidden {
+      display: none !important;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce-bar" role="region" aria-label="最新公告">
+  <div class="announce-inner">
+    <span class="announce-tag">校招更新</span>
+    <span class="announce-item">2026-11-08 技术类岗位新增 12 个</span>
+    <span class="announce-item">11 月 6 日 产品笔试真题解析已上线</span>
+    <span class="announce-item">11 月 3 日 设计岗作品集要求调整</span>
+    <span class="announce-item">11 月 1 日 宣讲会排期更新至 11 月 15 日</span>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/#top" class="brand" aria-label="b站校招首页">
+      <svg class="brand-logo" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="9" fill="#00a1d6"/>
+        <rect x="9" y="13" width="18" height="11" rx="2" fill="white" opacity="0.95"/>
+        <circle cx="14" cy="18.5" r="2" fill="#00a1d6"/>
+        <circle cx="22" cy="18.5" r="2" fill="#00a1d6"/>
+        <path d="M12 10L9 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M24 10L27 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text"><em>b站</em>校招</span>
+    </a>
+    <nav class="main-nav" aria-label="频道导航">
+      <a href="/#jobs">技术岗位</a>
+      <a href="/#product">产品岗位</a>
+      <a href="/#design">设计岗位</a>
+      <a href="/#operation">运营岗位</a>
+      <a href="/#guide">投递攻略</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#news">校招动态</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"/>
+          <path d="M21 21l-4-4"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="搜索岗位/攻略..." aria-label="搜索岗位或攻略">
+        <div class="search-feedback" id="searchFeedback"></div>
+      </div>
+      <button class="btn-primary" onclick="document.getElementById('jobs').scrollIntoView({behavior:'smooth'})">查看岗位</button>
+    </div>
+  </div>
+</header>
+
+<!-- 主题首屏 -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span></span> 2026 届校园招聘进行中</div>
+      <h1>b站校招</h1>
+      <p class="hero-desc">
+        汇聚技术、产品、设计、运营等方向的校园招聘岗位与应聘指南。整理各岗位的笔试面试要点、投递时间节点和宣讲会安排，帮助应届生找到匹配的投递方向。
+      </p>
+      <div class="hero-actions">
+        <a href="/#jobs" class="btn-primary">浏览岗位精选</a>
+        <a href="/#guide" class="btn-ghost">查看投递攻略</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 340 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="30" width="300" height="200" rx="16" fill="white" stroke="#dce5f0" stroke-width="1.5"/>
+        <rect x="20" y="30" width="300" height="48" rx="16" fill="#f0f4fa"/>
+        <rect x="20" y="62" width="300" height="16" fill="#f0f4fa"/>
+        <circle cx="48" cy="54" r="7" fill="#00a1d6" opacity="0.3"/>
+        <circle cx="68" cy="54" r="7" fill="#fb7299" opacity="0.3"/>
+        <circle cx="88" cy="54" r="7" fill="#00a1d6" opacity="0.15"/>
+        <rect x="44" y="96" width="120" height="10" rx="5" fill="#00a1d6" opacity="0.25"/>
+        <rect x="44" y="116" width="200" height="8" rx="4" fill="#dce5f0"/>
+        <rect x="44" y="132" width="180" height="8" rx="4" fill="#dce5f0"/>
+        <rect x="44" y="148" width="160" height="8" rx="4" fill="#dce5f0"/>
+        <rect x="44" y="174" width="80" height="28" rx="14" fill="#00a1d6"/>
+        <rect x="132" y="174" width="80" height="28" rx="14" fill="white" stroke="#dce5f0" stroke-width="1.5"/>
+        <rect x="44" y="96" width="60" height="10" rx="5" fill="#fb7299" opacity="0.2"/>
+        <path d="M252 100 L262 90 L272 100" stroke="#00a1d6" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <circle cx="262" cy="116" r="14" stroke="#00a1d6" stroke-width="2" fill="none"/>
+        <path d="M258 116 L261 119 L267 112" stroke="#00a1d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <rect x="240" y="148" width="56" height="8" rx="4" fill="#dce5f0"/>
+        <rect x="240" y="164" width="40" height="8" rx="4" fill="#dce5f0"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 三栏门户主体 -->
+<div class="container">
+  <div class="portal-layout">
+
+    <!-- 左频道索引 -->
+    <aside class="channel-sidebar" aria-label="频道索引">
+      <h3>频道导航</h3>
+      <nav>
+        <a href="/#jobs"><span class="dot"></span>技术岗位精选</a>
+        <a href="/#product"><span class="dot"></span>产品岗位精选</a>
+        <a href="/#design"><span class="dot"></span>设计岗位精选</a>
+        <a href="/#operation"><span class="dot"></span>运营岗位精选</a>
+        <a href="/#updates"><span class="dot"></span>最新校招动态</a>
+        <a href="/#categories"><span class="dot"></span>岗位分类入口</a>
+        <a href="/#deep-dive"><span class="dot"></span>投递深度解析</a>
+        <a href="/#guide"><span class="dot"></span>应聘体验指南</a>
+        <a href="/#faq"><span class="dot"></span>常见问题解答</a>
+        <a href="/#comments"><span class="dot"></span>社区讨论</a>
+        <a href="/#news"><span class="dot"></span>相关资讯</a>
+        <a href="/#related"><span class="dot"></span>延伸方向推荐</a>
+      </nav>
+    </aside>
+
+    <!-- 中主内容 -->
+    <main class="main-content" id="main-content">
+
+      <!-- 板块1：领域概览 -->
+      <section class="section" id="overview">
+        <div class="section-header">
+          <h2>b站校招方向概览</h2>
+          <span class="meta">2026 届 · 岗位方向</span>
+        </div>
+        <div class="section-intro">
+          <p><strong>b站校招</strong>覆盖技术、产品、设计、运营、内容制作、市场营销等六大方向。技术类包括前端开发、后端开发、算法工程师、数据分析、客户端开发等岗位，笔试侧重编程能力与计算机基础，面试通常有三轮技术面和一轮 HR 面。产品类岗位涵盖产品经理、产品运营、策略产品等，笔试常考产品分析题和逻辑推理，面试关注项目经历与用户思维。</p>
+          <p>设计类方向包括视觉设计、UI/UX 设计、交互设计、动态设计等，需要提交作品集，面试重点考察设计思维与工具熟练度。运营类岗位涉及内容运营、社区运营、活动运营、用户增长等，笔试偏重数据分析与文案能力。内容制作方向有视频编导、动画师、虚拟主播运营等特色岗位，与 B 站社区生态紧密相关。</p>
+          <p>2026 届校招从 2026 年 8 月中旬开启网申，技术岗笔试集中在 9 月，产品与设计岗笔试在 9 月下旬至 10 月，面试从 10 月持续到 11 月。当前 11 月 8 日仍可投递部分补录岗位，宣讲会排期延续至 11 月 15 日。</p>
+        </div>
+      </section>
+
+      <!-- 板块2：精选内容推荐（技术+产品+设计+运营卡片） -->
+      <section class="section" id="jobs">
+        <div class="section-header">
+          <h2>技术岗位精选</h2>
+          <span class="meta">共 8 个岗位 · 更新于 2026-11-08</span>
+        </div>
+        <div class="card-grid">
+          <article class="job-card">
+            <img class="job-card-img" src="https://picsum.photos/seed/bz-frontend24/400/300" alt="B站前端开发工程师岗位封面" width="400" height="300" loading="lazy">
+            <div class="job-card-body">
+              <h3>前端开发工程师</h3>
+              <div class="job-tags">
+                <span class="tag">技术类</span>
+                <span class="tag gray">上海</span>
+                <span class="tag accent">2026 届</span>
+              </div>
+              <p>负责 B 站主站 Web 与移动端页面开发，要求熟悉 React/Vue 及 TypeScript，有开源项目或实习经历优先。笔试含编程题与前端基础。</p>
+              <div class="job-meta">
+                <span>更新 11-08</span>
+                <strong>投递热度 98%</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="job-card">
+            <img class="job-card-img" src="https://picsum.photos/seed/bz-backend24/400/300" alt="B站后端开发工程师岗位封面" width="400" height="300" loading="lazy">
+            <div class="job-card-body">
+              <h3>后端开发工程师</h3>
+              <div class="job-tags">
+                <span class="tag">技术类</span>
+                <span class="tag gray">上海/北京</span>
+                <span class="tag accent">2026 届</span>
+              </div>
+              <p>参与 B 站推荐系统、直播服务等后端架构开发，要求掌握 Go/Java/C++ 中至少一门，理解分布式系统与数据库原理。</p>
+              <div class="job-meta">
+                <span>更新 11-07</span>
+                <strong>投递热度 95%</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="job-card">
+            <img class="job-card-img" src="https://picsum.photos/seed/bz-algo24/400/300" alt="B站算法工程师岗位封面" width="400" height="300" loading="lazy">
+            <div class="job-card-body">
+              <h3>算法工程师（推荐方向）</h3>
+              <div class="job-tags">
+                <span class="tag">技术类</span>
+                <span class="tag gray">上海</span>
+                <span class="tag accent">2026 届</span>
+              </div>
+              <p>负责推荐系统召回与排序策略优化，要求熟悉机器学习基础，有深度学习或 NLP 项目经验。面试含算法推导与场景设计。</p>
+              <div class="job-meta">
+                <span>更新 11-06</span>
+                <strong>投递热度 92%</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="job-card">
+            <img class="job-card-img" src="https://picsum.photos/seed/bz-data24/400/300" alt="B站数据分析师岗位封面" width="400" height="300" loading="lazy">
+            <div class="job-card-body">
+              <h3>数据分析师</h3>
+              <div class="job-tags">
+                <span class="tag">技术类</span>
+                <span class="tag gray">上海</span>
+                <span class="tag accent">2026 届</span>
+              </div>
+              <p>支撑内容生态与商业化团队的数据分析需求，要求 SQL 熟练，掌握 Python/R 及统计基础。笔试含 SQL 实操与业务分析题。</p>
+              <div class="job-meta">
+                <span>更新 11-05</span>
+                <strong>投递热度 88%</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-header" style="margin-top:32px;" id="product">
+          <h2>产品与运营岗位精选</h2>
+          <span class="meta">共 6 个岗位</span>
+        </div>
+        <div class="card-grid">
+          <article class="job-card">
+            <img class="job-card-img" src="https://picsum.photos/seed/bz-pm24/400/300" alt="B站产品经理岗位封面" width="400" height="300" loading="lazy">
+            <div class="job-card-body">
+              <h3>产品经理（社区方向）</h3>
+              <div class="job-tags">
+                <span class="tag">产品类</span>
+                <span class="tag gray">上海</span>
+                <span class="tag accent">2026 届</span>
+              </div>
+              <p>负责社区互动功能规划与迭代，需具备用户调研与数据分析能力。笔试含产品设计题，面试关注对 B 站社区生态的理解。</p>
+              <div class="job-meta">
+                <span>更新 11-08</span>
+                <strong>投递热度 96%</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="job-card">
+            <img class="job-card-img" src="https://picsum.photos/seed/bz-contentop24/400/300" alt="B站内容运营岗位封面" width="400" height="300" loading="lazy">
+            <div class="job-card-body">
+              <h3>内容运营（知识区）</h3>
+              <div class="job-tags">
+                <span class="tag">运营类</span>
+                <span class="tag gray">上海</span>
+                <span class="tag accent">2026 届</span>
+              </div>
+              <p>负责知识区内容策划与创作者运营，需熟悉 B 站知识类 UP 主生态。笔试含文案策划与数据分析题，面试需展示内容敏感度。</p>
+              <div class="job-meta">
+                <span>更新 11-07</span>
+                <strong>投递热度 90%</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="job-card">
+            <img class="job-card-img" src="https://picsum.photos/seed/bz-ui24/400/300" alt="B站UI设计师岗位封面" width="400" height="300" loading="lazy">
+            <div class="job-card-body">
+              <h3>UI 设计师（直播业务）</h3>
+              <div class="job-tags">
+                <span class="tag">设计类</span>
+                <span class="tag gray">上海</span>
+                <span class="tag accent">2026 届</span>
+              </div>
+              <p>负责直播产品界面与运营活动设计，要求作品集含完整项目，熟练使用 Figma/Sketch。面试含设计挑战环节，考察视觉与交互能力。</p>
+              <div class="job-meta">
+                <span>更新 11-06</span>
+                <strong>投递热度 85%</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="job-card">
+            <img class="job-card-img" src="https://picsum.photos/seed/bz-video24/400/300" alt="B站视频编导岗位封面" width="400" height="300" loading="lazy">
+            <div class="job-card-body">
+              <h3>视频编导（虚拟主播方向）</h3>
+              <div class="job-tags">
+                <span class="tag">内容制作</span>
+                <span class="tag gray">上海</span>
+                <span class="tag accent">2026 届</span>
+              </div>
+              <p>负责虚拟主播企划与短视频内容制作，需掌握分镜脚本撰写与后期剪辑。面试需提交作品集或参与命题创作。</p>
+              <div class="job-meta">
+                <span>更新 11-05</span>
+                <strong>投递热度 82%</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 板块3：最新更新动态 -->
+      <section class="section" id="updates">
+        <div class="section-header">
+          <h2>最新校招动态</h2>
+          <span class="meta">2026-11-08 更新</span>
+        </div>
+        <ul class="compact-list">
+          <li>
+            <span class="date">11-08 09:30</span>
+            <div class="content">
+              <strong>技术类补录岗位开放投递</strong>
+              <span>前端、后端、算法方向新增 12 个补录名额，网申截止 11 月 15 日。</span>
+            </div>
+          </li>
+          <li>
+            <span class="date">11-08 08:00</span>
+            <div class="content">
+              <strong>产品岗笔试真题解析上线</strong>
+              <span>2026 届产品经理笔试真题拆解已发布，含 3 道产品设计题思路解析。</span>
+            </div>
+          </li>
+          <li>
+            <span class="date">11-07 18:20</span>
+            <div class="content">
+              <strong>设计岗作品集要求调整</strong>
+              <span>UI 设计师岗位作品集需包含至少 2 个完整项目，交互设计岗新增动效作品要求。</span>
+            </div>
+          </li>
+          <li>
+            <span class="date">11-07 14:00</span>
+            <div class="content">
+              <strong>运营岗面试经验分享会</strong>
+              <span>11 月 10 日晚 8 点社区直播，邀请 2025 届入职运营分享面试流程。</span>
+            </div>
+          </li>
+          <li>
+            <span class="date">11-06 10:15</span>
+            <div class="content">
+              <strong>宣讲会排期更新至 11 月 15 日</strong>
+              <span>新增武汉大学、华中科技大学两场线下宣讲，线上宣讲可回看。</span>
+            </div>
+          </li>
+          <li>
+            <span class="date">11-05 16:40</span>
+            <div class="content">
+              <strong>算法岗面试预约开放</strong>
+              <span>通过笔试的候选人可于 11 月 5 日至 8 日预约面试时间，面试形式为视频面。</span>
+            </div>
+          </li>
+          <li>
+            <span class="date">11-04 11:00</span>
+            <div class="content">
+              <strong>内容制作岗新增虚拟主播企划方向</strong>
+              <span>该岗位要求了解虚拟主播生态，有直播或短视频创作经验者优先。</span>
+            </div>
+          </li>
+          <li>
+            <span class="date">11-03 09:00</span>
+            <div class="content">
+              <strong>2026 届校招 Q&A 文档更新</strong>
+              <span>汇总近期高频问题，涵盖投递状态查询、面试结果通知时间等。</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 板块4：分类入口 -->
+      <section class="section" id="categories">
+        <div class="section-header">
+          <h2>岗位分类入口</h2>
+          <span class="meta">按方向筛选</span>
+        </div>
+        <div class="category-grid">
+          <a href="/#jobs" class="category-item"><span class="icon">⌨️</span>前端开发</a>
+          <a href="/#jobs" class="category-item"><span class="icon">⚙️</span>后端开发</a>
+          <a href="/#jobs" class="category-item"><span class="icon">🧠</span>算法工程师</a>
+          <a href="/#product" class="category-item"><span class="icon">📊</span>数据分析</a>
+          <a href="/#product" class="category-item"><span class="icon">📱</span>产品经理</a>
+          <a href="/#product" class="category-item"><span class="icon">✏️</span>内容运营</a>
+          <a href="/#design" class="category-item"><span class="icon">🎨</span>UI 设计</a>
+          <a href="/#design" class="category-item"><span class="icon">🎬</span>视频编导</a>
+        </div>
+      </section>
+
+      <!-- 板块5：深度解析正文 -->
+      <section class="section" id="deep-dive">
+        <div class="section-header">
+          <h2>b站校招投递深度解析</h2>
+          <span class="meta">岗位差异与准备策略</span>
+        </div>
+        <div class="deep-dive">
+          <h3>技术岗与产品岗的笔试差异</h3>
+          <p>技术岗笔试以编程题和计算机基础为主。前端方向常考 JavaScript 核心概念、浏览器渲染机制和框架原理；后端方向侧重数据结构、算法、数据库与分布式系统设计。产品岗笔试则完全不同，通常包含产品分析题（如“如何提升某功能的使用率”）、逻辑推理和数据分析题，考察商业思维与用户洞察。</p>
+          <p>设计岗不设统一笔试，改为提交作品集后进入面试环节。运营岗笔试介于产品和技术之间，常考内容策划、数据解读和社区规则理解。内容制作岗需要提交作品或参与命题创作，重点看创意执行能力。</p>
+
+          <h3>面试流程与考察重点对比</h3>
+          <table class="compare-table">
+            <thead>
+              <tr><th>岗位方向</th><th>面试轮次</th><th>核心考察点</th><th>准备建议</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>技术类</td><td>3 轮技术 + 1 轮 HR</td><td>编码能力、系统设计、项目深度</td><td>刷算法题、复盘项目架构</td></tr>
+              <tr><td>产品类</td><td>2 轮业务 + 1 轮 HR</td><td>产品思维、数据分析、沟通表达</td><td>准备产品分析案例、熟悉 B 站功能</td></tr>
+              <tr><td>设计类</td><td>作品集评审 + 2 轮面试</td><td>设计逻辑、工具熟练度、审美</td><td>精选 2-3 个完整项目、准备命题设计</td></tr>
+              <tr><td>运营类</td><td>2 轮业务 + 1 轮 HR</td><td>内容敏感度、活动策划、数据意识</td><td>分析 B 站热门内容、准备运营方案</td></tr>
+            </tbody>
+          </table>
+
+          <h3>2026 届时间节点与补录机会</h3>
+          <p>2026 届校招网申从 8 月中旬持续到 10 月底，技术岗笔试集中在 9 月上旬，产品与运营岗笔试在 9 月下旬至 10 月中旬。面试从 10 月陆续开始，11 月初陆续发放意向书。当前 11 月 8 日，部分技术岗和内容制作岗仍有补录名额，补录投递截止到 11 月 15 日。</p>
+          <p>如果错过首批投递，可以关注补录岗位的更新。补录流程通常比首批简化，部分岗位免笔试直接进入面试，但竞争依然激烈，建议尽早投递并准备好项目材料。</p>
+
+          <h3>如何判断一个岗位是否适合自己</h3>
+          <ul>
+            <li><strong>技术栈匹配度：</strong>查看岗位描述中要求的语言和框架，评估自己是否具备相应项目经验。</li>
+            <li><strong>业务方向兴趣：</strong>B 站校招岗位分布在主站、直播、商业化、漫画等多个业务线，选择自己日常使用较多的产品方向更有优势。</li>
+            <li><strong>面试轮次与时间成本：</strong>技术岗面试轮次多、周期长，需要预留至少 3 周准备时间；设计岗作品集准备可能需 1-2 周。</li>
+            <li><strong>城市与团队规模：</strong>大部分岗位在上海，北京、广州有部分技术岗。团队规模影响培养方式，校招通常有导师制。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 板块6：体验指南 -->
+      <section class="section" id="guide">
+        <div class="section-header">
+          <h2>应聘体验指南</h2>
+          <span class="meta">从投递到面试的判断依据</span>
+        </div>
+        <div class="section-intro">
+          <p>准备 B 站校招时，建议先确定 1-2 个主攻方向，而不是海投所有岗位。技术岗优先准备算法题和项目复盘，产品与运营岗重点打磨对 B 站社区的理解和案例分析能力。设计岗需要提前 2 周整理作品集，内容制作岗则要准备好创意作品。</p>
+        </div>
+        <ol style="margin-left:20px;font-size:14px;color:var(--text-secondary);line-height:1.8;">
+          <li style="margin-bottom:10px;"><strong>第一步：对照岗位要求筛选。</strong>查看岗位描述中的硬性条件（学历、专业、技能），优先投递匹配度 70% 以上的岗位。</li>
+          <li style="margin-bottom:10px;"><strong>第二步：准备针对性材料。</strong>技术岗整理 GitHub 项目或实习代码；产品岗准备产品分析文档；设计岗挑选 2-3 个完整作品集项目。</li>
+          <li style="margin-bottom:10px;"><strong>第三步：熟悉 B 站产品与社区文化。</strong>面试中常被问到“你常用 B 站哪些功能”“如何看待弹幕文化”等问题，真实的使用体验比背诵答案更有说服力。</li>
+          <li style="margin-bottom:10px;"><strong>第四步：模拟面试与时间管理。</strong>技术岗刷近 3 年真题，产品岗练习案例分析，设计岗准备命题设计。注意各批次截止时间，避免错过预约。</li>
+        </ol>
+      </section>
+
+      <!-- 板块7：FAQ -->
+      <section class="section" id="faq">
+        <div class="section-header">
+          <h2>常见问题解答</h2>
+          <span class="meta">6 个高频问题</span>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>B站校招技术岗笔试一般考什么题型？</summary>
+            <div class="faq-answer">技术岗笔试通常包含选择题（计算机基础、操作系统、网络）、编程题（2-3 道，难度中等偏上）和少量简答题。前端方向侧重 JavaScript 与框架原理，后端方向侧重算法与数据库设计。建议刷 LeetCode 中等难度题目和历年真题。</div>
+          </details>
+          <details>
+            <summary>产品岗和运营岗的面试有什么区别？</summary>
+            <div class="faq-answer">产品岗面试更关注产品设计能力、需求分析和数据驱动决策，常要求现场分析一个功能。运营岗面试侧重内容敏感度、活动策划和用户沟通，可能会问“如何策划一场社区活动”或分析某个 UP 主的运营策略。</div>
+          </details>
+          <details>
+            <summary>设计岗作品集需要包含哪些内容？</summary>
+            <div class="faq-answer">UI/UX 设计岗作品集建议包含 2-3 个完整项目，展示从需求分析、草图、原型到视觉稿的全流程。交互设计岗需突出交互逻辑和用户测试。动态设计岗可加入动效作品。作品集以 PDF 或在线链接提交，文件大小控制在 30MB 以内。</div>
+          </details>
+          <details>
+            <summary>非技术专业可以投递B站校招的哪些岗位？</summary>
+            <div class="faq-answer">非技术专业可重点关注产品运营、内容运营、市场营销、内容制作（视频编导、动画师）等方向。这些岗位对专业限制较少，更看重项目经历、作品集和对 B 站社区的理解。部分岗位要求提交作品或参与命题创作。</div>
+          </details>
+          <details>
+            <summary>2026 届补录岗位的投递截止时间是什么时候？</summary>
+            <div class="faq-answer">当前补录岗位投递截止时间为 2026 年 11 月 15 日。补录流程通常简化，部分岗位免笔试直接进入面试。建议在 11 月 10 日前完成投递，预留面试准备时间。</div>
+          </details>
+          <details>
+            <summary>面试后一般多久出结果？</summary>
+            <div class="faq-answer">技术岗面试结果通常在每轮面试后 3-5 个工作日通知，全部通过后 1-2 周内发放意向书。产品、运营、设计岗流程类似。如果超过 2 周未收到通知，可礼貌发邮件询问进度，或关注投递状态页面。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 板块8：用户评论 -->
+      <section class="section" id="comments">
+        <div class="section-header">
+          <h2>社区讨论</h2>
+          <span class="meta">16 条讨论</span>
+        </div>
+        <div class="comment-list">
+          <div class="comment-item">
+            <div class="comment-avatar">小</div>
+            <div class="comment-body">
+              <div class="name">小鹿乱撞_</div>
+              <div class="text">前端岗笔试编程题难度大概 LeetCode 中等，最后一道场景题比较灵活，建议多练手写 Promise 和防抖节流。</div>
+              <div class="time">11-08 10:12</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">A</div>
+            <div class="comment-body">
+              <div class="name">Alice_产品喵</div>
+              <div class="text">产品岗二面被问到“如果让你优化 B 站收藏夹功能，你会怎么做”，需要从用户场景出发拆解，不能只讲功能。</div>
+              <div class="time">11-08 09:45</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">C</div>
+            <div class="comment-body">
+              <div class="name">CoderWang</div>
+              <div class="text">后端三面问了分布式锁的实现方案，还追问了 Redis 和 ZooKeeper 的取舍，项目里做过类似模块的会比较有优势。</div>
+              <div class="time">11-07 22:30</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">设</div>
+            <div class="comment-body">
+              <div class="name">设计小透明</div>
+              <div class="text">UI 岗面试有现场命题设计，给了 40 分钟画一个直播间礼物面板，时间挺紧的，平时要多练快速产出。</div>
+              <div class="time">11-07 20:15</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">运</div>
+            <div class="comment-body">
+              <div class="name">运营阿May</div>
+              <div class="text">内容运营笔试有一道题是分析知识区某 UP 主涨粉原因，需要结合数据看板来回答，没做过内容分析的会有点吃力。</div>
+              <div class="time">11-07 17:40</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">算</div>
+            <div class="comment-body">
+              <div class="name">算法练习生</div>
+              <div class="text">推荐方向一面问了不少深度学习基础，还让推导 FM 公式。项目经历问得很细，要准备好每步的改进理由。</div>
+              <div class="time">11-06 21:10</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">数</div>
+            <div class="comment-body">
+              <div class="name">数据小张</div>
+              <div class="text">数据分析岗笔试有 SQL 窗口函数题和一道 A/B 测试分析题，业务场景是直播打赏，需要懂一点直播生态。</div>
+              <div class="time">11-06 16:20</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">编</div>
+            <div class="comment-body">
+              <div class="name">编导小周</div>
+              <div class="text">虚拟主播方向面试要交一份企划案，我写了一个国风虚拟偶像的直播内容规划，面试官追问了技术实现细节。</div>
+              <div class="time">11-05 14:30</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">K</div>
+            <div class="comment-body">
+              <div class="name">Kevin_2026</div>
+              <div class="text">投了后端和算法两个岗，后端进面了算法还在笔试状态，建议优先投最匹配的那个，精力有限。</div>
+              <div class="time">11-05 11:00</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">橙</div>
+            <div class="comment-body">
+              <div class="name">橙子不酸</div>
+              <div class="text">产品岗 HR 面问了薪资期望和城市选择，如实回答就好，B 站校招薪资在互联网中属于中等偏上水平。</div>
+              <div class="time">11-04 19:45</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">J</div>
+            <div class="comment-body">
+              <div class="name">Json_前端</div>
+              <div class="text">前端二面考了手写一个简单的 EventEmitter 和虚拟 DOM diff，基础要扎实，框架源码最好也看看。</div>
+              <div class="time">11-04 15:20</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">交</div>
+            <div class="comment-body">
+              <div class="name">交互设计_L</div>
+              <div class="text">交互岗作品集建议放一个完整的用户研究流程，从访谈、需求提炼到方案落地，B 站挺看重用研能力的。</div>
+              <div class="time">11-03 20:00</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">社</div>
+            <div class="comment-body">
+              <div class="name">社区运营小刘</div>
+              <div class="text">运营岗群面题目是策划一个校园 UP 主扶持活动，需要快速拆解目标、预算和传播路径，时间只有 20 分钟。</div>
+              <div class="time">11-03 14:10</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">M</div>
+            <div class="comment-body">
+              <div class="name">Mia_设计</div>
+              <div class="text">视觉岗面试官会问设计背后的思考，不只是看好不好看，要能讲清楚为什么用这个颜色和版式。</div>
+              <div class="time">11-02 21:30</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">老</div>
+            <div class="comment-body">
+              <div class="name">老猫_后端</div>
+              <div class="text">后端一面基础题占比不小，操作系统和网络问得细，建议复习 TCP 三次握手、进程线程区别这些经典内容。</div>
+              <div class="time">11-02 10:15</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">N</div>
+            <div class="comment-body">
+              <div class="name">Nina_内容</div>
+              <div class="text">内容制作岗面试有 30 分钟写脚本环节，题目是策划一期 5 分钟的知识类短视频，平时多拆解热门视频结构会有帮助。</div>
+              <div class="time">11-01 16:50</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块9：相关资讯 -->
+      <section class="section" id="news">
+        <div class="section-header">
+          <h2>相关资讯</h2>
+          <span class="meta">2026 年 11 月</span>
+        </div>
+        <div class="news-grid">
+          <article class="news-card">
+            <img src="https://picsum.photos/seed/bz-news-tech11/600/400" alt="B站技术岗补录资讯配图" width="600" height="400" loading="lazy">
+            <div class="news-card-body">
+              <h3>技术类补录岗位新增 12 个名额</h3>
+              <p>前端、后端、算法方向开放补录，网申截止 11 月 15 日，部分岗位免笔试。</p>
+              <span class="date">2026-11-08</span>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://picsum.photos/seed/bz-news-oral11/600/400" alt="B站产品岗笔试真题解析配图" width="600" height="400" loading="lazy">
+            <div class="news-card-body">
+              <h3>2026 届产品岗笔试真题解析发布</h3>
+              <p>含 3 道产品设计题思路拆解，重点分析社区功能优化类题型。</p>
+              <span class="date">2026-11-08</span>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://picsum.photos/seed/bz-news-design11/600/400" alt="B站设计岗作品集要求调整配图" width="600" height="400" loading="lazy">
+            <div class="news-card-body">
+              <h3>UI 设计师岗位作品集要求调整</h3>
+              <p>需包含至少 2 个完整项目，交互设计岗新增动效作品要求。</p>
+              <span class="date">2026-11-07</span>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://picsum.photos/seed/bz-news-talk11/600/400" alt="B站宣讲会排期更新配图" width="600" height="400" loading="lazy">
+            <div class="news-card-body">
+              <h3>宣讲会排期更新至 11 月 15 日</h3>
+              <p>新增武汉大学、华中科技大学线下场次，线上宣讲支持回看。</p>
+              <span class="date">2026-11-06</span>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://picsum.photos/seed/bz-news-virtual11/600/400" alt="B站虚拟主播企划岗位新增配图" width="600" height="400" loading="lazy">
+            <div class="news-card-body">
+              <h3>内容制作岗新增虚拟主播企划方向</h3>
+              <p>要求了解虚拟主播生态，有直播或短视频创作经验优先。</p>
+              <span class="date">2026-11-05</span>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://picsum.photos/seed/bz-news-qa11/600/400" alt="B站校招Q&A文档更新配图" width="600" height="400" loading="lazy">
+            <div class="news-card-body">
+              <h3>2026 届校招 Q&A 文档更新</h3>
+              <p>汇总投递状态查询、面试结果通知时间等高频问题。</p>
+              <span class="date">2026-11-03</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 板块10：相关推荐 -->
+      <section class="section" id="related">
+        <div class="section-header">
+          <h2>延伸方向推荐</h2>
+          <span class="meta">具体内容方向与条目</span>
+        </div>
+        <div class="tag-cloud">
+          <a href="/#jobs">前端框架源码解析</a>
+          <a href="/#jobs">后端分布式系统设计</a>
+          <a href="/#jobs">推荐算法实战项目</a>
+          <a href="/#product">产品数据分析方法</a>
+          <a href="/#product">社区运营活动策划</a>
+          <a href="/#design">UI 设计规范与组件库</a>
+          <a href="/#design">交互设计用户研究</a>
+          <a href="/#news">2026 届校招时间线</a>
+        </div>
+      </section>
+
+      <!-- 板块11：补充板块 - 时间线 + 热门榜单 -->
+      <section class="section" id="timeline">
+        <div class="section-header">
+          <h2>2026 届校招时间线</h2>
+          <span class="meta">关键节点</span>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="tl-date">2026-08-15</div>
+            <strong>网申开启</strong>
+            <span>技术、产品、设计、运营等方向同步开放投递。</span>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">2026-09-05</div>
+            <strong>技术岗笔试</strong>
+            <span>前端、后端、算法、数据分析统一笔试。</span>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">2026-09-25</div>
+            <strong>产品与运营岗笔试</strong>
+            <span>产品分析题、逻辑推理与内容策划题。</span>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">2026-10-15</div>
+            <strong>面试阶段开始</strong>
+            <span>技术岗 3 轮技术面，产品与设计岗业务面。</span>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">2026-11-08</div>
+            <strong>补录岗位开放</strong>
+            <span>技术类补录 12 个名额，内容制作岗新增方向。</span>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">2026-11-15</div>
+            <strong>补录投递截止</strong>
+            <span>最后一批岗位投递截止，面试持续到 11 月底。</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="aux-sidebar" aria-label="辅助信息">
+      <div class="aux-card">
+        <div class="aux-card-header">
+          热门岗位榜
+          <a href="/#jobs">查看全部</a>
+        </div>
+        <div class="aux-card-body">
+          <ol class="hot-list">
+            <li>
+              <span class="rank">1</span>
+              <div class="info">
+                <strong>前端开发工程师</strong>
+                <span>投递热度 98% · 上海</span>
+              </div>
+            </li>
+            <li>
+              <span class="rank">2</span>
+              <div class="info">
+                <strong>产品经理（社区方向）</strong>
+                <span>投递热度 96% · 上海</span>
+              </div>
+            </li>
+            <li>
+              <span class="rank">3</span>
+              <div class="info">
+                <strong>后端开发工程师</strong>
+                <span>投递热度 95% · 上海/北京</span>
+              </div>
+            </li>
+            <li>
+              <span class="rank">4</span>
+              <div class="info">
+                <strong>算法工程师（推荐方向）</strong>
+                <span>投递热度 92% · 上海</span>
+              </div>
+            </li>
+            <li>
+              <span class="rank">5</span>
+              <div class="info">
+                <strong>内容运营（知识区）</strong>
+                <span>投递热度 90% · 上海</span>
+              </div>
+            </li>
+            <li>
+              <span class="rank">6</span>
+              <div class="info">
+                <strong>UI 设计师（直播业务）</strong>
+                <span>投递热度 85% · 上海</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="aux-card">
+        <div class="aux-card-header">
+          最新更新
+          <a href="/#updates">更多</a>
+        </div>
+        <div class="aux-card-body">
+          <ul class="update-stream">
+            <li>
+              <span class="time">11-08 09:30</span>
+              <span class="title">技术岗补录开放</span>
+              <span class="desc">新增 12 个名额</span>
+            </li>
+            <li>
+              <span class="time">11-08 08:00</span>
+              <span class="title">产品笔试真题解析</span>
+              <span class="desc">3 道设计题思路</span>
+            </li>
+            <li>
+              <span class="time">11-07 18:20</span>
+              <span class="title">设计岗作品集调整</span>
+              <span class="desc">需含 2 个完整项目</span>
+            </li>
+            <li>
+              <span class="time">11-07 14:00</span>
+              <span class="title">运营岗面试分享会</span>
+              <span class="desc">11 月 10 日晚 8 点</span>
+            </li>
+            <li>
+              <span class="time">11-06 10:15</span>
+              <span class="title">宣讲会排期更新</span>
+              <span class="desc">延续至 11 月 15 日</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="aux-card">
+        <div class="aux-card-header">
+          快捷入口
+        </div>
+        <div class="aux-card-body" style="padding:12px 18px; display:flex; flex-direction:column; gap:8px;">
+          <a href="/#guide" class="btn-ghost" style="justify-content:center;">投递攻略</a>
+          <a href="/#faq" class="btn-ghost" style="justify-content:center;">常见问题</a>
+          <a href="/#timeline" class="btn-ghost" style="justify-content:center;">校招时间线</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="9" fill="#00a1d6"/>
+            <rect x="9" y="13" width="18" height="11" rx="2" fill="white" opacity="0.95"/>
+            <circle cx="14" cy="18.5" r="2" fill="#00a1d6"/>
+            <circle cx="22" cy="18.5" r="2" fill="#00a1d6"/>
+            <path d="M12 10L9 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M24 10L27 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-text"><em>b站</em>校招</span>
+        </div>
+        <p class="footer-desc">聚焦 B 站校园招聘的技术、产品、设计、运营岗位与应聘指南，整理笔试面试要点和投递时间节点。</p>
+      </div>
+      <div class="footer-col">
+        <h4>岗位方向</h4>
+        <ul>
+          <li><a href="/#jobs">前端开发</a></li>
+          <li><a href="/#jobs">后端开发</a></li>
+          <li><a href="/#jobs">算法工程师</a></li>
+          <li><a href="/#product">产品经理</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>应聘指南</h4>
+        <ul>
+          <li><a href="/#guide">投递攻略</a></li>
+          <li><a href="/#deep-dive">深度解析</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#timeline">时间线</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>动态与讨论</h4>
+        <ul>
+          <li><a href="/#updates">最新动态</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#comments">社区讨论</a></li>
+          <li><a href="/#related">延伸推荐</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 b站校招 · 内容聚合页</span>
+      <span class="disclaimer">部分内容为示例数据，仅用于展示页面结构</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    // 搜索功能
+    const searchInput = document.getElementById('searchInput');
+    const searchFeedback = document.getElementById('searchFeedback');
+    const sections = document.querySelectorAll('.section, .job-card, .compact-list li, .news-card, .comment-item, .faq-list details');
+
+    function resetSearch() {
+      sections.forEach(el => el.classList.remove('search-hidden'));
+      document.querySelectorAll('.section').forEach(el => el.classList.remove('search-hidden'));
+      document.querySelectorAll('.job-card').forEach(el => el.classList.remove('search-hidden'));
+      document.querySelectorAll('.compact-list li').forEach(el => el.classList.remove('search-hidden'));
+      document.querySelectorAll('.news-card').forEach(el => el.classList.remove('search-hidden'));
+      document.querySelectorAll('.comment-item').forEach(el => el.classList.remove('search-hidden'));
+      document.querySelectorAll('.faq-list details').forEach(el => el.classList.remove('search-hidden'));
+      searchFeedback.classList.remove('show');
+      searchFeedback.textContent = '';
+    }
+
+    searchInput.addEventListener('input', function() {
+      const query = this.value.trim().toLowerCase();
+      if (!query) {
+        resetSearch();
+        return;
+      }
+
+      let hasResult = false;
+
+      // 先隐藏所有板块
+      document.querySelectorAll('.section').forEach(el => el.classList.add('search-hidden'));
+
+      // 搜索卡片、列表项、新闻、评论、FAQ
+      const searchableItems = document.querySelectorAll('.job-card, .compact-list li, .news-card, .comment-item, .faq-list details, .category-item, .tag-cloud a');
+      
+      searchableItems.forEach(el => {
+        const text = el.textContent.toLowerCase();
+        if (text.includes(query)) {
+          el.classList.remove('search-hidden');
+          hasResult = true;
+          // 显示所在板块
+          const parentSection = el.closest('.section');
+          if (parentSection) parentSection.classList.remove('search-hidden');
+        } else {
+          el.classList.add('search-hidden');
+        }
+      });
+
+      // 对于没有搜索项匹配的板块，检查板块文本
+      if (!hasResult) {
+        document.querySelectorAll('.section').forEach(el => {
+          if (el.textContent.toLowerCase().includes(query)) {
+            el.classList.remove('search-hidden');
+            hasResult = true;
+          }
+        });
+      }
+
+      // 确保所有板块都被处理
+      if (!hasResult) {
+        searchFeedback.classList.add('show');
+        searchFeedback.textContent = '未找到「' + query + '」相关内容，试试“前端”“产品”“笔试”等关键词。';
+      } else {
+        searchFeedback.classList.remove('show');
+      }
+    });
+
+    // 点击外部关闭搜索提示
+    document.addEventListener('click', function(e) {
+      if (!searchInput.contains(e.target) && !searchFeedback.contains(e.target)) {
+        searchFeedback.classList.remove('show');
+      }
+    });
+
+    // 搜索框回车不提交
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+      }
+    });
+  })();
+</script>
+
+</body>
+      </html>
