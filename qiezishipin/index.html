@@ -1,0 +1,1880 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>茄子视频凹凸 - 垂类内容聚合与观看指南</title>
+  <meta name="description" content="茄子视频凹凸聚合凹凸题材短视频、微短剧与创作者内容，包含热门条目、分类导航、深度解析、更新动态与观看路径建议，适合喜欢都市情感与轻悬疑短剧的观众。">
+  <meta name="keywords" content="凹凸短剧, 都市情感短视频, 微短剧推荐, 轻悬疑系列, 短剧观看指南">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #f7f5f2;
+      --surface: #ffffff;
+      --surface-soft: #f0ede8;
+      --text: #1e1c1a;
+      --text-secondary: #5e5a55;
+      --text-muted: #8a857e;
+      --primary: #c44536;
+      --primary-soft: #f7e6e3;
+      --primary-dark: #9b352a;
+      --accent: #2c6e6b;
+      --accent-soft: #e3efee;
+      --border: #e2ddd6;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --font-sans: system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      --header-height: 64px;
+      --announce-height: 40px;
+      --sticky-offset: calc(var(--announce-height) + var(--header-height));
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--sticky-offset);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--announce-height);
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      padding: 0 16px;
+    }
+
+    .announce-bar strong {
+      font-weight: 600;
+      margin-right: 6px;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 99;
+      height: var(--header-height);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-inner {
+      max-width: 1360px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .header-nav a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .header-nav a:hover,
+    .header-nav a:focus-visible {
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      outline: none;
+    }
+
+    /* 主容器 */
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 首屏 */
+    .hero {
+      padding: 40px 0 32px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 640px;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 22px;
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: var(--primary-dark);
+      outline: 2px solid var(--primary-dark);
+      outline-offset: 2px;
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      background: var(--surface-soft);
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+    }
+
+    /* 三栏门户布局 */
+    .portal-layout {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr) 240px;
+      gap: 28px;
+      align-items: start;
+      padding-bottom: 60px;
+    }
+
+    /* 左频道索引 */
+    .channel-index {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .channel-index h2 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      padding: 0 16px 10px;
+    }
+
+    .channel-index ul {
+      list-style: none;
+    }
+
+    .channel-index li a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 14px;
+      border-left: 3px solid transparent;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+
+    .channel-index li a:hover,
+    .channel-index li a:focus-visible {
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      border-left-color: var(--primary);
+      outline: none;
+    }
+
+    /* 主内容区 */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      min-width: 0;
+    }
+
+    /* 板块通用 */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .section-more {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .section-more:hover {
+      color: var(--primary);
+    }
+
+    /* 概览 */
+    .overview-text {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .overview-text p {
+      margin-bottom: 10px;
+    }
+
+    .overview-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--surface);
+      transition: box-shadow 0.15s, transform 0.1s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      background: var(--surface-soft);
+    }
+
+    .card-body {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 20px;
+      background: var(--surface-soft);
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .tag-primary {
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+    }
+
+    .tag-accent {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .card-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: auto;
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* 动态列表 */
+    .update-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .update-list li {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      align-items: flex-start;
+    }
+
+    .update-list li:last-child {
+      border-bottom: none;
+    }
+
+    .update-time {
+      flex-shrink: 0;
+      width: 90px;
+      font-size: 12px;
+      color: var(--text-muted);
+      padding-top: 2px;
+    }
+
+    .update-name {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .update-summary {
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .category-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 16px 8px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.15s, border-color 0.15s;
+      text-align: center;
+    }
+
+    .category-item:hover,
+    .category-item:focus-visible {
+      background: var(--primary-soft);
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    .category-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    /* 深度解析 */
+    .deep-read {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .deep-read h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 20px 0 8px;
+    }
+
+    .deep-read h3:first-child {
+      margin-top: 0;
+    }
+
+    .deep-read p {
+      margin-bottom: 10px;
+    }
+
+    .deep-read ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    .deep-read li {
+      margin-bottom: 4px;
+    }
+
+    /* 体验指南 */
+    .guide-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      counter-reset: step;
+    }
+
+    .guide-steps li {
+      display: flex;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px dashed var(--border);
+      counter-increment: step;
+    }
+
+    .guide-steps li:last-child {
+      border-bottom: none;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .step-num::before {
+      content: counter(step);
+    }
+
+    .step-body h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .step-body p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--surface-soft);
+      transition: background 0.15s;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      margin-left: 8px;
+    }
+
+    .faq-item[open] summary::after {
+      content: '−';
+    }
+
+    .faq-item summary:hover {
+      background: var(--primary-soft);
+    }
+
+    .faq-item summary:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: -2px;
+    }
+
+    .faq-answer {
+      padding: 12px 16px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 评论 */
+    .comment-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .comment-item {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .comment-item:last-child {
+      border-bottom: none;
+    }
+
+    .comment-avatar {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .comment-body {
+      min-width: 0;
+    }
+
+    .comment-user {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .comment-text {
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* 资讯 */
+    .news-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-date {
+      flex-shrink: 0;
+      width: 80px;
+      font-size: 12px;
+      color: var(--text-muted);
+      padding-top: 2px;
+    }
+
+    .news-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .news-summary {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* 相关推荐标签 */
+    .tag-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag-index a {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: var(--surface-soft);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .tag-index a:hover,
+    .tag-index a:focus-visible {
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      outline: none;
+    }
+
+    /* 热门榜单 */
+    .rank-list {
+      list-style: none;
+      counter-reset: rank;
+    }
+
+    .rank-list li {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: center;
+      counter-increment: rank;
+      font-size: 14px;
+    }
+
+    .rank-list li:last-child {
+      border-bottom: none;
+    }
+
+    .rank-num {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--surface-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .rank-num::before {
+      content: counter(rank);
+    }
+
+    .rank-list li:nth-child(1) .rank-num {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .rank-list li:nth-child(2) .rank-num {
+      background: #e8a87c;
+      color: #fff;
+    }
+
+    .rank-list li:nth-child(3) .rank-num {
+      background: #d4b895;
+      color: #fff;
+    }
+
+    .rank-name {
+      font-weight: 600;
+    }
+
+    .rank-meta {
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    /* 右辅助栏 */
+    .aside-panel {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .aside-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .aside-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+    }
+
+    .aside-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .aside-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .aside-list li:last-child {
+      border-bottom: none;
+    }
+
+    .aside-list a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      transition: color 0.15s;
+    }
+
+    .aside-list a:hover {
+      color: var(--primary);
+    }
+
+    .aside-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    /* 页尾 */
+    .site-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 40px 0 24px;
+    }
+
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand .brand-text {
+      font-size: 18px;
+    }
+
+    .footer-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 6px;
+    }
+
+    .footer-col a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .footer-col a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .portal-layout {
+        grid-template-columns: 1fr 240px;
+      }
+
+      .channel-index {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 740px) {
+      .portal-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .aside-panel {
+        position: static;
+      }
+
+      .site-header {
+        padding: 0 16px;
+      }
+
+      .header-inner {
+        gap: 12px;
+      }
+
+      .header-nav {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .header-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .header-nav a {
+        font-size: 13px;
+        padding: 6px 8px;
+      }
+
+      .brand-text {
+        font-size: 17px;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section {
+        padding: 16px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .update-list li {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .update-time {
+        width: auto;
+      }
+
+      .news-item {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .news-date {
+        width: auto;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* 焦点可见 */
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" role="banner" aria-label="站内公告">
+    <strong>本周新增</strong> 凹凸短剧第八季 12 条内容 · 《暗涌》第 5 集已上线 · 情感研究所专题更新
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/#top" aria-label="茄子视频凹凸首页">
+        <svg class="brand-logo" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="36" height="36" rx="10" fill="#C44536"/>
+          <ellipse cx="14" cy="22" rx="6" ry="8" fill="#F7E6E3" transform="rotate(-20 14 22)"/>
+          <ellipse cx="22" cy="16" rx="5" ry="7" fill="#F0EDE8" transform="rotate(15 22 16)"/>
+          <circle cx="13" cy="20" r="1.5" fill="#C44536"/>
+          <circle cx="23" cy="14" r="1.2" fill="#C44536"/>
+          <path d="M9 28 Q18 32 27 26" stroke="#F7E6E3" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="brand-text">茄子视频凹凸</span>
+      </a>
+      <nav class="header-nav" aria-label="主导航">
+        <a href="/#精选推荐">精选推荐</a>
+        <a href="/#最新更新">最新更新</a>
+        <a href="/#分类入口">分类</a>
+        <a href="/#深度解析">深度解析</a>
+        <a href="/#FAQ">常见问题</a>
+        <a href="/#热门榜单">热门榜单</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 主题首屏 -->
+    <section class="hero container" aria-label="首屏介绍">
+      <div class="hero-content">
+        <h1>茄子视频凹凸</h1>
+        <p class="hero-desc">
+          聚合凹凸题材都市情感短剧、微短剧与创作者内容，覆盖《暗涌》《平行恋人》《合租笔记》等热门系列，提供分类导航、观看路径建议与更新动态追踪，适合喜欢快节奏情感叙事与轻悬疑反转的观众。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#精选推荐">浏览精选条目</a>
+          <a class="btn btn-secondary" href="/#深度解析">了解类型差异</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="30" width="360" height="240" rx="20" fill="#F0EDE8"/>
+          <rect x="40" y="50" width="150" height="110" rx="12" fill="#C44536" opacity="0.9"/>
+          <rect x="200" y="50" width="160" height="50" rx="10" fill="#2C6E6B" opacity="0.7"/>
+          <rect x="200" y="110" width="160" height="50" rx="10" fill="#E8A87C" opacity="0.8"/>
+          <rect x="40" y="172" width="320" height="36" rx="10" fill="#FFFFFF"/>
+          <rect x="40" y="218" width="240" height="16" rx="8" fill="#D4B895"/>
+          <circle cx="310" cy="226" r="14" fill="#C44536" opacity="0.6"/>
+          <path d="M330 226 L340 220 L340 232 Z" fill="#C44536" opacity="0.6"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 三栏门户布局 -->
+    <div class="container">
+      <div class="portal-layout">
+        <!-- 左频道索引 -->
+        <aside class="channel-index" aria-label="频道索引">
+          <h2>内容频道</h2>
+          <ul>
+            <li><a href="/#精选推荐">都市情感</a></li>
+            <li><a href="/#最新更新">轻悬疑</a></li>
+            <li><a href="/#分类入口">合租日常</a></li>
+            <li><a href="/#深度解析">反转剧情</a></li>
+            <li><a href="/#热门榜单">治愈系</a></li>
+            <li><a href="/#用户评论">创作者访谈</a></li>
+            <li><a href="/#相关资讯">行业动态</a></li>
+            <li><a href="/#FAQ">新手指南</a></li>
+          </ul>
+        </aside>
+
+        <!-- 中主内容区 -->
+        <div class="main-content">
+          <!-- 1. 主题领域概览 -->
+          <section class="section" id="领域概览">
+            <div class="section-header">
+              <h2 class="section-title">凹凸内容领域概览</h2>
+            </div>
+            <div class="overview-text">
+              <p>茄子视频凹凸所聚合的内容，核心围绕“凹凸”叙事结构展开：两个性格、身份或处境截然不同的主角，因合租、职场、意外事件产生交集，在摩擦与互补中推进情感线。当前平台上主要包含四条内容方向：都市情感短剧、轻悬疑反转系列、合租日常轻喜剧，以及创作者第一视角的观察类短片。</p>
+              <p>都市情感方向以《暗涌》《平行恋人》为代表，单集 5—8 分钟，通常 12—16 集完结，适合通勤或碎片时间连续观看。轻悬疑方向如《第七个房客》《逆光证词》，在情感主线中埋入信息差与反转节点，观看时需要留意细节铺垫。合租日常方向偏向生活流，如《合租笔记》《厨房协奏曲》，节奏舒缓，适合放松场景。创作者观察类短片则多为 3—5 分钟的单集内容，以第一视角记录特定关系中的凹凸互动。</p>
+              <p>从更新节奏看，头部系列通常每周三、周六各更新一集，季播作品在季终后会有 2—3 周的制作间歇。新观众可以从单集口碑较高的条目切入，再根据类型偏好扩展。平台分类入口按“都市情感”“轻悬疑”“合租日常”“反转剧情”“治愈系”等具体类别划分，便于按方向筛选。</p>
+            </div>
+          </section>
+
+          <!-- 2. 精选内容推荐 -->
+          <section class="section" id="精选推荐">
+            <div class="section-header">
+              <h2 class="section-title">精选内容推荐</h2>
+              <a class="section-more" href="/#最新更新">查看更新 →</a>
+            </div>
+            <div class="card-grid">
+              <article class="card">
+                <img class="card-img" src="https://picsum.photos/seed/anyong-drama01/400/300" alt="暗涌短剧封面：雨夜都市天台场景" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <h3 class="card-title">暗涌</h3>
+                  <div class="card-tags">
+                    <span class="tag tag-primary">都市情感</span>
+                    <span class="tag">轻悬疑</span>
+                    <span class="tag">反转</span>
+                  </div>
+                  <p class="card-desc">合租室友意外卷入同一桩旧案，每集结尾抛出新的信息差，适合喜欢细节点回看的观众。</p>
+                  <div class="card-meta">
+                    <span>更新至第 8 集</span>
+                    <span>热度 9.2</span>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <img class="card-img" src="https://picsum.photos/seed/pingxing-lianren02/400/300" alt="平行恋人剧照：双线叙事交叉画面" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <h3 class="card-title">平行恋人</h3>
+                  <div class="card-tags">
+                    <span class="tag tag-primary">都市情感</span>
+                    <span class="tag">双线叙事</span>
+                    <span class="tag">抉择</span>
+                  </div>
+                  <p class="card-desc">同一主角在两条时间线里做出不同选择，第 6 集起两条线开始互相影响，适合逐集追看。</p>
+                  <div class="card-meta">
+                    <span>全 14 集完结</span>
+                    <span>评分 8.7</span>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <img class="card-img" src="https://picsum.photos/seed/hezu-biji03/400/300" alt="合租笔记封面：共享厨房场景" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <h3 class="card-title">合租笔记</h3>
+                  <div class="card-tags">
+                    <span class="tag tag-primary">合租日常</span>
+                    <span class="tag">生活流</span>
+                    <span class="tag">轻喜剧</span>
+                  </div>
+                  <p class="card-desc">三室一厅里四个年轻人的日常摩擦，单集一个生活议题，适合吃饭或睡前放松观看。</p>
+                  <div class="card-meta">
+                    <span>更新至第 20 集</span>
+                    <span>热度 8.4</span>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <img class="card-img" src="https://picsum.photos/seed/diqi-fangke04/400/300" alt="第七个房客封面：走廊尽头的光影" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <h3 class="card-title">第七个房客</h3>
+                  <div class="card-tags">
+                    <span class="tag tag-accent">轻悬疑</span>
+                    <span class="tag">密室</span>
+                    <span class="tag">推理</span>
+                  </div>
+                  <p class="card-desc">老洋房七间客房，每位房客都藏着一条线索，第 3 集起进入集中推理阶段。</p>
+                  <div class="card-meta">
+                    <span>更新至第 5 集</span>
+                    <span>热度 9.0</span>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <img class="card-img" src="https://picsum.photos/seed/niguang-zhengci05/400/300" alt="逆光证词剧照：法庭外走廊" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <h3 class="card-title">逆光证词</h3>
+                  <div class="card-tags">
+                    <span class="tag tag-accent">轻悬疑</span>
+                    <span class="tag">律政</span>
+                    <span class="tag">证据链</span>
+                  </div>
+                  <p class="card-desc">新人律师接手一桩看似简单的侵权案，每一集补全一条证据链，适合喜欢拼图式叙事的观众。</p>
+                  <div class="card-meta">
+                    <span>全 12 集完结</span>
+                    <span>评分 8.9</span>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <img class="card-img" src="https://picsum.photos/seed/chufang-xiezou06/400/300" alt="厨房协奏曲封面：两人共厨画面" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <h3 class="card-title">厨房协奏曲</h3>
+                  <div class="card-tags">
+                    <span class="tag tag-primary">治愈系</span>
+                    <span class="tag">美食</span>
+                    <span class="tag">慢节奏</span>
+                  </div>
+                  <p class="card-desc">两个作息完全错开的室友，通过留言和冰箱便签建立联系，单集围绕一道菜展开。</p>
+                  <div class="card-meta">
+                    <span>更新至第 10 集</span>
+                    <span>热度 8.1</span>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <img class="card-img" src="https://picsum.photos/seed/fanzhuan-jieti07/400/300" alt="反转阶梯海报：螺旋楼梯构图" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <h3 class="card-title">反转阶梯</h3>
+                  <div class="card-tags">
+                    <span class="tag">反转剧情</span>
+                    <span class="tag">单元剧</span>
+                    <span class="tag">社会派</span>
+                  </div>
+                  <p class="card-desc">每两集一个独立故事，围绕同一栋写字楼里的不同关系，反转点集中在最后一分钟。</p>
+                  <div class="card-meta">
+                    <span>更新至第 6 单元</span>
+                    <span>评分 8.5</span>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <img class="card-img" src="https://picsum.photos/seed/chuangzuozhe-fangtan08/400/300" alt="创作者观察室节目封面：访谈机位" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <h3 class="card-title">创作者观察室</h3>
+                  <div class="card-tags">
+                    <span class="tag tag-accent">创作者访谈</span>
+                    <span class="tag">幕后</span>
+                    <span class="tag">第一视角</span>
+                  </div>
+                  <p class="card-desc">每期邀请一位凹凸类短剧编剧或导演，拆解一个具体桥段的设计思路与拍摄取舍。</p>
+                  <div class="card-meta">
+                    <span>更新至第 9 期</span>
+                    <span>热度 7.8</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- 3. 最新更新 -->
+          <section class="section" id="最新更新">
+            <div class="section-header">
+              <h2 class="section-title">最新更新与热播动态</h2>
+              <span class="section-more">截至 2026-11-08</span>
+            </div>
+            <ul class="update-list">
+              <li>
+                <span class="update-time">今天 10:20</span>
+                <div><span class="update-name">《暗涌》</span> <span class="update-summary">第 8 集上线，合租室友线进入关键信息交换阶段</span></div>
+              </li>
+              <li>
+                <span class="update-time">今天 09:05</span>
+                <div><span class="update-name">《第七个房客》</span> <span class="update-summary">第 5 集上线，走廊监控时间线出现前后矛盾</span></div>
+              </li>
+              <li>
+                <span class="update-time">昨天 21:10</span>
+                <div><span class="update-name">《合租笔记》</span> <span class="update-summary">第 20 集上线，厨房使用规则引发新一轮室友谈判</span></div>
+              </li>
+              <li>
+                <span class="update-time">昨天 18:40</span>
+                <div><span class="update-name">《厨房协奏曲》</span> <span class="update-summary">第 10 集上线，冰箱便签首次出现双方同时留言</span></div>
+              </li>
+              <li>
+                <span class="update-time">11 月 6 日</span>
+                <div><span class="update-name">《反转阶梯》</span> <span class="update-summary">第 6 单元上线，写字楼电梯间成为新的故事场景</span></div>
+              </li>
+              <li>
+                <span class="update-time">11 月 5 日</span>
+                <div><span class="update-name">《创作者观察室》</span> <span class="update-summary">第 9 期上线，嘉宾拆解“一句话反转”的铺垫节奏</span></div>
+              </li>
+              <li>
+                <span class="update-time">11 月 3 日</span>
+                <div><span class="update-name">《平行恋人》</span> <span class="update-summary">后 7 集进入限时回顾专题，双线对照视角上线</span></div>
+              </li>
+              <li>
+                <span class="update-time">11 月 1 日</span>
+                <div><span class="update-name">《逆光证词》</span> <span class="update-summary">全 12 集完结，最终集补充了第三条证据链</span></div>
+              </li>
+              <li>
+                <span class="update-time">10 月 30 日</span>
+                <div><span class="update-name">《暗涌》</span> <span class="update-summary">第 6—7 集连更，旧案时间线首次完整呈现</span></div>
+              </li>
+              <li>
+                <span class="update-time">10 月 28 日</span>
+                <div><span class="update-name">《第七个房客》</span> <span class="update-summary">角色关系图更新，新增房客与房东的旧交集提示</span></div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- 4. 分类入口 -->
+          <section class="section" id="分类入口">
+            <div class="section-header">
+              <h2 class="section-title">按类别浏览</h2>
+            </div>
+            <div class="category-grid">
+              <a class="category-item" href="/#精选推荐">
+                <span class="category-icon" aria-hidden="true">🏙️</span>
+                都市情感
+              </a>
+              <a class="category-item" href="/#精选推荐">
+                <span class="category-icon" aria-hidden="true">🔍</span>
+                轻悬疑
+              </a>
+              <a class="category-item" href="/#精选推荐">
+                <span class="category-icon" aria-hidden="true">🏠</span>
+                合租日常
+              </a>
+              <a class="category-item" href="/#精选推荐">
+                <span class="category-icon" aria-hidden="true">🔁</span>
+                反转剧情
+              </a>
+              <a class="category-item" href="/#精选推荐">
+                <span class="category-icon" aria-hidden="true">🌿</span>
+                治愈系
+              </a>
+              <a class="category-item" href="/#用户评论">
+                <span class="category-icon" aria-hidden="true">🎙️</span>
+                创作者访谈
+              </a>
+              <a class="category-item" href="/#热门榜单">
+                <span class="category-icon" aria-hidden="true">📈</span>
+                热门榜单
+              </a>
+              <a class="category-item" href="/#FAQ">
+                <span class="category-icon" aria-hidden="true">📘</span>
+                新手指南
+              </a>
+            </div>
+          </section>
+
+          <!-- 5. 深度解析正文 -->
+          <section class="section" id="深度解析">
+            <div class="section-header">
+              <h2 class="section-title">凹凸系列深度解析</h2>
+            </div>
+            <div class="deep-read">
+              <h3>都市情感与轻悬疑的类型差异</h3>
+              <p>都市情感方向以关系推进为第一驱动，反转服务于人物成长；轻悬疑方向则以信息揭示为第一驱动，人物关系在解谜过程中被重新定义。两者在单集时长上接近，但观看方式不同：情感类适合按顺序连续观看，悬疑类更适合每集结束后回看细节。</p>
+              <p>以《暗涌》和《第七个房客》为例，前者每集结尾的钩子多来自角色选择，后者每集结尾的钩子多来自新线索出现。判断自己更适合哪一类，可以看追剧时更在意“人物接下来会怎么做”还是“真相接下来会怎么被揭开”。</p>
+
+              <h3>评判凹凸短剧质量的三个维度</h3>
+              <ul>
+                <li><strong>信息密度：</strong>单集 5—8 分钟内是否推进了实质关系或线索，还是只靠对白填充。密度高的条目通常会在每集结尾留下一个可讨论的具体问题。</li>
+                <li><strong>反转合理性：</strong>反转是否在前文有可回看的铺垫，而不是最后一刻凭空引入新信息。可以留意第 2—4 集里是否出现过看似无关的道具或台词。</li>
+                <li><strong>角色弧线一致性：</strong>主角在关键选择上是否符合此前建立的性格逻辑。凹凸结构的魅力在于差异碰撞，但差异不能变成前后矛盾的借口。</li>
+              </ul>
+
+              <h3>合租日常与治愈系的观看节奏</h3>
+              <p>合租日常类条目单集议题通常较小，一集解决一个具体矛盾，如厨房使用时间、公共区域收纳、访客边界等。这类内容适合不按顺序跳看，任意一集都能独立进入。治愈系条目则更依赖连续观看来积累情绪，如《厨房协奏曲》中留言频率的变化，需要前后对照才能体会。</p>
+              <p>如果时间有限，合租日常可以按“单集议题是否与自己生活相关”来挑选；治愈系建议至少连续看 3 集，再判断是否符合自己的节奏偏好。</p>
+
+              <h3>创作者观察类内容的参考价值</h3>
+              <p>《创作者观察室》这类访谈内容不直接提供剧情，而是拆解具体桥段的制作取舍。对普通观众来说，它解答的是“为什么某个反转让我觉得意外但不突兀”；对想尝试创作的观众来说，它提供的是可迁移的铺垫方法。观看顺序建议放在至少追完一部完整短剧之后，带着具体桥段的记忆去看对应的访谈期数。</p>
+            </div>
+          </section>
+
+          <!-- 6. 体验指南 -->
+          <section class="section" id="观看路径">
+            <div class="section-header">
+              <h2 class="section-title">凹凸内容体验指南</h2>
+            </div>
+            <ol class="guide-steps">
+              <li>
+                <span class="step-num" aria-hidden="true"></span>
+                <div class="step-body">
+                  <h4>先确定自己的观看场景</h4>
+                  <p>通勤或碎片时间优先选单集 5—8 分钟的都市情感或轻悬疑条目；吃饭、睡前等放松场景优先选合租日常或治愈系。场景决定类型，比直接按热度排序更有效。</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" aria-hidden="true"></span>
+                <div class="step-body">
+                  <h4>用前两集判断信息密度</h4>
+                  <p>任意条目看前两集，如果两集之内已经建立了明确的人物差异和一个待解决的具体问题，说明叙事效率较高；如果两集后仍在铺垫，可以按个人耐心决定是否继续。</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" aria-hidden="true"></span>
+                <div class="step-body">
+                  <h4>悬疑类条目预留回看时间</h4>
+                  <p>轻悬疑条目通常在每集结尾留下一个需要对照前文的细节。建议每集结束后花半分钟回想关键道具或台词，或者直接使用回看功能定位到具体时间点。</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" aria-hidden="true"></span>
+                <div class="step-body">
+                  <h4>同类条目横向比较时看反转成本</h4>
+                  <p>同类型两部剧之间比较，可以看反转是否需要额外解释。好的反转在揭晓后不需要大段补设定；如果揭晓后需要新加一条规则才能成立，说明前期铺垫可能不足。</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" aria-hidden="true"></span>
+                <div class="step-body">
+                  <h4>完结后再决定是否补创作者访谈</h4>
+                  <p>创作者访谈涉及具体桥段的剧透拆解，建议在一部剧完结或至少看完当前季之后再观看对应期数，避免提前获知关键反转点。</p>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <!-- 7. FAQ -->
+          <section class="section" id="FAQ">
+            <div class="section-header">
+              <h2 class="section-title">常见问题</h2>
+            </div>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>凹凸短剧一般多久更新一集？</summary>
+                <div class="faq-answer">
+                  头部系列通常每周更新两集，集中在周三和周六；季播作品在季终后会有 2—3 周制作间歇。单元剧类条目更新频率可能更高，具体以当周更新动态为准。
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>都市情感和轻悬疑的凹凸短剧有什么区别？</summary>
+                <div class="faq-answer">
+                  都市情感以关系推进和人物选择为核心，反转服务于角色成长；轻悬疑以信息揭示为核心，每集结尾多留下待解线索。观看方式上，情感类适合顺序连看，悬疑类更适合每集回看细节。
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>第一次接触凹凸系列，从哪部开始看比较好？</summary>
+                <div class="faq-answer">
+                  如果偏好生活流，可以从《合租笔记》或《厨房协奏曲》开始，单集独立性强；如果偏好强剧情，可以从《暗涌》或《逆光证词》开始，前者更新中、后者已完结，便于按自己的时间安排选择。
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>轻悬疑类条目的反转评判标准通常是什么？</summary>
+                <div class="faq-answer">
+                  主要看三点：反转信息是否在前文出现过可回看的铺垫、揭晓后是否需要额外补设定才能成立、以及反转是否改变了观众对前面剧情的理解。三点都满足的条目通常被认为反转质量较高。
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>合租日常类短剧可以不按顺序看吗？</summary>
+                <div class="faq-answer">
+                  大部分可以。合租日常类条目通常单集解决一个具体生活议题，独立性强。但涉及室友关系长期变化的集数，按顺序看能更好理解前后态度差异。
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>创作者观察室访谈会剧透剧情吗？</summary>
+                <div class="faq-answer">
+                  部分期数会围绕具体桥段展开拆解，涉及关键反转点。建议在看完对应作品当前季之后再观看，或先查看该期简介中标注的关联作品名称。
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- 8. 用户评论 -->
+          <section class="section" id="用户评论">
+            <div class="section-header">
+              <h2 class="section-title">观众评论</h2>
+            </div>
+            <ul class="comment-list">
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">林</span>
+                <div class="comment-body">
+                  <div class="comment-user">林间有风</div>
+                  <div class="comment-text">《暗涌》第 8 集那个信息交换的节奏很舒服，没有急着揭底，但每句台词都在往前推。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">陈</span>
+                <div class="comment-body">
+                  <div class="comment-user">陈小满</div>
+                  <div class="comment-text">《合租笔记》第 20 集厨房规则那段太真实了，我和室友现在还在用类似的轮流表。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">周</span>
+                <div class="comment-body">
+                  <div class="comment-user">周周不加班</div>
+                  <div class="comment-text">《第七个房客》第五集监控时间线对不上，我回看了三遍，感觉房东那条线还没完全展开。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">吴</span>
+                <div class="comment-body">
+                  <div class="comment-user">吴所谓</div>
+                  <div class="comment-text">《逆光证词》完结了，最后补的第三条证据链有点意外但不突兀，前几集确实埋过。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">郑</span>
+                <div class="comment-body">
+                  <div class="comment-user">郑在追剧</div>
+                  <div class="comment-text">《厨房协奏曲》冰箱便签同时留言那集很戳，节奏慢但情绪积累到位。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">许</span>
+                <div class="comment-body">
+                  <div class="comment-user">许愿不熬夜</div>
+                  <div class="comment-text">《平行恋人》双线互相影响的设计挺大胆，不过第 9 集之后有点绕，需要停下来理一理。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">何</span>
+                <div class="comment-body">
+                  <div class="comment-user">何处不青山</div>
+                  <div class="comment-text">《反转阶梯》第六单元电梯间那个故事，反转点集中在最后一分钟，但前面铺垫其实够用。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">孙</span>
+                <div class="comment-body">
+                  <div class="comment-user">孙悟饭不吃鱼</div>
+                  <div class="comment-text">创作者观察室第九期讲一句话反转型的铺垫，听完再回看《暗涌》前几集确实有新的发现。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">李</span>
+                <div class="comment-body">
+                  <div class="comment-user">李树开花</div>
+                  <div class="comment-text">合租日常类整体看下来，《合租笔记》的生活议题最具体，不是泛泛的搞笑。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">王</span>
+                <div class="comment-body">
+                  <div class="comment-user">王不留行</div>
+                  <div class="comment-text">《暗涌》和《第七个房客》都在追，前者看人物选择，后者看线索拼图，完全两种体验。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">张</span>
+                <div class="comment-body">
+                  <div class="comment-user">张望的猫</div>
+                  <div class="comment-text">《厨房协奏曲》第 10 集之后感觉节奏可以再快一点，不过治愈系本来就慢，能接受。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">刘</span>
+                <div class="comment-body">
+                  <div class="comment-user">刘六六</div>
+                  <div class="comment-text">《逆光证词》证据链的补全方式很适合二刷，第一遍看人物关系，第二遍看物证对应。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">赵</span>
+                <div class="comment-body">
+                  <div class="comment-user">赵小刀</div>
+                  <div class="comment-text">《平行恋人》双线对照专题上线之后又看了一遍，很多第一次没注意的对应细节。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">钱</span>
+                <div class="comment-body">
+                  <div class="comment-user">钱多多不多</div>
+                  <div class="comment-text">《反转阶梯》单元剧的好处是随时能停，坏处是每个单元都想马上看下一个。</div>
+                </div>
+              </li>
+              <li class="comment-item">
+                <span class="comment-avatar" aria-hidden="true">黄</span>
+                <div class="comment-body">
+                  <div class="comment-user">黄鹤楼上看翻船</div>
+                  <div class="comment-text">《合租笔记》第 20 集的室友谈判很写实，公共区域收纳那一段我直接截图发给了室友。</div>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- 9. 相关资讯 -->
+          <section class="section" id="相关资讯">
+            <div class="section-header">
+              <h2 class="section-title">相关资讯</h2>
+            </div>
+            <ul class="news-list">
+              <li class="news-item">
+                <span class="news-date">2026-11-08</span>
+                <div>
+                  <div class="news-title">《暗涌》第 8 集上线，合租线进入信息交换阶段</div>
+                  <div class="news-summary">本集开始，两位主角首次共享各自掌握的旧案信息，后续走向将取决于这次交换的完整程度。</div>
+                </div>
+              </li>
+              <li class="news-item">
+                <span class="news-date">2026-11-06</span>
+                <div>
+                  <div class="news-title">《反转阶梯》第六单元更新，场景移至写字楼电梯间</div>
+                  <div class="news-summary">新单元围绕同一栋写字楼里的不同关系展开，延续每两集一个独立故事的单元剧结构。</div>
+                </div>
+              </li>
+              <li class="news-item">
+                <span class="news-date">2026-11-04</span>
+                <div>
+                  <div class="news-title">凹凸类短剧单集时长趋势：5—8 分钟成主流</div>
+                  <div class="news-summary">近期更新的都市情感与轻悬疑条目中，多数将单集时长控制在 5—8 分钟，以适应碎片化观看场景。</div>
+                </div>
+              </li>
+              <li class="news-item">
+                <span class="news-date">2026-11-02</span>
+                <div>
+                  <div class="news-title">《逆光证词》完结，证据链式叙事引发回看讨论</div>
+                  <div class="news-summary">全 12 集完结后，观众围绕第三条证据链的铺垫位置展开讨论，部分细节在第二遍观看时才被注意。</div>
+                </div>
+              </li>
+              <li class="news-item">
+                <span class="news-date">2026-10-30</span>
+                <div>
+                  <div class="news-title">《创作者观察室》第九期拆解“一句话反转”铺垫节奏</div>
+                  <div class="news-summary">本期嘉宾以具体桥段为例，讲解反转信息在前期需要以何种密度出现，才能让揭晓时既意外又合理。</div>
+                </div>
+              </li>
+              <li class="news-item">
+                <span class="news-date">2026-10-27</span>
+                <div>
+                  <div class="news-title">合租日常类条目增加，生活议题细分到收纳与访客边界</div>
+                  <div class="news-summary">近期更新的合租日常条目中，厨房使用、公共区域收纳、访客留宿边界成为出现频率较高的具体议题。</div>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- 10. 相关推荐 -->
+          <section class="section" id="相关推荐">
+            <div class="section-header">
+              <h2 class="section-title">延伸方向与相关标签</h2>
+            </div>
+            <div class="tag-index">
+              <a href="/#精选推荐">双线叙事短剧</a>
+              <a href="/#精选推荐">证据链式推理</a>
+              <a href="/#精选推荐">合租生活流</a>
+              <a href="/#精选推荐">单元剧反转</a>
+              <a href="/#精选推荐">慢节奏治愈</a>
+              <a href="/#用户评论">创作者幕后拆解</a>
+              <a href="/#深度解析">反转合理性判断</a>
+              <a href="/#观看路径">碎片时间观看顺序</a>
+            </div>
+          </section>
+
+          <!-- 11. 热门榜单 -->
+          <section class="section" id="热门榜单">
+            <div class="section-header">
+              <h2 class="section-title">本周热门条目榜</h2>
+              <span class="section-more">统计截至 2026-11-08</span>
+            </div>
+            <ol class="rank-list">
+              <li>
+                <span class="rank-num" aria-hidden="true"></span>
+                <span class="rank-name">《暗涌》</span>
+                <span class="rank-meta">热度 9.2 · 更新中</span>
+              </li>
+              <li>
+                <span class="rank-num" aria-hidden="true"></span>
+                <span class="rank-name">《第七个房客》</span>
+                <span class="rank-meta">热度 9.0 · 更新中</span>
+              </li>
+              <li>
+                <span class="rank-num" aria-hidden="true"></span>
+                <span class="rank-name">《逆光证词》</span>
+                <span class="rank-meta">评分 8.9 · 已完结</span>
+              </li>
+              <li>
+                <span class="rank-num" aria-hidden="true"></span>
+                <span class="rank-name">《平行恋人》</span>
+                <span class="rank-meta">评分 8.7 · 已完结</span>
+              </li>
+              <li>
+                <span class="rank-num" aria-hidden="true"></span>
+                <span class="rank-name">《反转阶梯》</span>
+                <span class="rank-meta">评分 8.5 · 更新中</span>
+              </li>
+              <li>
+                <span class="rank-num" aria-hidden="true"></span>
+                <span class="rank-name">《合租笔记》</span>
+                <span class="rank-meta">热度 8.4 · 更新中</span>
+              </li>
+              <li>
+                <span class="rank-num" aria-hidden="true"></span>
+                <span class="rank-name">《厨房协奏曲》</span>
+                <span class="rank-meta">热度 8.1 · 更新中</span>
+              </li>
+              <li>
+                <span class="rank-num" aria-hidden="true"></span>
+                <span class="rank-name">《创作者观察室》</span>
+                <span class="rank-meta">热度 7.8 · 更新中</span>
+              </li>
+            </ol>
+          </section>
+        </div>
+
+        <!-- 右辅助栏 -->
+        <aside class="aside-panel">
+          <div class="aside-card">
+            <h3>更新速览</h3>
+            <ul class="aside-list">
+              <li><a href="/#最新更新">《暗涌》第 8 集 <span class="aside-meta">今天 10:20</span></a></li>
+              <li><a href="/#最新更新">《第七个房客》第 5 集 <span class="aside-meta">今天 09:05</span></a></li>
+              <li><a href="/#最新更新">《合租笔记》第 20 集 <span class="aside-meta">昨天</span></a></li>
+              <li><a href="/#最新更新">《厨房协奏曲》第 10 集 <span class="aside-meta">昨天</span></a></li>
+              <li><a href="/#最新更新">《反转阶梯》第 6 单元 <span class="aside-meta">11-06</span></a></li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <h3>分类快捷</h3>
+            <ul class="aside-list">
+              <li><a href="/#精选推荐">都市情感 <span class="aside-meta">8 部</span></a></li>
+              <li><a href="/#精选推荐">轻悬疑 <span class="aside-meta">6 部</span></a></li>
+              <li><a href="/#精选推荐">合租日常 <span class="aside-meta">5 部</span></a></li>
+              <li><a href="/#精选推荐">反转剧情 <span class="aside-meta">4 部</span></a></li>
+              <li><a href="/#精选推荐">治愈系 <span class="aside-meta">3 部</span></a></li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <h3>本周更新日历</h3>
+            <ul class="aside-list">
+              <li><a href="/#最新更新">周三 11-04 <span class="aside-meta">2 条</span></a></li>
+              <li><a href="/#最新更新">周六 11-07 <span class="aside-meta">3 条</span></a></li>
+              <li><a href="/#最新更新">周日 11-08 <span class="aside-meta">2 条</span></a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="36" height="36" rx="10" fill="#C44536"/>
+              <ellipse cx="14" cy="22" rx="6" ry="8" fill="#F7E6E3" transform="rotate(-20 14 22)"/>
+              <ellipse cx="22" cy="16" rx="5" ry="7" fill="#F0EDE8" transform="rotate(15 22 16)"/>
+            </svg>
+            <span class="brand-text">茄子视频凹凸</span>
+          </div>
+          <p class="footer-desc">聚合凹凸题材都市情感短剧、轻悬疑系列与合租日常内容，提供分类导航、深度解析与更新追踪。</p>
+        </div>
+        <div class="footer-col">
+          <h4>内容方向</h4>
+          <ul>
+            <li><a href="/#精选推荐">都市情感</a></li>
+            <li><a href="/#精选推荐">轻悬疑</a></li>
+            <li><a href="/#精选推荐">合租日常</a></li>
+            <li><a href="/#精选推荐">反转剧情</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>浏览与参考</h4>
+          <ul>
+            <li><a href="/#深度解析">深度解析</a></li>
+            <li><a href="/#观看路径">体验指南</a></li>
+            <li><a href="/#FAQ">常见问题</a></li>
+            <li><a href="/#热门榜单">热门榜单</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>社区与动态</h4>
+          <ul>
+            <li><a href="/#用户评论">观众评论</a></li>
+            <li><a href="/#相关资讯">相关资讯</a></li>
+            <li><a href="/#最新更新">更新动态</a></li>
+            <li><a href="/#相关推荐">延伸标签</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 茄子视频凹凸 · 内容聚合示例页</span>
+        <span>部分内容为示例数据，仅用于展示页面结构</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 轻量交互：平滑滚动由 CSS 处理，此处仅确保锚点偏移兼容
+    (function () {
+      // 无额外交互依赖，保持正文关闭 JS 可读
+    })();
+  </script>
+</body>
+            </html>
