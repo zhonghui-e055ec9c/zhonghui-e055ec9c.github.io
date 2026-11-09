@@ -1,0 +1,1882 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日大赛主题大赛吃瓜 - 赛事动态与社区热榜 - 吃瓜观赛指南</title>
+  <meta name="description" content="每日大赛主题大赛吃瓜，汇聚每日创意大赛、主题挑战赛的最新赛况与吃瓜动态。提供大赛看点、选手瓜料、赛制解读与社区热评，适合关注赛事与八卦的观众。">
+  <meta name="keywords" content="创意大赛赛况, 主题挑战赛瓜料, 每日大赛热榜, 选手争议事件, 赛制规则解读">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23d94f4f'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3E%E5%90%83%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --surface: #ffffff;
+      --panel: #fff8f0;
+      --border: #e8ddd0;
+      --text: #2d2a24;
+      --text-secondary: #6b6259;
+      --text-muted: #9a8f85;
+      --primary: #c94f3d;
+      --primary-light: #fdf0ed;
+      --primary-dark: #a33a2b;
+      --accent: #d4a03c;
+      --accent-light: #fef8e7;
+      --success: #4a8f5c;
+      --info: #5b7fa5;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(45, 42, 36, 0.06);
+      --shadow-md: 0 4px 12px rgba(45, 42, 36, 0.08);
+      --font-sans: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+      --font-serif: 'Noto Serif SC', 'Songti SC', Georgia, serif;
+      --header-height: 120px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: var(--header-height); }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* 吸顶公告条 + 页头 */
+    .sticky-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .announce-bar {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .announce-bar .tag {
+      background: rgba(255,255,255,0.25);
+      padding: 1px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .site-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      height: 60px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 18px;
+      font-family: var(--font-serif);
+    }
+
+    .brand-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.5px;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .main-nav::-webkit-scrollbar { display: none; }
+
+    .main-nav a {
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .main-nav a:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .header-search {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .header-search input {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-family: var(--font-sans);
+      width: 160px;
+      background: var(--bg);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .header-search input:focus { border-color: var(--primary); }
+    .header-search button {
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      transition: background 0.2s;
+    }
+    .header-search button:hover { background: var(--primary-dark); }
+
+    /* 首屏 */
+    .hero {
+      background: linear-gradient(135deg, #fdf0ed 0%, #fef8e7 50%, #f0f4f8 100%);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 48px 24px 40px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--text);
+      margin-bottom: 16px;
+      font-family: var(--font-serif);
+      letter-spacing: 1px;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 28px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.15s;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-sans);
+    }
+    .btn-primary:hover { background: var(--primary-dark); text-decoration: none; transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      color: var(--primary);
+      padding: 10px 24px;
+      border-radius: 28px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1.5px solid var(--primary);
+      transition: background 0.2s;
+      cursor: pointer;
+      font-family: var(--font-sans);
+    }
+    .btn-outline:hover { background: var(--primary-light); text-decoration: none; }
+
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+    }
+
+    /* 三栏布局 */
+    .page-layout {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 32px 24px 60px;
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 260px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* 左侧频道索引 */
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--header-height) + 16px);
+    }
+
+    .channel-nav {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .channel-nav h3 {
+      font-size: 13px;
+      color: var(--text-muted);
+      padding: 0 18px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .channel-nav ul {
+      list-style: none;
+    }
+
+    .channel-nav li a {
+      display: block;
+      padding: 8px 18px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      border-left: 3px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .channel-nav li a:hover,
+    .channel-nav li a.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-left-color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* 中间主内容 */
+    .main-content {
+      min-width: 0;
+    }
+
+    .section-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .section-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      font-family: var(--font-serif);
+    }
+
+    .section-header .sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* 概览 */
+    .overview-text {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.9;
+    }
+    .overview-text p { margin-bottom: 12px; }
+    .overview-text p:last-child { margin-bottom: 0; }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+    .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: #eee;
+    }
+
+    .card-body {
+      padding: 14px 16px 16px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .card-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .tag-sm {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .tag-sm.accent {
+      background: var(--accent-light);
+      color: #8a6a1e;
+    }
+
+    .tag-sm.info {
+      background: #e9f0f7;
+      color: var(--info);
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 10px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-meta {
+      display: flex;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .card-meta .hot { color: var(--primary); font-weight: 600; }
+
+    /* 最新动态列表 */
+    .update-list {
+      list-style: none;
+    }
+
+    .update-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+    .update-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .update-time {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      min-width: 70px;
+      padding-top: 2px;
+    }
+
+    .update-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .update-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .update-summary {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .update-badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 1px 7px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      color: var(--primary);
+      margin-left: 6px;
+      font-weight: 500;
+    }
+
+    /* 分类入口网格 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-item {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 12px;
+      text-align: center;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .category-item:hover { border-color: var(--primary); background: var(--primary-light); }
+
+    .category-item .cat-icon {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .category-item .cat-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .category-item .cat-count {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* 深度解析 */
+    .deep-dive h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 24px 0 10px;
+      font-family: var(--font-serif);
+    }
+    .deep-dive h3:first-of-type { margin-top: 0; }
+
+    .deep-dive p {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+
+    .deep-dive ul {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    .deep-dive li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 4px;
+    }
+
+    /* 体验指南步骤 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .guide-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .step-content h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* FAQ */
+    .faq-list details {
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    .faq-list details:last-child { border-bottom: none; }
+
+    .faq-list summary {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+
+    .faq-list summary::before {
+      content: '+';
+      font-size: 18px;
+      color: var(--primary);
+      font-weight: 400;
+      width: 20px;
+      flex-shrink: 0;
+    }
+
+    .faq-list details[open] summary::before {
+      content: '−';
+    }
+
+    .faq-list .faq-answer {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      padding: 8px 0 0 28px;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .comment-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .comment-nick {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .comment-time {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+
+    .comment-text {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 资讯 */
+    .news-list {
+      list-style: none;
+    }
+
+    .news-list li {
+      display: flex;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .news-list li:last-child { border-bottom: none; }
+
+    .news-thumb {
+      width: 100px;
+      height: 68px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      flex-shrink: 0;
+      background: #eee;
+    }
+
+    .news-body { flex: 1; min-width: 0; }
+
+    .news-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .news-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .news-summary {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* 相关推荐标签索引 */
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .related-tags a {
+      display: inline-block;
+      padding: 7px 16px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      transition: all 0.2s;
+    }
+
+    .related-tags a:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+      text-decoration: none;
+    }
+
+    /* 热门榜单 */
+    .rank-list {
+      list-style: none;
+      counter-reset: rank;
+    }
+
+    .rank-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--border);
+      counter-increment: rank;
+    }
+    .rank-list li:last-child { border-bottom: none; }
+
+    .rank-list li::before {
+      content: counter(rank);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--bg);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .rank-list li:nth-child(1)::before { background: #f5d76e; color: #7a5e00; }
+    .rank-list li:nth-child(2)::before { background: #d4d4d4; color: #555; }
+    .rank-list li:nth-child(3)::before { background: #e8b88a; color: #7a4a1a; }
+
+    .rank-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      flex: 1;
+    }
+
+    .rank-score {
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* 右侧栏 */
+    .right-sidebar {
+      position: sticky;
+      top: calc(var(--header-height) + 16px);
+    }
+
+    .sidebar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sidebar-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary-light);
+      font-family: var(--font-serif);
+    }
+
+    .hot-list {
+      list-style: none;
+      counter-reset: hot;
+    }
+
+    .hot-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--border);
+      counter-increment: hot;
+    }
+    .hot-list li:last-child { border-bottom: none; }
+
+    .hot-list li::before {
+      content: counter(hot);
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      background: var(--bg);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .hot-list li:nth-child(-n+3)::before {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .hot-list a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .hot-list a:hover { color: var(--primary); }
+
+    .update-stream li {
+      display: flex;
+      gap: 8px;
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      padding: 7px 0;
+      border-bottom: 1px dashed var(--border);
+      line-height: 1.5;
+    }
+    .update-stream li:last-child { border-bottom: none; }
+
+    .update-stream .time {
+      color: var(--text-muted);
+      white-space: nowrap;
+      font-size: 11px;
+    }
+
+    /* 页尾 */
+    .site-footer {
+      background: #2d2a24;
+      color: #c5bdb5;
+      padding: 48px 24px 32px;
+      margin-top: 20px;
+    }
+
+    .footer-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand .brand-text { color: #fff; font-size: 20px; margin-bottom: 8px; }
+
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #a09890;
+      max-width: 300px;
+    }
+
+    .footer-col h4 {
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 6px;
+    }
+
+    .footer-col a {
+      color: #a09890;
+      font-size: 13px;
+    }
+    .footer-col a:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid #443f38;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: #7a736c;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .page-layout {
+        grid-template-columns: 1fr 240px;
+      }
+      .channel-sidebar {
+        display: none;
+      }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .hero-visual { display: none; }
+      .category-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media (max-width: 740px) {
+      .page-layout {
+        grid-template-columns: 1fr;
+        padding: 20px 14px 40px;
+        gap: 20px;
+      }
+      .right-sidebar {
+        position: static;
+      }
+      .header-inner {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 14px;
+        gap: 10px;
+      }
+      .main-nav {
+        order: 3;
+        flex-basis: 100%;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+      .header-search { margin-left: auto; }
+      .header-search input { width: 120px; }
+      .hero-inner { padding: 32px 14px 28px; }
+      .hero-content h1 { font-size: 26px; }
+      .section-block { padding: 20px 16px; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .comment-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .card-grid { grid-template-columns: 1fr; }
+      .news-thumb { width: 72px; height: 54px; }
+    }
+
+    @media (max-width: 400px) {
+      .category-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+    }
+
+    /* 搜索无结果提示 */
+    .no-result {
+      display: none;
+      text-align: center;
+      padding: 32px 16px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .no-result.show { display: block; }
+
+    .hidden-by-search { display: none !important; }
+
+    /* 焦点可见 */
+    a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-wrapper">
+  <div class="announce-bar">
+    <span class="tag">今日新增</span>
+    <span>「城市怪谈」主题赛第 4 轮作品上线 · 「深夜食堂」瓜料曝光 · 本周榜单已刷新</span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">吃</div>
+        <span class="brand-text">每日大赛主题大赛吃瓜</span>
+      </div>
+      <nav class="main-nav" aria-label="主题导航">
+        <a href="/#section-overview">大赛概览</a>
+        <a href="/#section-featured">精选推荐</a>
+        <a href="/#section-updates">最新动态</a>
+        <a href="/#section-categories">分类入口</a>
+        <a href="/#section-deep">深度解析</a>
+        <a href="/#section-guide">观赛指南</a>
+        <a href="/#section-faq">常见问题</a>
+        <a href="/#section-comments">吃瓜评论</a>
+        <a href="/#section-news">相关资讯</a>
+        <a href="/#section-related">延伸推荐</a>
+        <a href="/#section-rank">热门榜单</a>
+      </nav>
+      <div class="header-search">
+        <input type="search" id="searchInput" placeholder="搜索大赛/瓜料…" aria-label="搜索大赛或瓜料">
+        <button type="button" id="searchBtn">搜索</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>每日大赛主题大赛吃瓜</h1>
+      <p class="hero-desc">
+        每天追踪创意主题赛、限时挑战赛与社区投票赛的最新赛况，整合选手瓜料、评委争议、赛制变动与观众热评。从「城市怪谈」到「深夜食堂」，从作品翻车到黑马逆袭，这里汇总值得一吃的赛事焦点。
+      </p>
+      <div class="hero-actions">
+        <a href="/#section-updates" class="btn-primary">查看今日赛况 →</a>
+        <a href="/#section-rank" class="btn-outline">热门榜单</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 360 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="60" width="280" height="180" rx="16" fill="#fff" stroke="#e8ddd0" stroke-width="2"/>
+        <rect x="40" y="60" width="280" height="40" rx="16" fill="#c94f3d"/>
+        <rect x="40" y="84" width="280" height="16" fill="#c94f3d"/>
+        <text x="180" y="86" font-size="14" text-anchor="middle" fill="#fff" font-family="sans-serif" font-weight="bold">今日大赛吃瓜现场</text>
+        <circle cx="100" cy="140" r="18" fill="#fdf0ed"/>
+        <text x="100" y="146" font-size="16" text-anchor="middle" fill="#c94f3d" font-family="sans-serif" font-weight="bold">1</text>
+        <rect x="130" y="128" width="120" height="10" rx="5" fill="#e8ddd0"/>
+        <rect x="130" y="146" width="80" height="8" rx="4" fill="#f0e8dd"/>
+        <circle cx="100" cy="190" r="18" fill="#fdf0ed"/>
+        <text x="100" y="196" font-size="16" text-anchor="middle" fill="#c94f3d" font-family="sans-serif" font-weight="bold">2</text>
+        <rect x="130" y="178" width="100" height="10" rx="5" fill="#e8ddd0"/>
+        <rect x="130" y="196" width="140" height="8" rx="4" fill="#f0e8dd"/>
+        <circle cx="270" cy="160" r="30" fill="#fef8e7" stroke="#d4a03c" stroke-width="2"/>
+        <text x="270" y="166" font-size="12" text-anchor="middle" fill="#8a6a1e" font-family="sans-serif" font-weight="bold">HOT</text>
+        <path d="M290 140 L310 120" stroke="#d4a03c" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="313" cy="117" r="4" fill="#d4a03c"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 三栏主体 -->
+<div class="page-layout">
+  <!-- 左侧频道索引 -->
+  <aside class="channel-sidebar" aria-label="频道索引">
+    <nav class="channel-nav">
+      <h3>赛事频道</h3>
+      <ul>
+        <li><a href="/#section-overview" class="active">大赛概览</a></li>
+        <li><a href="/#section-featured">精选赛事</a></li>
+        <li><a href="/#section-updates">最新动态</a></li>
+        <li><a href="/#section-categories">分类入口</a></li>
+        <li><a href="/#section-deep">深度解析</a></li>
+        <li><a href="/#section-guide">观赛指南</a></li>
+        <li><a href="/#section-faq">常见问题</a></li>
+        <li><a href="/#section-comments">吃瓜评论</a></li>
+        <li><a href="/#section-news">相关资讯</a></li>
+        <li><a href="/#section-related">延伸推荐</a></li>
+        <li><a href="/#section-rank">热门榜单</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- 中间主内容 -->
+  <main class="main-content" id="main-content">
+
+    <!-- 主题领域概览 -->
+    <section class="section-block" id="section-overview">
+      <div class="section-header">
+        <h2>主题赛事领域概览</h2>
+        <span class="sub">当前热门方向与内容生态</span>
+      </div>
+      <div class="overview-text">
+        <p>每日大赛主题大赛吃瓜所关注的，是一类以“每日命题、限时创作、社区围观”为核心的内容赛事形态。参与者围绕当天或当周发布的主题——可能是“城市怪谈”“深夜食堂”“末日便利店”这类具象场景，也可能是“反转结局”“三分钟叙事”“无声表演”这类形式约束——在限定时间内完成作品并提交。评委打分、观众投票与社区讨论共同构成赛事结果，而围绕作品质量、选手表现、评委偏好产生的争议与八卦，正是“吃瓜”环节的核心燃料。</p>
+        <p>当前这一领域的内容方向大致可分为几类：一是<strong>创意命题赛</strong>，如“城市怪谈”主题赛要求选手在 48 小时内提交图文或短片，侧重概念完整度与氛围营造；二是<strong>限时挑战赛</strong>，如“深夜食堂”三小时即兴创作，强调临场反应与执行速度；三是<strong>社区投票赛</strong>，由观众票选决定晋级，容易催生拉票争议与刷票疑云；四是<strong>评委对抗赛</strong>，多位评委各自带队，作品风格差异明显，赛后复盘常成为讨论焦点。每种赛制下都有具体的选手、具体的作品和具体的争议事件值得追踪。</p>
+        <p>值得关注的具体条目包括：正在进行中的「城市怪谈」第四轮作品《末班地铁末班人》因结局反转引发评分两极；「深夜食堂」赛区选手“老饭骨阿强”被质疑使用预制菜素材；评委“陈默”在直播点评中直接批评某作品“形式大于内容”，相关切片在社区传播超过 12 万次。这些事件与作品共同构成了每日大赛主题大赛吃瓜的内容底色。</p>
+      </div>
+    </section>
+
+    <!-- 精选内容推荐 -->
+    <section class="section-block" id="section-featured">
+      <div class="section-header">
+        <h2>精选赛事与瓜料推荐</h2>
+        <span class="sub">当下值得关注的 6 个具体条目</span>
+      </div>
+      <div class="card-grid" id="featuredGrid">
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/chengshi-guaitan-01/400/300" alt="城市怪谈主题赛作品末班地铁末班人封面" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">末班地铁末班人</h3>
+            <div class="card-tags">
+              <span class="tag-sm">城市怪谈</span>
+              <span class="tag-sm accent">反转结局</span>
+              <span class="tag-sm info">48h赛</span>
+            </div>
+            <p class="card-desc">选手“夜行舟”以末班地铁为舞台，讲述乘客逐个消失的悬疑故事。最后一镜的反转被部分观众认为“强行拔高”，但氛围营造获得评委“陈默”肯定。</p>
+            <div class="card-meta">
+              <span>🔥 热度 9.2</span>
+              <span>⭐ 评分 7.8</span>
+              <span>💬 342 讨论</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/shenye-shitang-02/400/300" alt="深夜食堂赛区选手老饭骨阿强作品截图" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">老饭骨阿强的即兴料理</h3>
+            <div class="card-tags">
+              <span class="tag-sm">深夜食堂</span>
+              <span class="tag-sm accent">预制菜争议</span>
+              <span class="tag-sm info">3h挑战</span>
+            </div>
+            <p class="card-desc">三小时即兴创作环节中，阿强端出“十分钟佛跳墙”，被眼尖观众发现汤底与某品牌预制菜包装高度相似。阿强回应称“高汤提前吊好不算违规”，赛组委尚未表态。</p>
+            <div class="card-meta">
+              <span>🔥 热度 8.9</span>
+              <span>⭐ 评分 6.5</span>
+              <span>💬 876 讨论</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/pingwei-duikang-03/400/300" alt="评委对抗赛陈默战队作品海报" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">陈默战队《无声告白》</h3>
+            <div class="card-tags">
+              <span class="tag-sm">评委对抗</span>
+              <span class="tag-sm accent">无声表演</span>
+              <span class="tag-sm info">团队赛</span>
+            </div>
+            <p class="card-desc">陈默带队以全片无台词的方式呈现听障家庭故事，情感浓度极高。但对手战队粉丝质疑“题材讨巧”，双方在评论区展开超过 500 楼的辩论。</p>
+            <div class="card-meta">
+              <span>🔥 热度 8.4</span>
+              <span>⭐ 评分 8.9</span>
+              <span>💬 521 讨论</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/pati-bianti-04/400/300" alt="反转结局赛作品第七秒封面" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">《第七秒》</h3>
+            <div class="card-tags">
+              <span class="tag-sm">反转结局</span>
+              <span class="tag-sm accent">时间循环</span>
+              <span class="tag-sm info">短篇赛</span>
+            </div>
+            <p class="card-desc">新人选手“六六”的作品，用七秒钟循环讲完一个救赎故事。结构精巧被赞“本届最强新人”，但画质粗糙也被部分观众扣分，形成口碑两极。</p>
+            <div class="card-meta">
+              <span>🔥 热度 8.1</span>
+              <span>⭐ 评分 8.2</span>
+              <span>💬 233 讨论</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/piaoju-zhengyi-05/400/300" alt="社区投票赛拉票争议事件截图" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">投票赛刷票疑云</h3>
+            <div class="card-tags">
+              <span class="tag-sm">社区投票</span>
+              <span class="tag-sm accent">刷票争议</span>
+              <span class="tag-sm info">赛制讨论</span>
+            </div>
+            <p class="card-desc">“最佳氛围奖”投票中，选手“小鹿乱撞”在最后两小时票数暴涨 4000，被对手粉丝质疑机器刷票。官方公布后台数据称“无异常”，但未解释具体来源。</p>
+            <div class="card-meta">
+              <span>🔥 热度 9.5</span>
+              <span>⭐ 评分 —</span>
+              <span>💬 1203 讨论</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/heimia-nixi-06/400/300" alt="黑马选手逆袭作品海报" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">黑马“一只猫”逆袭</h3>
+            <div class="card-tags">
+              <span class="tag-sm">城市怪谈</span>
+              <span class="tag-sm accent">黑马选手</span>
+              <span class="tag-sm info">第三轮</span>
+            </div>
+            <p class="card-desc">前两轮排名垫底的“一只猫”，第三轮以《便利店夜班日记》拿下评委全票。作品用监控视角讲了一个细思极恐的故事，被评委称为“本届最大惊喜”。</p>
+            <div class="card-meta">
+              <span>🔥 热度 8.7</span>
+              <span>⭐ 评分 9.1</span>
+              <span>💬 445 讨论</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="no-result" id="featuredNoResult">没有找到匹配的赛事条目，试试其他关键词。</div>
+    </section>
+
+    <!-- 最新动态 -->
+    <section class="section-block" id="section-updates">
+      <div class="section-header">
+        <h2>最新赛况与瓜料动态</h2>
+        <span class="sub">截至 2026 年 11 月 8 日</span>
+      </div>
+      <ul class="update-list">
+        <li>
+          <span class="update-time">今天 09:30</span>
+          <div class="update-content">
+            <div class="update-title">「城市怪谈」第四轮作品提交截止<span class="update-badge">新</span></div>
+            <div class="update-summary">共收到 47 份作品，其中 3 份因超时被取消资格，赛组委已发布公告。</div>
+          </div>
+        </li>
+        <li>
+          <span class="update-time">今天 08:15</span>
+          <div class="update-content">
+            <div class="update-title">「深夜食堂」阿强预制菜争议后续</div>
+            <div class="update-summary">赛组委回应称“将调取现场录像复核”，阿强在个人账号发布长文自证，评论区已关闭。</div>
+          </div>
+        </li>
+        <li>
+          <span class="update-time">昨天 21:10</span>
+          <div class="update-content">
+            <div class="update-title">投票赛刷票疑云官方数据公布</div>
+            <div class="update-summary">公布的后台记录显示“小鹿乱撞”票数在 21:00-21:20 集中来自同一 IP 段，官方称“正在核查”。</div>
+          </div>
+        </li>
+        <li>
+          <span class="update-time">昨天 18:45</span>
+          <div class="update-content">
+            <div class="update-title">评委陈默直播点评《末班地铁末班人》</div>
+            <div class="update-summary">“氛围有了，人物动机不足”的片段被剪辑传播，播放量已破 12 万。</div>
+          </div>
+        </li>
+        <li>
+          <span class="update-time">11 月 6 日</span>
+          <div class="update-content">
+            <div class="update-title">「无声表演」团队赛晋级名单公布</div>
+            <div class="update-summary">陈默战队《无声告白》以 8.9 分领跑，另有两支战队作品因“技术故障”申请重赛获批。</div>
+          </div>
+        </li>
+        <li>
+          <span class="update-time">11 月 5 日</span>
+          <div class="update-content">
+            <div class="update-title">新人“六六”《第七秒》获评委特别提及</div>
+            <div class="update-summary">评委“方也”称“结构值得所有老选手学习”，但画质问题在观众评分中被拉低。</div>
+          </div>
+        </li>
+        <li>
+          <span class="update-time">11 月 4 日</span>
+          <div class="update-content">
+            <div class="update-title">「城市怪谈」第三轮排名正式发布</div>
+            <div class="update-summary">“一只猫”逆袭至第一，“夜行舟”跌至第五，赛组委同步更新了评委打分细则。</div>
+          </div>
+        </li>
+        <li>
+          <span class="update-time">11 月 3 日</span>
+          <div class="update-content">
+            <div class="update-title">「反转结局」赛新增“观众陪审团”机制</div>
+            <div class="update-summary">下一轮起，随机抽取 20 名观众参与打分，权重占 15%，赛制变动引发选手讨论。</div>
+          </div>
+        </li>
+        <li>
+          <span class="update-time">11 月 2 日</span>
+          <div class="update-content">
+            <div class="update-title">「深夜食堂」赛区新增“食材透明”规则</div>
+            <div class="update-summary">要求选手提交作品时附主要食材来源说明，阿强事件后首条针对性规则。</div>
+          </div>
+        </li>
+        <li>
+          <span class="update-time">11 月 1 日</span>
+          <div class="update-content">
+            <div class="update-title">十月大赛主题大赛吃瓜月度热词公布</div>
+            <div class="update-summary">“预制菜”“刷票”“无声告白”“末班地铁”位列前四，裁判争议相关讨论量环比涨 40%。</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 分类入口 -->
+    <section class="section-block" id="section-categories">
+      <div class="section-header">
+        <h2>按主题类型查找赛事</h2>
+        <span class="sub">8 个常见类别与对应赛事方向</span>
+      </div>
+      <div class="category-grid">
+        <a href="/#section-featured" class="category-item">
+          <div class="cat-icon">👻</div>
+          <div class="cat-name">城市怪谈</div>
+          <div class="cat-count">在赛 12 组</div>
+        </a>
+        <a href="/#section-featured" class="category-item">
+          <div class="cat-icon">🍜</div>
+          <div class="cat-name">深夜食堂</div>
+          <div class="cat-count">在赛 8 组</div>
+        </a>
+        <a href="/#section-featured" class="category-item">
+          <div class="cat-icon">🔄</div>
+          <div class="cat-name">反转结局</div>
+          <div class="cat-count">在赛 15 组</div>
+        </a>
+        <a href="/#section-featured" class="category-item">
+          <div class="cat-icon">🤫</div>
+          <div class="cat-name">无声表演</div>
+          <div class="cat-count">在赛 6 组</div>
+        </a>
+        <a href="/#section-featured" class="category-item">
+          <div class="cat-icon">⏱️</div>
+          <div class="cat-name">限时挑战</div>
+          <div class="cat-count">在赛 10 组</div>
+        </a>
+        <a href="/#section-featured" class="category-item">
+          <div class="cat-icon">🗳️</div>
+          <div class="cat-name">社区投票</div>
+          <div class="cat-count">在赛 9 组</div>
+        </a>
+        <a href="/#section-featured" class="category-item">
+          <div class="cat-icon">⚔️</div>
+          <div class="cat-name">评委对抗</div>
+          <div class="cat-count">在赛 4 组</div>
+        </a>
+        <a href="/#section-featured" class="category-item">
+          <div class="cat-icon">🌱</div>
+          <div class="cat-name">新人赛区</div>
+          <div class="cat-count">在赛 22 组</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section class="section-block deep-dive" id="section-deep">
+      <div class="section-header">
+        <h2>赛事类型差异与评判维度解析</h2>
+        <span class="sub">从赛制到评审，理解每日大赛的吃瓜逻辑</span>
+      </div>
+
+      <h3>创意命题赛 vs 限时挑战赛：压力点完全不同</h3>
+      <p>创意命题赛通常给 24 至 72 小时，选手有相对充裕的时间打磨概念。“城市怪谈”“末日便利店”这类命题赛的关键在于<strong>概念完整度</strong>——故事是否自洽、设定是否新鲜、氛围是否到位。观众吃瓜时看的是“谁的想法更妙”，翻车点往往是“点子好但执行垮”。典型如《末班地铁末班人》，反转设计被认可但人物动机被评委挑刺，这类争议在命题赛中非常常见。</p>
+      <p>限时挑战赛则把时间压到 1 至 3 小时，选手几乎没有打磨空间。“深夜食堂”即兴料理、“三分钟叙事”现场创作都属于此类。评判重心从“概念”转向<strong>执行力与临场反应</strong>，翻车点也变成“超时”“道具失误”“明显准备不足”。阿强预制菜事件正是限时赛的典型争议——观众对“提前准备”的容忍度极低，因为那直接破坏了挑战赛的公平性预设。</p>
+
+      <h3>社区投票赛的吃瓜焦点：票数曲线比作品更有戏</h3>
+      <p>社区投票赛的最终结果由观众票数决定，这使得“拉票策略”“票数增长曲线”“粉丝团组织度”成为比作品本身更受关注的瓜料。一个作品可能在专业评审中表现平平，但靠着社区动员能力逆袭；也可能作品质量不错，却因对手刷票疑云而被拖入舆论泥潭。观察这类赛事时，可以重点看几个指标：</p>
+      <ul>
+        <li><strong>票数时间分布</strong>——正常拉票的票数增长是渐进的，刷票往往出现在深夜或截止前集中爆发；</li>
+        <li><strong>投票账号注册时间</strong>——大量新注册账号集中投票是经典异常信号；</li>
+        <li><strong>选手与粉丝群的互动记录</strong>——是否明确号召“集中火力”或暗示刷票渠道。</li>
+      </ul>
+
+      <h3>评委对抗赛：看的是评委，不是选手</h3>
+      <p>评委对抗赛由多位评委各自带队，作品风格往往打上强烈的评委个人烙印。陈默带队偏重情感叙事与社会议题，方也战队更强调结构精巧与形式创新。观众看这类赛事，一半在看作品，一半在看评委之间的暗流——点评时的措辞、打分时的倾向、赛后采访的微妙态度，都是瓜料来源。典型事件是陈默点评对手战队作品“技术完成度高但缺乏灵魂”，被对方粉丝截取传播，引发“评委是否该公开贬低对手作品”的讨论。</p>
+
+      <h3>判断一个赛事瓜值不值得吃，看三个维度</h3>
+      <p>每日大赛主题大赛吃瓜的信息量很大，但不是每个争议都值得投入时间。可以用三个维度快速筛选：<strong>第一，争议是否涉及赛制公平</strong>——刷票、违规、评委利益冲突属于高价值瓜，个人风格争论属于低价值；<strong>第二，是否有可验证的事实依据</strong>——截图、后台数据、录像片段比纯口头爆料可信；<strong>第三，事件是否影响最终结果</strong>——能改变晋级名单的争议远比场外口水重要。按这个标准，阿强预制菜事件和投票赛刷票疑云都属于值得追踪的高价值瓜，而选手之间的互相调侃则不必过度关注。</p>
+    </section>
+
+    <!-- 体验指南 -->
+    <section class="section-block" id="section-guide">
+      <div class="section-header">
+        <h2>赛事内容消费顺序与判断依据</h2>
+        <span class="sub">第一次关注每日大赛，从哪里看起</span>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>先看晋级名单和评委打分表</h4>
+            <p>晋级名单反映赛果，打分表反映评委偏好。把两者对照，能快速判断一个赛事是“专业导向”还是“人气导向”，也更容易发现评分异常的具体作品。以「城市怪谈」第三轮为例，“一只猫”评委全票但观众评分中等，说明这届评委更看重创意完整度而非制作精度。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>再挑争议最大的两三个作品看</h4>
+            <p>不必追完所有作品。按讨论量排序，挑争议最大的两三个——通常也是瓜料最集中的。看作品本身，再看评论区高赞，基本能还原争议全貌。比如《末班地铁末班人》的“反转是否成立”、《无声告白》的“题材是否讨巧”，都是评论区能快速补齐背景的典型议题。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>最后追踪赛制变动与官方回应</h4>
+            <p>赛制变动往往预示下一轮吃瓜方向。新增“食材透明”规则说明组委会在回应阿强事件；新增“观众陪审团”则是对投票公信力争议的修补。关注官方公告的措辞和时点，比追选手个人动态更能把握赛事走向。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>判断一个条目值不值得花时间：看“信息增量”</h4>
+            <p>同样是一个争议事件，有的能提供新的赛制视角（如刷票疑云引出投票机制讨论），有的只是情绪宣泄（如选手之间的口角）。优先选择有具体证据链、能改变赛果、或能反映赛制漏洞的条目。阿强预制菜事件之所以值得追，是因为它直接推动了规则修改，而不仅仅是“某人被骂了”。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-block" id="section-faq">
+      <div class="section-header">
+        <h2>关于赛事与瓜料的常见问题</h2>
+        <span class="sub">6 个高频疑问</span>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>城市怪谈类主题赛一般多久更新一轮？</summary>
+          <div class="faq-answer">多数城市怪谈主题赛采用“一周一轮”的节奏，周一发布命题、周四截止提交、周末公布排名。但不同主办方差异较大，有的紧凑到 48 小时一轮，有的拉长到两周。具体以赛事公告为准，当前进行中的「城市怪谈」第四轮就是 11 月 4 日发布命题、11 月 7 日截止。</div>
+        </details>
+        <details>
+          <summary>限时挑战赛和创意命题赛的核心区别是什么？</summary>
+          <div class="faq-answer">最核心的区别是时间预算与评判重心。限时挑战赛通常只给 1 到 3 小时，看的是执行速度、临场反应和完成度；创意命题赛给 24 小时以上，看的是概念完整度、叙事深度和打磨程度。限时赛更容易出“翻车名场面”，命题赛更容易出“概念争议”。</div>
+        </details>
+        <details>
+          <summary>第一次关注每日大赛，从哪个赛事或选手看起比较好？</summary>
+          <div class="faq-answer">建议从「城市怪谈」或「反转结局」这类命题清晰、作品数量适中的赛事入手。选手方面，可以关注“一只猫”这类有完整逆袭线的新人——他们的作品讨论度高、背景容易补齐，且争议点不复杂。避开规则繁杂的评委对抗赛作为入门，容易看晕。</div>
+        </details>
+        <details>
+          <summary>社区投票赛的刷票疑云，通常怎么判断真假？</summary>
+          <div class="faq-answer">看三个公开信号：官方是否公布后台投票时间分布图、异常票数是否集中在特定 IP 段、选手是否在截止前发布过催票动态。官方愿意公布细粒度数据的，通常问题不大；只给结论不出数据的，争议往往持续更久。当前投票赛刷票事件仍在核查中，尚无定论。</div>
+        </details>
+        <details>
+          <summary>评委对抗赛中，评委的点评是否会影响选手得分？</summary>
+          <div class="faq-answer">在多数对抗赛中，评委点评不直接改变已提交作品的分数，但会影响观众投票倾向和下一轮评委的预设立场。陈默对《末班地铁末班人》的点评虽然没改分，但引发了大量观众重新审视该作品，间接影响了下一轮的舆论风向。</div>
+        </details>
+        <details>
+          <summary>每日大赛主题大赛吃瓜里说的“高价值瓜”一般指什么？</summary>
+          <div class="faq-answer">通常指有事实依据、涉及赛制公平、可能改变赛果的争议事件。例如预制菜违规、刷票疑云、评委利益冲突都属于高价值；而选手之间的互怼、粉丝骂战则价值较低。判断标准可以概括为：有没有证据、影响不影响结果、能不能推动规则改变。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 用户评论 -->
+    <section class="section-block" id="section-comments">
+      <div class="section-header">
+        <h2>社区吃瓜评论</h2>
+        <span class="sub">16 条来自不同观众的讨论</span>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">夜</div>
+            <span class="comment-nick">夜行舟的粉丝</span>
+            <span class="comment-time">今天 10:22</span>
+          </div>
+          <p class="comment-text">《末班地铁末班人》的反转确实有点硬，但氛围是真的好。陈默说人物动机不足，我觉得他这次说得在理。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">吃</div>
+            <span class="comment-nick">吃瓜不吐皮</span>
+            <span class="comment-time">今天 09:45</span>
+          </div>
+          <p class="comment-text">阿强那个十分钟佛跳墙，我奶奶看了都说像超市买的。坐等赛组委通报，别又是“正在核查”然后没下文。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">六</div>
+            <span class="comment-nick">六六冲鸭</span>
+            <span class="comment-time">昨天 22:10</span>
+          </div>
+          <p class="comment-text">《第七秒》画质确实糙，但七秒循环的结构太妙了。新人能做成这样，我觉得比很多老选手强。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">理</div>
+            <span class="comment-nick">理性看赛</span>
+            <span class="comment-time">昨天 20:33</span>
+          </div>
+          <p class="comment-text">刷票那个事，官方公布了时间分布图，21:00 到 21:20 同一个 IP 段投了 3000 多票，这还不叫异常？</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">猫</div>
+            <span class="comment-nick">一只猫的铲屎官</span>
+            <span class="comment-time">昨天 18:07</span>
+          </div>
+          <p class="comment-text">从垫底到全票第一，一只猫的逆袭剧本太燃了。《便利店夜班日记》最后那个监控视角的反转，我看了两遍才反应过来。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">无</div>
+            <span class="comment-nick">无声告白自来水</span>
+            <span class="comment-time">11 月 6 日 21:15</span>
+          </div>
+          <p class="comment-text">说《无声告白》题材讨巧的，你倒是拍一个无台词还讲清楚故事的试试？情感浓度摆在那，评委不瞎。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">反</div>
+            <span class="comment-nick">反转爱好者</span>
+            <span class="comment-time">11 月 6 日 16:40</span>
+          </div>
+          <p class="comment-text">反转结局赛加观众陪审团，15% 权重，这不就是官方也怕再出刷票争议吗。以后竞争更卷了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">老</div>
+            <span class="comment-nick">老观众了</span>
+            <span class="comment-time">11 月 5 日 14:22</span>
+          </div>
+          <p class="comment-text">看了三年每日大赛，预制菜这种争议每年都有，最后还是看组委会敢不敢下狠手。取消资格才能服众。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">方</div>
+            <span class="comment-nick">方也战队观察员</span>
+            <span class="comment-time">11 月 5 日 11:08</span>
+          </div>
+          <p class="comment-text">陈默说对手作品“缺乏灵魂”确实过了，作为评委这么说太主观。方也战队那部技术流作品完成度明明很高。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">深</div>
+            <span class="comment-nick">深夜食堂常客</span>
+            <span class="comment-time">11 月 4 日 22:50</span>
+          </div>
+          <p class="comment-text">三小时做菜本来就不公平，有人灶台好有人灶台差。阿强那个事，规则本身就有漏洞，不能全怪他。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">新</div>
+            <span class="comment-nick">新人观察员</span>
+            <span class="comment-time">11 月 4 日 19:33</span>
+          </div>
+          <p class="comment-text">新人赛区这届质量不错，除了六六还有好几个值得关注的。建议多给新人镜头，别老盯着那几个熟脸。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">赛</div>
+            <span class="comment-nick">赛制研究员</span>
+            <span class="comment-time">11 月 3 日 15:12</span>
+          </div>
+          <p class="comment-text">观众陪审团这个机制有意思，15% 权重既不会颠覆专业评审，又能拉回一些民意分。就看随机抽取怎么保证公正了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">阿</div>
+            <span class="comment-nick">阿强的路人粉</span>
+            <span class="comment-time">11 月 3 日 10:05</span>
+          </div>
+          <p class="comment-text">阿强做菜确实有一手，但这次真的洗不动。高汤提前吊好没问题，问题是那汤底颜色跟某品牌一模一样。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">榜</div>
+            <span class="comment-nick">榜单观察</span>
+            <span class="comment-time">11 月 2 日 20:44</span>
+          </div>
+          <p class="comment-text">月度热词“预制菜”排第一不意外，“刷票”才第四有点意外。看来大家对吃进嘴里的东西还是更敏感。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">路</div>
+            <span class="comment-nick">路过的评审</span>
+            <span class="comment-time">11 月 2 日 13:20</span>
+          </div>
+          <p class="comment-text">打分表公开是好事，但也让评委压力更大了。陈默这次被冲，下次点评估计会收着点。有好有坏吧。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-header">
+            <div class="avatar">监</div>
+            <span class="comment-nick">监控视角爱好者</span>
+            <span class="comment-time">11 月 1 日 17:38</span>
+          </div>
+          <p class="comment-text">《便利店夜班日记》那个监控视角真的绝，全程第一人称，最后三秒才出现异常画面，比直接吓人高级多了。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section class="section-block" id="section-news">
+      <div class="section-header">
+        <h2>赛事相关资讯</h2>
+        <span class="sub">近期动态与规则变化</span>
+      </div>
+      <ul class="news-list">
+        <li>
+          <img class="news-thumb" src="https://picsum.photos/seed/news-chengshi-07/600/400" alt="城市怪谈第四轮作品提交现场" width="600" height="400" loading="lazy">
+          <div class="news-body">
+            <div class="news-title">「城市怪谈」第四轮 47 份作品提交，3 份超时被取消资格</div>
+            <div class="news-date">2026-11-08</div>
+            <div class="news-summary">赛组委公告称超时作品中有两份仅超出 2 分钟，但规则未留缓冲期，维持取消决定。</div>
+          </div>
+        </li>
+        <li>
+          <img class="news-thumb" src="https://picsum.photos/seed/news-shitang-08/600/400" alt="深夜食堂赛区新增食材透明规则公告" width="600" height="400" loading="lazy">
+          <div class="news-body">
+            <div class="news-title">「深夜食堂」新增“食材透明”规则，要求提交来源说明</div>
+            <div class="news-date">2026-11-02</div>
+            <div class="news-summary">规则要求选手在提交作品时附主要食材来源，被视为对阿强预制菜事件的直接回应。</div>
+          </div>
+        </li>
+        <li>
+          <img class="news-thumb" src="https://picsum.photos/seed/news-toupiao-09/600/400" alt="社区投票赛后台数据公布截图" width="600" height="400" loading="lazy">
+          <div class="news-body">
+            <div class="news-title">投票赛刷票疑云：官方公布后台数据，异常 IP 段仍在核查</div>
+            <div class="news-date">2026-11-07</div>
+            <div class="news-summary">数据显示“小鹿乱撞”在截止前 20 分钟票数激增，来源集中在同一 IP 段，官方称“不排除误判”。</div>
+          </div>
+        </li>
+        <li>
+          <img class="news-thumb" src="https://picsum.photos/seed/news-pingwei-10/600/400" alt="评委陈默直播点评画面" width="600" height="400" loading="lazy">
+          <div class="news-body">
+            <div class="news-title">陈默点评《末班地铁末班人》片段播放量破 12 万</div>
+            <div class="news-date">2026-11-07</div>
+            <div class="news-summary">“氛围有了，动机不足”的短评被剪辑传播，评论区对评委是否该公开批评选手作品争论不休。</div>
+          </div>
+        </li>
+        <li>
+          <img class="news-thumb" src="https://picsum.photos/seed/news-jiaoshi-11/600/400" alt="反转结局赛新增观众陪审团机制公告" width="600" height="400" loading="lazy">
+          <div class="news-body">
+            <div class="news-title">「反转结局」赛新增“观众陪审团”，权重占 15%</div>
+            <div class="news-date">2026-11-03</div>
+            <div class="news-summary">每轮随机抽取 20 名观众参与打分，被视为对社区投票公信力争议的机制性修补。</div>
+          </div>
+        </li>
+        <li>
+          <img class="news-thumb" src="https://picsum.photos/seed/news-heici-12/600/400" alt="十月大赛月度热词统计图表" width="600" height="400" loading="lazy">
+          <div class="news-body">
+            <div class="news-title">十月大赛热词榜：“预制菜”“刷票”“无声告白”前三</div>
+            <div class="news-date">2026-11-01</div>
+            <div class="news-summary">裁判争议相关讨论量环比上涨 40%，社区对赛制公平性的关注度明显提升。</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="section-block" id="section-related">
+      <div class="section-header">
+        <h2>延伸推荐方向</h2>
+        <span class="sub">8 个值得继续追踪的条目或类型</span>
+      </div>
+      <div class="related-tags">
+        <a href="/#section-featured">《便利店夜班日记》完整复盘</a>
+        <a href="/#section-featured">「无声表演」赛区规则详解</a>
+        <a href="/#section-updates">阿强预制菜事件时间线</a>
+        <a href="/#section-deep">限时挑战赛翻车案例合集</a>
+        <a href="/#section-rank">评委打分与观众评分差异榜</a>
+        <a href="/#section-featured">新人赛区黑马选手追踪</a>
+        <a href="/#section-news">观众陪审团机制讨论</a>
+        <a href="/#section-comments">刷票疑云社区辩论存档</a>
+      </div>
+    </section>
+
+    <!-- 补充板块：热门榜单 -->
+    <section class="section-block" id="section-rank">
+      <div class="section-header">
+        <h2>本周赛事热度榜</h2>
+        <span class="sub">基于社区讨论量与搜索趋势的示例排名</span>
+      </div>
+      <ol class="rank-list">
+        <li>
+          <span class="rank-title">投票赛刷票疑云（“小鹿乱撞”票数异常）</span>
+          <span class="rank-score">9.5</span>
+        </li>
+        <li>
+          <span class="rank-title">阿强预制菜事件（深夜食堂赛区）</span>
+          <span class="rank-score">9.2</span>
+        </li>
+        <li>
+          <span class="rank-title">《末班地铁末班人》反转争议</span>
+          <span class="rank-score">9.0</span>
+        </li>
+        <li>
+          <span class="rank-title">陈默战队《无声告白》题材讨论</span>
+          <span class="rank-score">8.8</span>
+        </li>
+        <li>
+          <span class="rank-title">“一只猫”从垫底到全票第一逆袭</span>
+          <span class="rank-score">8.7</span>
+        </li>
+        <li>
+          <span class="rank-title">新人“六六”《第七秒》口碑两极</span>
+          <span class="rank-score">8.4</span>
+        </li>
+        <li>
+          <span class="rank-title">观众陪审团机制新增</span>
+          <span class="rank-score">8.1</span>
+        </li>
+        <li>
+          <span class="rank-title">食材透明规则发布</span>
+          <span class="rank-score">7.9</span>
+        </li>
+      </ol>
+    </section>
+
+  </main>
+
+  <!-- 右侧辅助栏 -->
+  <aside class="right-sidebar" aria-label="辅助信息">
+    <div class="sidebar-card">
+      <h3>今日热榜</h3>
+      <ol class="hot-list">
+        <li><a href="/#section-updates">投票赛刷票疑云后续：官方称正在核查</a></li>
+        <li><a href="/#section-updates">阿强长文自证，评论区已关闭</a></li>
+        <li><a href="/#section-featured">《末班地铁末班人》评分跌至 7.8</a></li>
+        <li><a href="/#section-featured">《无声告白》观众评分升至 9.1</a></li>
+        <li><a href="/#section-updates">城市怪谈第四轮 3 份作品超时被取消</a></li>
+        <li><a href="/#section-featured">“一只猫”逆袭作品完整版上线</a></li>
+      </ol>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>更新流</h3>
+      <ul class="update-stream">
+        <li><span class="time">09:30</span> 城市怪谈第四轮提交截止</li>
+        <li><span class="time">08:15</span> 阿强发布长文自证</li>
+        <li><span class="time">昨天 21:10</span> 投票赛官方公布后台数据</li>
+        <li><span class="time">昨天 18:45</span> 陈默点评片段播放量破 12 万</li>
+        <li><span class="time">11-06</span> 无声表演团队赛晋级名单公布</li>
+        <li><span class="time">11-05</span> 新人六六获评委特别提及</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>赛事日历</h3>
+      <ul class="update-stream">
+        <li><span class="time">11-08</span> 城市怪谈第四轮评审中</li>
+        <li><span class="time">11-09</span> 反转结局赛观众陪审团抽签</li>
+        <li><span class="time">11-10</span> 深夜食堂第五轮命题发布</li>
+        <li><span class="time">11-12</span> 评委对抗赛半决赛</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-text">每日大赛主题大赛吃瓜</div>
+        <p>追踪每日创意命题赛、限时挑战赛与社区投票赛的赛况、瓜料与规则变化，为关注赛事动态与社区讨论的观众提供集中入口。</p>
+      </div>
+      <div class="footer-col">
+        <h4>赛事频道</h4>
+        <ul>
+          <li><a href="/#section-overview">大赛概览</a></li>
+          <li><a href="/#section-featured">精选赛事</a></li>
+          <li><a href="/#section-updates">最新动态</a></li>
+          <li><a href="/#section-categories">分类入口</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>深度内容</h4>
+        <ul>
+          <li><a href="/#section-deep">深度解析</a></li>
+          <li><a href="/#section-guide">观赛指南</a></li>
+          <li><a href="/#section-faq">常见问题</a></li>
+          <li><a href="/#section-rank">热门榜单</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>社区互动</h4>
+        <ul>
+          <li><a href="/#section-comments">吃瓜评论</a></li>
+          <li><a href="/#section-news">相关资讯</a></li>
+          <li><a href="/#section-related">延伸推荐</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 每日大赛主题大赛吃瓜</span>
+      <span>部分内容为示例数据，仅用于展示页面结构</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    var searchInput = document.getElementById('searchInput');
+    var searchBtn = document.getElementById('searchBtn');
+    var featuredGrid = document.getElementById('featuredGrid');
+    var noResult = document.getElementById('featuredNoResult');
+    var cards = featuredGrid ? featuredGrid.querySelectorAll('.card') : [];
+
+    function filterCards() {
+      var q = (searchInput.value || '').trim().toLowerCase();
+      var visibleCount = 0;
+
+      cards.forEach(function(card) {
+        if (!q) {
+          card.classList.remove('hidden-by-search');
+          visibleCount++;
+          return;
+        }
+        var text = card.textContent.toLowerCase();
+        if (text.indexOf(q) > -1) {
+          card.classList.remove('hidden-by-search');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden-by-search');
+        }
+      });
+
+      if (visibleCount === 0 && q) {
+        noResult.classList.add('show');
+      } else {
+        noResult.classList.remove('show');
+      }
+    }
+
+    if (searchBtn) {
+      searchBtn.addEventListener('click', filterCards);
+    }
+    if (searchInput) {
+      searchInput.addEventListener('input', filterCards);
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          filterCards();
+        }
+      });
+    }
+  })();
+</script>
+
+</body>
+          </html>
